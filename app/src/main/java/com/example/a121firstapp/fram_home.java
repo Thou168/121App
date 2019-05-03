@@ -82,7 +82,7 @@ public class fram_home extends Fragment implements NavigationView.OnNavigationIt
         sliderView = (SliderView) view.findViewById(R.id.sliderView);
         mLinearLayout = (LinearLayout) view.findViewById(R.id.pagesContainer);
         setupSlider();
-
+//dropdwon
         btn_breand = (Button) view.findViewById(R.id.btnShow);
         btn_breand.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -113,22 +113,7 @@ public class fram_home extends Fragment implements NavigationView.OnNavigationIt
                 popup.show();
             }
         });
-//dropdwon
-//        sp_breand = (Spinner)view.findViewById(R.id.sp_breand);
-//        ArrayAdapter<String> st_breand = new ArrayAdapter<String>(getContext(),android.R.layout.simple_list_item_1,
-//                getResources().getStringArray(R.array.sp_brand));
-//        st_breand.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-//        sp_breand.setAdapter(st_breand);
-//        sp_price = (Spinner)view.findViewById(R.id.sp_price);
-//        ArrayAdapter<String> st_price = new ArrayAdapter<String>(getContext(),android.R.layout.simple_list_item_1,
-//                getResources().getStringArray(R.array.sp_price));
-//        st_price.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-//        sp_price.setAdapter(st_price);
-//        sp_loca = (Spinner)view.findViewById(R.id.sp_loca);
-//        ArrayAdapter<String> st_loca = new ArrayAdapter<String>(getContext(),android.R.layout.simple_list_item_1,
-//                getResources().getStringArray(R.array.sp_location));
-//        st_price.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-//        sp_loca.setAdapter(st_loca);
+
 //Horizontal
         ItemHorizontal();
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
