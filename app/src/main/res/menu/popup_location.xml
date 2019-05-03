@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item android:id="@+id/pp"
+        android:title="Phnom Penh" />
+    <item android:id="@+id/kpc"
+        android:title="Kam PongCham" />
+    <item android:id="@+id/kpt"
+        android:title="Kam PongThom" />
+</menu>

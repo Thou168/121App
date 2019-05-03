@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">121FirstApp</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string-array name="sp_brand">
+        <item>Brand</item>
+        <item>Honda</item>
+        <item>Suzuki</item>
+        <item>Yamaha</item>
+        <item>Other</item>
+    </string-array>
+    <string-array name="sp_price">
+        <item>Price</item>
+        <item>$1</item>
+        <item>$2</item>
+        <item>$3</item>
+        <item>$4</item>
+    </string-array>
+    <string-array name="sp_location">
+        <item>Location</item>
+        <item>Phnom Penh</item>
+        <item>Kompong Cham</item>
+        <item>Kompong Thom</item>
+    </string-array>
+
+    <string-array name="kh_title">
+        <item>ប្រភេទពន្ធ:</item>
+        <item>ម៉ាក:</item>
+        <item>ឆ្នាំផលិត:</item>
+        <item>លក្ខខណ្ឌ:</item>
+    </string-array>
+</resources>
