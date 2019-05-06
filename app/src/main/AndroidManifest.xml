@@ -24,7 +24,7 @@
         <activity android:name=".UserAccountRegisterFacebookActivity"></activity>
         <activity android:name=".UserAccountRegistrationActivity" />
         <activity android:name=".create_loan_request" />
-        <activity android:name=".Class_item.Create_loan_request" />
+        <activity android:name=".View_buying_request_main"/>
 
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"

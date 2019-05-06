@@ -8,6 +8,9 @@
     <color name="colorWhite">#FFFFFFFF</color>
     <color name="tab_select">#03A9F4</color>
     <color name="no_select">#FFFFFF</color>
+    <color name="grey">#f3f1f1</color>
+    <color name="grey2">#424242</color>
+    <color name="WHITE">#FFFFFF</color>
 
     <color name="backgroundfragment">#B2BEB5</color>
 </resources>

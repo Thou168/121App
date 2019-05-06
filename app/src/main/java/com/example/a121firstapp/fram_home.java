@@ -68,6 +68,14 @@ public class fram_home extends Fragment implements NavigationView.OnNavigationIt
         setHasOptionsMenu(true);
 
         edtsearch = (EditText) view.findViewById(R.id.edt_search);
+        edtsearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getContext(),"Click",Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getContext(),View_buying_request_main.class);
+                startActivity(intent);
+            }
+        });
         edtsearch.clearFocus();
 
         drawer = (DrawerLayout) view.findViewById(R.id.drawer_layout);
