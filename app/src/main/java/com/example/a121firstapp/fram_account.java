@@ -139,6 +139,7 @@ public class fram_account extends Fragment {
                 startActivity(Intent.createChooser(intent,"share_using"));
                 break;
             case R.id.action_settings:
+                startActivity(new Intent(this.getActivity(),UserAccountRegistrationActivity.class));
                 break;
         }
         return super.onOptionsItemSelected(item);

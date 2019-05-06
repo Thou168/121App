@@ -29,7 +29,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textStyle="bold"
-            android:text="092660677"
+            android:text="086 595 985"
             android:textColor="#168AE6"
             android:background="@drawable/corner_top"
             android:textSize="18dp"/>
@@ -47,7 +47,7 @@
             android:layout_below="@+id/SplitLine_hor1"
             android:layout_marginTop="2dp"
             android:textSize="18dp"
-            android:text="093660677"
+            android:text="093 499 293"
             android:textColor="#168AE6"
             android:background="@drawable/corner_bottom"
             android:textStyle="bold" />

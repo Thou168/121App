@@ -24,17 +24,19 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.zip.Inflater;
 
 public class View_buying_request_item_detail extends AppCompatActivity {
 
     String[] kh_title,detail;
     ImageView imageView;
     TextView breand,price;
-    Button btn_call,btn_order,phone1,phone2,cancel;
+    Button btn_call,btn_chat,btn_order,btn_loan, phone1,phone2,cancel;
     BottomSheetDialog bottomSheetDialog;
     private static final int REQUEST_CALL = 1;
 
@@ -53,65 +55,27 @@ public class View_buying_request_item_detail extends AppCompatActivity {
                 finish();
             }
         });
+
+// action button
+
         btn_call = (Button)findViewById(R.id.btn_call);
         btn_call.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                View view = LayoutInflater.from(v.getContext()).inflate(R.layout.bottom_sheet_call,null);
-                phone1 = view.findViewById(R.id.btnPhone1);
-                phone2 = view.findViewById(R.id.btnPhone2);
-                cancel = view.findViewById(R.id.btnCancel);
-
-                bottomSheetDialog = new BottomSheetDialog(v.getContext());
-                bottomSheetDialog.setCancelable(true);
-                bottomSheetDialog.setCanceledOnTouchOutside(true);
-                bottomSheetDialog.setContentView(view);
-                bottomSheetDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-                bottomSheetDialog.show();
+               bottomsheet(v);
                 phone1.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                switch (which){
-                                    case DialogInterface.BUTTON_POSITIVE:
-                                        String num = phone1.getText().toString();
-                                        makePhonecall(num);
-                                        break;
-                                    case DialogInterface.BUTTON_NEGATIVE:
-                                        break;
-                                }
-                            }
-                        };
-                        AlertDialog.Builder builder = new AlertDialog.Builder(v.getContext());
-                        builder.setMessage("Call to " + phone1.getText()).setPositiveButton("Yes", dialogClickListener)
-                                .setNegativeButton("No", dialogClickListener).show();
+                        String num = phone1.getText().toString();
+                        makePhonecall(num);
                         bottomSheetDialog.dismiss();
                     }
                 });
                 phone2.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                switch (which){
-                                    case DialogInterface.BUTTON_POSITIVE:
-                                        String num= phone2.getText().toString();
-                                        makePhonecall(num);
-                                        break;
-
-                                    case DialogInterface.BUTTON_NEGATIVE:
-
-                                        break;
-                                }
-                            }
-                        };
-
-                        AlertDialog.Builder builder = new AlertDialog.Builder(v.getContext());
-                        builder.setMessage("Call to " + phone2.getText()).setPositiveButton("Yes", dialogClickListener)
-                                .setNegativeButton("No", dialogClickListener).show();
+                        String num = phone2.getText().toString();
+                        makePhonecall(num);
                         bottomSheetDialog.dismiss();
                     }
                 });
@@ -124,6 +88,40 @@ public class View_buying_request_item_detail extends AppCompatActivity {
                 });
             }
         });
+
+        btn_chat = (Button)findViewById(R.id.btn_chat);
+        btn_chat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                bottomsheet(v);
+
+                phone1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        String sms = phone1.getText().toString();
+                        makeSMS(sms);
+                        bottomSheetDialog.dismiss();
+                    }
+                });
+
+                phone2.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        String sms = phone2.getText().toString();
+                        makeSMS(sms);
+                        bottomSheetDialog.dismiss();
+                    }
+                });
+
+                cancel.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        bottomSheetDialog.dismiss();
+                    }
+                });
+            }
+        });
+
         btn_order = (Button)findViewById(R.id.btn_order);
         btn_order.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -138,6 +136,18 @@ public class View_buying_request_item_detail extends AppCompatActivity {
                 // v.getContext().startActivity(intent);
             }
         });
+
+        btn_loan = (Button)findViewById(R.id.btn_loan);
+        btn_loan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(v.getContext(),"loan",Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(v.getContext(),create_loan_request.class);
+                startActivity(intent);
+            }
+        });
+
+/// finish buttom
 
         imageView = (ImageView)findViewById(R.id.image_header);
         imageView.setImageResource(getIntent().getIntExtra("img_header",0));
@@ -165,6 +175,25 @@ public class View_buying_request_item_detail extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_detail_product, menu);
         return super.onCreateOptionsMenu(menu);
+    }
+
+    public void bottomsheet(View v){
+        View view = LayoutInflater.from(v.getContext()).inflate(R.layout.bottom_sheet_call,null);
+        phone1 = view.findViewById(R.id.btnPhone1);
+        phone2 = view.findViewById(R.id.btnPhone2);
+        cancel = view.findViewById(R.id.btnCancel);
+
+        bottomSheetDialog = new BottomSheetDialog(v.getContext());
+        bottomSheetDialog.setCancelable(true);
+        bottomSheetDialog.setCanceledOnTouchOutside(true);
+        bottomSheetDialog.setContentView(view);
+        bottomSheetDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        bottomSheetDialog.show();
+    }
+
+    public void makeSMS(String sms){
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.fromParts("sms",sms,null));
+        startActivity(intent);
     }
     public void makePhonecall(String num){
 

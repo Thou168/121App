@@ -4,16 +4,15 @@
     <!-- if you want to load images from the internet -->
     <uses-permission android:name="android.permission.INTERNET" /> <!-- if you want to load images from a file OR from the internet -->
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.CALL_PHONE" />
-    <!--google map-->
+    <uses-permission android:name="android.permission.CALL_PHONE" /> <!-- google map -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <permission
         android:name="com.example.permission.MAPS_RECEIVE"
-        android:protectionLevel="signature"/>
-    <uses-permission android:name="com.example.permission.MAPS_RECEIVE"/>
+        android:protectionLevel="signature" />
 
+    <uses-permission android:name="com.example.permission.MAPS_RECEIVE" />
 
     <application
         android:allowBackup="true"
@@ -22,12 +21,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".UserAccountRegisterFacebookActivity"></activity>
+        <activity android:name=".UserAccountRegistrationActivity" />
+        <activity android:name=".create_loan_request" />
+        <activity android:name=".Class_item.Create_loan_request" />
 
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
             android:value="AIzaSyA4GHayq3AVbLLaSeipU3lC63tzDF8DWY4" />
 
-        <activity android:name=".Edit_account"></activity>
+        <activity android:name=".Edit_account" />
         <activity android:name=".View_buying_request_item_detail" />
         <activity android:name=".MainActivity">
             <intent-filter>

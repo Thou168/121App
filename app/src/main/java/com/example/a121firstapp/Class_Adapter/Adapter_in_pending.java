@@ -1,12 +1,16 @@
 package com.example.a121firstapp.Class_Adapter;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.a121firstapp.Class_item.Item_in_pending;
 import com.example.a121firstapp.R;
@@ -36,6 +40,7 @@ public class Adapter_in_pending extends RecyclerView.Adapter<Adapter_in_pending.
         private TextView txtbreand,txtposton,txtrenew,txtprice;
         private ImageView imageView;
         private Item_in_pending item;
+        private Button delete,edit;
 
         public ViewHolder(View v) {
             super(v);
@@ -45,9 +50,11 @@ public class Adapter_in_pending extends RecyclerView.Adapter<Adapter_in_pending.
             imageView = (ImageView) v.findViewById(R.id.image_view);
             txtrenew = (TextView) v.findViewById(R.id.txtrenew);
             txtposton = (TextView) v.findViewById(R.id.txtposton);
+            delete = (Button)v.findViewById(R.id.btn_delete);
+            edit = (Button)v.findViewById(R.id.btn_edit);
         }
 
-        public void setData(Item_in_pending item) {
+        public void setData(final Item_in_pending item) {
             this.item = item;
             txtbreand.setText(item.getBrand());
             txtprice.setText(Double.toString(item.getPrice()));
@@ -55,6 +62,33 @@ public class Adapter_in_pending extends RecyclerView.Adapter<Adapter_in_pending.
             txtposton.setText(item.getPost_on());
             imageView.setImageResource(item.getImage_view());
             //relativeLayout.setBackgroundColor(Color.parseColor(item.color));
+
+            delete.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            switch (which){
+                                case DialogInterface.BUTTON_POSITIVE:
+                                    mValues.remove(item);
+                                    notifyItemRemoved(which);
+                                    notifyItemRangeChanged(which,mValues.size());
+                                    break;
+
+                                case DialogInterface.BUTTON_NEGATIVE:
+
+                                    break;
+                            }
+                        }
+                    };
+
+                    AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
+                    builder.setMessage("Are you sure to delete this item?").setPositiveButton("Yes", dialogClickListener)
+                            .setNegativeButton("No", dialogClickListener).show();
+                }
+            });
         }
 
         @Override

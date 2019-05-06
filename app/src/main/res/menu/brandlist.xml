@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menu_honda"      android:title="Honda"/>
+    <item android:id="@+id/menu_yamaha"   android:title="Yamaha"/>
+    <item android:id="@+id/menu_suzuki"   android:title="Suzuki"/>
+    <item android:id="@+id/menu_kawazaki" android:title="Kawazaki"/>
+    <item android:id="@+id/menu_bmw"      android:title="BMW"/>
+    <item android:id="@+id/menu_ktm"      android:title="KTM"/>
+    <item android:id="@+id/menu_kr"       android:title="KR Motor"/>
+    <item android:id="@+id/menu_gpx"      android:title="GPX"/>
+    <item android:id="@+id/menu_keewey"   android:title="Keewey"/>
+    <item android:id="@+id/menu_ducati"   android:title="Ducati"/>
+    <item android:id="@+id/menu_benelli"  android:title="Benelli"/>
+    <item android:id="@+id/menu_other"    android:title="Other"/>
+
+</menu>

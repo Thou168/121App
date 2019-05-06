@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_fill_information"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#3F5BEB"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fill in information"
+            android:textColor="#ffff"
+            android:textSize="20dp"
+            android:gravity="center"
+            android:layout_gravity="center_horizontal"
+            />
+    </android.support.v7.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:text="    DETAIL"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:gravity="center_vertical"
+                android:background="#9CE9E7E7"
+                />
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/underline">
+                <ImageView
+                    android:id="@+id/imgNameL"
+                    android:layout_width="20dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/icon_circle_null_24"
+                    android:layout_marginTop="-45dp"/>
+                <EditText
+                    android:id="@+id/etNameL"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="22dp"
+                    android:hint="User name"
+
+                    />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/underline">
+                <ImageView
+                    android:id="@+id/imgGenderL"
+                    android:layout_width="20dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/icon_circle_null_24"
+                    />
+
+                <TextView
+                    android:id="@+id/etGenderL"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="22dp"
+                    android:layout_marginTop="-29dp"
+                    android:hint="Gender"
+                    android:paddingLeft="5dp"
+                    android:textSize="17dp"
+                    android:paddingTop="7dp"
+                    android:drawableRight="@drawable/arrow_down_black_24dp"
+                    android:paddingRight="15dp"
+
+
+                    />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/underline">
+                <ImageView
+                    android:id="@+id/imgAgeL"
+                    android:layout_width="20dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/icon_circle_null_24"
+                    android:layout_marginTop="-45dp"/>
+                <EditText
+                    android:id="@+id/etAgeL"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="22dp"
+                    android:hint="Age"
+                    android:inputType="number"
+
+                    />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/underline">
+                <ImageView
+                    android:id="@+id/imgJobL"
+                    android:layout_width="20dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/icon_circle_null_24"
+                    android:layout_marginTop="-45dp"/>
+                <EditText
+                    android:id="@+id/etJobL"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="22dp"
+                    android:hint="Job"
+                    />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/underline">
+                <ImageView
+                    android:id="@+id/imgincomeL"
+                    android:layout_width="20dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/icon_circle_null_24"
+                    android:layout_marginTop="-45dp"/>
+                <EditText
+                    android:id="@+id/etIncomeL"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="22dp"
+                    android:hint="Monthly Average income"
+                    android:inputType="number"
+                    />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/underline"
+                >
+                <ImageView
+                    android:id="@+id/imgExpenseL"
+                    android:layout_width="20dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/icon_circle_null_24"
+                    android:layout_marginTop="-45dp"/>
+                <EditText
+                    android:id="@+id/etExpenseL"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="22dp"
+                    android:hint="Monthly Average Expense"
+                    android:inputType="number"
+                    />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/underline">
+                <ImageView
+                    android:id="@+id/imgPhoneLW"
+                    android:layout_width="20dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/icon_circle_null_24"
+                    android:layout_marginTop="-45dp"/>
+                <EditText
+                    android:id="@+id/etPhoneLW"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="22dp"
+                    android:hint="Phone"
+                    android:inputType="phone"
+
+                    />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:background="#fff"
+                >
+                <ImageView
+                    android:id="@+id/imgAddressL"
+                    android:layout_width="20dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/icon_circle_null_24"
+                    android:layout_marginTop="-35dp"/>
+                <EditText
+                    android:id="@+id/etAddressL"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_marginLeft="22dp"
+                    android:hint=" Address"
+                    android:inputType="textPostalAddress"
+                    android:background="@null"
+                    />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:text="    LOAN INFORMATION"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:gravity="center_vertical"
+                android:layout_marginTop="5dp"
+                android:background="#9CE9E7E7"
+                />
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/underline">
+                <ImageView
+                    android:id="@+id/imgloanAmmount"
+                    android:layout_width="20dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/icon_circle_null_24"
+                    android:layout_marginTop="-45dp"/>
+                <EditText
+                    android:id="@+id/etLoanAmount"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="22dp"
+                    android:hint="Loan Amount"
+                    />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/underline">
+                <ImageView
+                    android:id="@+id/imgLoanDuration"
+                    android:layout_width="20dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/icon_circle_null_24"
+                    android:layout_marginTop="-45dp"/>
+                <EditText
+                    android:id="@+id/etLoanDuration"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="22dp"
+                    android:hint="Loan Duration(month)"
+                    />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/underline">
+                <ImageView
+                    android:id="@+id/imgLoanPurpose"
+                    android:layout_width="20dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/icon_circle_null_24"
+                    android:layout_marginTop="-45dp"/>
+                <EditText
+                    android:id="@+id/etLoanPurpose"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="22dp"
+                    android:hint="Loan purpose"
+
+                    />
+
+            </android.support.design.widget.TextInputLayout>
+
+
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:background="#fff"
+                >
+                <ImageView
+                    android:id="@+id/imgloanstatus"
+                    android:layout_width="20dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/icon_circle_null_24"
+                    android:layout_marginTop="-35dp"/>
+                <EditText
+                    android:id="@+id/etStatus"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_marginLeft="22dp"
+                    android:hint=" Status"
+                    android:inputType="textPostalAddress"
+                    android:background="@null"
+                    />
+
+            </android.support.design.widget.TextInputLayout>
+
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:text="   LOAN SUPPORTING DOCUMENT"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:layout_marginTop="5dp"
+                android:background="#9CE9E7E7"/>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/underline">
+                <ImageView
+                    android:id="@+id/imgstateid"
+                    android:layout_width="20dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/icon_circle_null_24"
+                    />
+                <TextView
+                    android:id="@+id/etStateID"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="22dp"
+                    android:hint=" State ID"
+                    android:textSize="17dp"
+                    android:layout_marginTop="-30dp"
+                    android:drawableRight="@drawable/arrow_down_black_24dp"
+                    android:paddingRight="15dp"
+
+                    />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/underline">
+                <ImageView
+                    android:id="@+id/imgfamily"
+                    android:layout_width="20dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/icon_circle_null_24"
+                    />
+                <TextView
+                    android:id="@+id/etfamily"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="22dp"
+                    android:hint=" Family block"
+                    android:textSize="17dp"
+                    android:layout_marginTop="-30dp"
+                    android:drawableRight="@drawable/arrow_down_black_24dp"
+                    android:paddingRight="15dp"
+
+                    />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/underline">
+                <ImageView
+                    android:id="@+id/imgstaff"
+                    android:layout_width="20dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/icon_circle_null_24"
+                    />
+                <TextView
+                    android:id="@+id/etstaff"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="22dp"
+                    android:hint=" Staff ID / Salary sip"
+                    android:textSize="17dp"
+                    android:layout_marginTop="-30dp"
+                    android:drawableRight="@drawable/arrow_down_black_24dp"
+                    android:paddingRight="15dp"
+
+                    />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="#ffff">
+                <ImageView
+                    android:id="@+id/imgHours"
+                    android:layout_width="20dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/icon_circle_null_24"
+
+                    />
+                <TextView
+                    android:id="@+id/etHours"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="22dp"
+                    android:hint=" Hourse plant"
+                    android:textSize="17dp"
+                    android:layout_marginTop="-30dp"
+                    android:drawableRight="@drawable/arrow_down_black_24dp"
+                    android:paddingRight="15dp"
+
+
+                    />
+
+            </android.support.design.widget.TextInputLayout>
+
+
+            <Button
+                android:id="@+id/btnsubmit"
+                android:layout_width="350dp"
+                android:layout_height="50dp"
+                android:text="Submit"
+                android:textSize="20dp"
+                android:textAllCaps="false"
+                android:background="#3B56EB"
+                android:layout_marginTop="50dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="20dp"
+                />
+
+
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
