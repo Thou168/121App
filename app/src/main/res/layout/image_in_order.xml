@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/background_border_bottom"
+    android:id="@+id/relativeLayout"
+    android:padding="5sp">
+
+    <ImageView
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:id="@+id/image_product"
+        android:scaleType="centerInside"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/lato_bold"
+        android:textSize="16sp"
+        android:id="@+id/txt_title"
+        android:layout_toRightOf="@id/image_product"
+        android:text="Honda Dream C125 2019"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="8dp"
+        android:textColor="#0C0202"/>
+    <ImageButton
+        android:id="@+id/btnShowDetail"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/ic_chevron_right"
+        android:layout_marginTop="4dp"
+        android:layout_alignParentRight="true"
+        android:foregroundGravity="right"
+        android:background="#FFFFFF"
+        />
+    <TextView
+        android:id="@+id/txt_price_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/image_product"
+        android:layout_below="@+id/txt_title"
+        android:layout_marginTop="24dp"
+        android:layout_marginLeft="8dp"
+        android:text="Price: "
+        android:textSize="12sp"
+        android:fontFamily="@font/lato_regular" />
+
+    <TextView
+        android:id="@+id/txt_Price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/txt_price_title"
+        android:layout_below="@+id/txt_title"
+        android:layout_marginTop="24dp"
+        android:text="USD 17,00.00"
+        android:textSize="13sp"
+        android:fontFamily="@font/lato_bold"/>
+    <TextView
+        android:id="@+id/txt_condition_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txt_price_title"
+        android:layout_toRightOf="@+id/image_product"
+        android:text="Condition: "
+        android:textSize="12sp"
+        android:fontFamily="@font/lato_regular"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="8dp"/>
+    <TextView
+        android:id="@+id/txt_condition"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txt_price_title"
+        android:layout_toRightOf="@+id/txt_condition_title"
+        android:text="Use"
+        android:textSize="13sp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/lato_bold"/>
+
+    <TextView
+        android:id="@+id/txt_amount_request_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txt_condition_title"
+        android:layout_toRightOf="@+id/image_product"
+        android:text="Amount Request: "
+        android:textSize="12sp"
+        android:fontFamily="@font/lato_regular"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="8dp"/>
+    <TextView
+        android:id="@+id/txt_amount_request"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txt_condition"
+        android:layout_toRightOf="@+id/txt_amount_request_title"
+        android:text="Use"
+        android:textSize="13sp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/lato_bold"/>
+
+</RelativeLayout>
