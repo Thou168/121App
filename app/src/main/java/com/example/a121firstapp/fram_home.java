@@ -2,6 +2,7 @@ package com.example.a121firstapp;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.NavigationView;
@@ -24,13 +25,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupMenu;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
-
+import com.example.a121firstapp.Class_Adapter.ItemClickListener;
 import com.example.a121firstapp.Class_Adapter.Vertical;
+import com.example.a121firstapp.Class_item.Item_product;
 import com.example.a121firstapp.Class_item.Item_vertical;
 import com.example.a121firstapp.Class_item.Item_horizotal;
 import com.example.a121firstapp.Class_Adapter.Horizontal;
@@ -38,6 +42,11 @@ import com.example.a121firstapp._sliders.FragmentSlider;
 import com.example.a121firstapp._sliders.SliderIndicator;
 import com.example.a121firstapp._sliders.SliderPagerAdapter;
 import com.example.a121firstapp._sliders.SliderView;
+import com.firebase.ui.database.FirebaseRecyclerAdapter;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.squareup.picasso.Picasso;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -55,20 +64,35 @@ public class fram_home extends Fragment implements NavigationView.OnNavigationIt
     private SliderView sliderView;
     private LinearLayout mLinearLayout;
     EditText edtsearch;
-    Button btn_breand,btn_price,btn_loca;
+    Button btn_breand,btn_price,btn_loca,btn_insert;
+
+    RecyclerView recy_vertical;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fram_home, container, false);
+        final View view = inflater.inflate(R.layout.fram_home, container, false);
 
         toolbar = (Toolbar)view.findViewById(R.id.toolbar_home);
         toolbar.setTitle("");
         ((AppCompatActivity)getActivity()).setSupportActionBar(toolbar);
         setHasOptionsMenu(true);
 
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference table = database.getReference("Product");
+
+        btn_insert = (Button) view.findViewById(R.id.insert);
+        btn_insert.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(),Insertdata.class);
+                startActivity(intent);
+            }
+        });
+
         edtsearch = (EditText) view.findViewById(R.id.edt_search);
-        edtsearch.clearFocus();
+        edtsearch.setSelected(false);
 
         drawer = (DrawerLayout) view.findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(getActivity(), drawer, toolbar,
@@ -123,12 +147,32 @@ public class fram_home extends Fragment implements NavigationView.OnNavigationIt
         recy_horizontal.setLayoutManager(layoutManager);
         recy_horizontal.setAdapter(adapter);
 //Vertical
-        ItemVertical();
-        RecyclerView recy_vertical = (RecyclerView) view.findViewById(R.id.recy_vertical);
-        Vertical adapter1 = new Vertical(getContext(), item, this);
-        recy_vertical.setAdapter(adapter1);
+//       ItemVertical();
+        recy_vertical = (RecyclerView) view.findViewById(R.id.recy_vertical);
+//       Vertical adapter1 = new Vertical(getContext(), item, this);
+//        recy_vertical.setAdapter(adapter1);
         GridLayoutManager manager = new GridLayoutManager(getContext(), 2, GridLayoutManager.VERTICAL, false);
         recy_vertical.setLayoutManager(manager);
+        recy_vertical.setHasFixedSize(true);
+
+        FirebaseRecyclerAdapter<Item_product,MovieViewHolder> adapter1 = new FirebaseRecyclerAdapter<Item_product, MovieViewHolder>(Item_product.class,
+                R.layout.image_product,MovieViewHolder.class,table) {
+            @Override
+            protected void populateViewHolder(MovieViewHolder viewHolder, final Item_product model, int position) {
+                viewHolder.tvName.setText(model.getName());
+                viewHolder.tvprice.setText(model.getPrice());
+                Picasso.with(getContext()).load(model.getImage()).into(viewHolder.ivproduct);
+                final Item_product clickitem = model;
+                viewHolder.setItemClickListener(new ItemClickListener() {
+                    @Override
+                    public void OnClick(View view, int position, Boolean isLongClick) {
+                        Toast.makeText(getContext(),""+model.getName(),Toast.LENGTH_SHORT).show();
+                    }
+                });
+            }
+        };
+
+        recy_vertical.setAdapter(adapter1);
 
         return view;
     }
@@ -289,6 +333,28 @@ public class fram_home extends Fragment implements NavigationView.OnNavigationIt
                 return true;
             default:
                 return false;
+        }
+    }
+    public static class MovieViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+
+        TextView tvName,tvprice;
+        ImageView ivproduct;
+        private ItemClickListener itemClickListener;
+        public MovieViewHolder(View v) {
+            super(v);
+            tvName = (TextView) v.findViewById(R.id.tv_name);
+            tvprice = (TextView) v.findViewById(R.id.tv_price);
+            ivproduct = (ImageView) v.findViewById(R.id.iv_product);
+            v.setOnClickListener(this);
+        }
+
+        public void setItemClickListener(ItemClickListener itemClickListener) {
+            this.itemClickListener = itemClickListener;
+        }
+
+        @Override
+        public void onClick(View v) {
+            itemClickListener.OnClick(v,getAdapterPosition(),false);
         }
     }
 }
