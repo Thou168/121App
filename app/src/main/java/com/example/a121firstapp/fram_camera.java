@@ -70,8 +70,6 @@ public class fram_camera extends Fragment {
 
         View view = inflater.inflate(R.layout.fram_camera,container,false);
 
-
-
 // Detail
         Title =     (EditText)    view.findViewById(R.id.etTitle);
         category =  (TextView) view.findViewById(R.id.etCategory);
