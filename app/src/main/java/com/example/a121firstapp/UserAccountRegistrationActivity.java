@@ -6,8 +6,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 
+import com.facebook.AccessToken;
+import com.facebook.login.LoginManager;
+
 public class UserAccountRegistrationActivity extends AppCompatActivity {
     ImageButton btnFacebookLogin;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,5 +25,9 @@ public class UserAccountRegistrationActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
+
+
     }
+
+
 }
