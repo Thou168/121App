@@ -1,14 +1,13 @@
 package com.example.a121firstapp;
 
 import android.content.Intent;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.os.Bundle;
-import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -17,6 +16,8 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -34,7 +35,6 @@ import android.widget.Toast;
 
 import com.example.a121firstapp.Class_Adapter.ItemClickListener;
 import com.example.a121firstapp.Class_Adapter.Vertical;
-import com.example.a121firstapp.Class_item.Item_product;
 import com.example.a121firstapp.Class_item.Item_vertical;
 import com.example.a121firstapp.Class_item.Item_horizotal;
 import com.example.a121firstapp.Class_Adapter.Horizontal;
@@ -42,14 +42,14 @@ import com.example.a121firstapp._sliders.FragmentSlider;
 import com.example.a121firstapp._sliders.SliderIndicator;
 import com.example.a121firstapp._sliders.SliderPagerAdapter;
 import com.example.a121firstapp._sliders.SliderView;
+/*
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.squareup.picasso.Picasso;
-
-
+*/
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class fram_home extends Fragment implements NavigationView.OnNavigationItemSelectedListener,
         Vertical.ItemListener,PopupMenu.OnMenuItemClickListener  {
@@ -65,9 +65,11 @@ public class fram_home extends Fragment implements NavigationView.OnNavigationIt
     private LinearLayout mLinearLayout;
     EditText edtsearch;
     Button btn_breand,btn_price,btn_loca,btn_insert;
-
     RecyclerView recy_vertical;
 
+    Locale myLocale;
+    String currentLanguage = "km", currentLang;
+    //private final String LOG_TAG=getActivity().getClass().getSimpleName();
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
@@ -79,6 +81,7 @@ public class fram_home extends Fragment implements NavigationView.OnNavigationIt
         ((AppCompatActivity)getActivity()).setSupportActionBar(toolbar);
         setHasOptionsMenu(true);
 
+        /*
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference table = database.getReference("Product");
 
@@ -90,6 +93,13 @@ public class fram_home extends Fragment implements NavigationView.OnNavigationIt
                 startActivity(intent);
             }
         });
+        */
+
+        if(getArguments()!=null){
+            currentLanguage =getArguments().getString(currentLang);
+        }
+        String LOG_TAG=getContext().getClass().getSimpleName();
+
 
         edtsearch = (EditText) view.findViewById(R.id.edt_search);
         edtsearch.setSelected(false);
@@ -102,11 +112,12 @@ public class fram_home extends Fragment implements NavigationView.OnNavigationIt
 
         NavigationView navigationView = (NavigationView) view.findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-//sliderview
+        //sliderview
         sliderView = (SliderView) view.findViewById(R.id.sliderView);
         mLinearLayout = (LinearLayout) view.findViewById(R.id.pagesContainer);
         setupSlider();
-//dropdwon
+        //dropdwon
+        /*
         btn_breand = (Button) view.findViewById(R.id.btnShow);
         btn_breand.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -137,8 +148,8 @@ public class fram_home extends Fragment implements NavigationView.OnNavigationIt
                 popup.show();
             }
         });
-
-//Horizontal
+        */
+        //Horizontal
         ItemHorizontal();
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
         Horizontal adapter = new Horizontal(getContext(),items);
@@ -146,15 +157,15 @@ public class fram_home extends Fragment implements NavigationView.OnNavigationIt
         recy_horizontal.setHasFixedSize(true);
         recy_horizontal.setLayoutManager(layoutManager);
         recy_horizontal.setAdapter(adapter);
-//Vertical
-//       ItemVertical();
+        //        //Vertical
+        ItemVertical();
         recy_vertical = (RecyclerView) view.findViewById(R.id.recy_vertical);
-//       Vertical adapter1 = new Vertical(getContext(), item, this);
-//        recy_vertical.setAdapter(adapter1);
+        Vertical adapter1 = new Vertical(getContext(), item, this);
+        recy_vertical.setAdapter(adapter1);
         GridLayoutManager manager = new GridLayoutManager(getContext(), 2, GridLayoutManager.VERTICAL, false);
         recy_vertical.setLayoutManager(manager);
         recy_vertical.setHasFixedSize(true);
-
+        /*
         FirebaseRecyclerAdapter<Item_product,MovieViewHolder> adapter1 = new FirebaseRecyclerAdapter<Item_product, MovieViewHolder>(Item_product.class,
                 R.layout.image_product,MovieViewHolder.class,table) {
             @Override
@@ -173,18 +184,18 @@ public class fram_home extends Fragment implements NavigationView.OnNavigationIt
         };
 
         recy_vertical.setAdapter(adapter1);
-
+        */
         return view;
     }
     private void ItemVertical(){
         item = new ArrayList<>();
-        item.add( new Item_vertical(R.drawable.image_zoomer_x_2017,"Zoomer X hfghdgfhfh hfghggf hhfghdghffd gfhfghdfgh hfhfghfgdh hfdhfdghgfh 2017",2050));
-        item.add( new Item_vertical(R.drawable.image_honda_dream,"Honda Dream c125",2000));
-        item.add( new Item_vertical(R.drawable.image_honda_click125i_19,"Click 2019",1900));
-        item.add( new Item_vertical(R.drawable.image_zoomer_x_2017,"Zoomer X 2017",2050));
-        item.add( new Item_vertical(R.drawable.image_macbook_pro_2018,"Macbookfasdf fdsfsaf fsfdsfsfsdfdfd Pro 2018",2300));
-        item.add( new Item_vertical(R.drawable.image_nex,"Nex 2019",1800));
-        item.add( new Item_vertical(R.drawable.image_hybrid_2017,"Honda Hybrid 2017",35000));
+        item.add( new Item_vertical(R.drawable.image_zoomer_x_2017,"Zoomer X 2017",2050,"Phnom Penh"));
+        item.add( new Item_vertical(R.drawable.image_honda_dream,"Honda Dream c125",2000,"Phnom Penh"));
+        item.add( new Item_vertical(R.drawable.image_honda_click125i_19,"Click 2019",1900,"Phnom Penh"));
+        item.add( new Item_vertical(R.drawable.image_zoomer_x_2017,"Zoomer X 2017",2050,"Phnom Penh"));
+        item.add( new Item_vertical(R.drawable.image_macbook_pro_2018,"Macbook Pro 2018",2300,"Phnom Penh"));
+        item.add( new Item_vertical(R.drawable.image_nex,"Nex 2019",1800,"Phnom Penh"));
+        item.add( new Item_vertical(R.drawable.image_hybrid_2017,"Honda Hybrid 2017",35000,"Phnom Penh"));
     }
     private void ItemHorizontal(){
         items = new ArrayList<>();
@@ -238,12 +249,7 @@ public class fram_home extends Fragment implements NavigationView.OnNavigationIt
             case R.id.nav_product_order:
                 Toast.makeText(getContext(),"Your Product Order",Toast.LENGTH_SHORT).show();
                 return true;
-            case R.id.nav_report:
-                Toast.makeText(getContext(),"Report",Toast.LENGTH_SHORT).show();
-                return true;
-            case R.id.nav_language:
-                Toast.makeText(getContext(),"Language",Toast.LENGTH_SHORT).show();
-                return true;
+
         }
         DrawerLayout drawer = (DrawerLayout) getView().findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
@@ -260,13 +266,15 @@ public class fram_home extends Fragment implements NavigationView.OnNavigationIt
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
-            case R.id.action_english:
+            case R.id.action_khmer:
                 if(click){
-                    item.setIcon(R.drawable.flag_khmer);
+                    item.setIcon(R.drawable.flag_english);
+                    setLocale("en");
                     click = false;
                 }
                 else {
-                    item.setIcon(R.drawable.flag_english);
+                    item.setIcon(R.drawable.flag_khmer);
+                    setLocale("km");
                     click = true;
                 }
                 break;
@@ -283,7 +291,7 @@ public class fram_home extends Fragment implements NavigationView.OnNavigationIt
         intent.putExtra("price",item.getPrice());
         startActivity(intent);
     }
-//PopupMenu
+    //PopupMenu
     @Override
     public boolean onMenuItemClick(MenuItem item) {
         Toast.makeText(getContext(), "Selected Item: " +item.getTitle(), Toast.LENGTH_SHORT).show();
@@ -355,6 +363,22 @@ public class fram_home extends Fragment implements NavigationView.OnNavigationIt
         @Override
         public void onClick(View v) {
             itemClickListener.OnClick(v,getAdapterPosition(),false);
+        }
+    }
+    public void setLocale(String localeName) {
+        if (!localeName.equals(currentLanguage)) {
+            myLocale = new Locale(localeName);
+            Resources res = getResources();
+            DisplayMetrics dm = res.getDisplayMetrics();
+            Configuration conf = res.getConfiguration();
+            conf.locale = myLocale;
+            res.updateConfiguration(conf, dm);
+            //Intent refresh = new Intent(this.getContext(), MainActivity.class);
+            //refresh.putExtra(currentLang, localeName);
+            //startActivity(refresh);
+            //getFragmentManager().beginTransaction().detach(this).attach(this).commit();
+        } else {
+
         }
     }
 }

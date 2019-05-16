@@ -1,11 +1,16 @@
 <resources>
-    <string name="app_name">121FirstApp</string>
-
+    <string name="app_name">121</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-
+    <!--
     <string name="facebook_app_id">964897083704220</string>
     <string name="fb_login_protocol_scheme">fb964897083704220</string>
+    -->
+    <string name="facebook_app_id">2122529867862391</string>
+    <string name="fb_login_protocol_scheme">2122529867862391</string>
+
+    <string name="thank_you">ជំរាបសួរ</string>
+    <string name="buy">ទិញ</string>
 
 
     <string-array name="sp_brand">

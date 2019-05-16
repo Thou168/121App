@@ -2,9 +2,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
     <item
-        android:id="@+id/action_english"
-        android:icon="@drawable/flag_english"
+        android:id="@+id/action_khmer"
+        android:icon="@drawable/flag_khmer"
         android:orderInCategory="100"
-        android:title="action_englisg"
+        android:title="action_khmer"
         app:showAsAction="always" />
 </menu>

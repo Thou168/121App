@@ -6,11 +6,12 @@ import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.WindowManager;
 
 public class MainActivity extends AppCompatActivity {
 
     public BottomNavigationView bottomNavigationView;
+    String currentLanguage = "km", currentLang;
+    Bundle args;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
                     switch (menuItem.getItemId()) {
                         case R.id.nav_home:
                             selectedFragment = new fram_home();
+                            selectedFragment.setArguments(args);
                             break;
                         case R.id.nav_notification:
                             selectedFragment = new fram_notification();

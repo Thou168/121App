@@ -11,9 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.a121firstapp.Class_Adapter.Adapter_in_like;
-import com.example.a121firstapp.Class_Adapter.Adapter_in_pending;
 import com.example.a121firstapp.Class_item.Item_in_like;
-import com.example.a121firstapp.Class_item.Item_in_pending;
 
 import java.util.ArrayList;
 

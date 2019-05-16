@@ -20,10 +20,12 @@
             android:title="Your Product Order List" />
         <item
             android:id="@+id/nav_report"
-            android:title="Report" />
+            android:title="Your Product Order List"
+            android:visible="false"/>
         <item
             android:id="@+id/nav_language"
-            android:title="Language" />
+            android:title="Your Product Order List"
+            android:visible="false"/>
     </group>
-
 </menu>
+
