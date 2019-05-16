@@ -207,9 +207,16 @@
                 <android.support.v7.widget.RecyclerView
                     android:id="@+id/recy_vertical"
                     android:orientation="vertical"
+                    android:paddingBottom="15dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                 </android.support.v7.widget.RecyclerView>
+                <Button
+                    android:id="@+id/insert"
+                    android:text="Insert"
+                    android:layout_below="@+id/recy_vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
             </RelativeLayout>
 
         </android.support.constraint.ConstraintLayout>
