@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">121FirstApp</string>
+
+    <string name="navigation_drawer_open" >បើក</string>
+    <string name="navigation_drawer_close" >បិទ</string>
+
+    <string name="title_sell">លក់</string>
+    <string name="title_buy">ទិញ</string>
+    <string name="title_rent">ជួល</string>
+    <string name="txt_search">ស្វែងរក</string>
+    <string name="txt_dic">បញ្ចុះតម្លៃ</string>
+    <string name="txt_new">ថ្មី</string>
+
+    <string name="txt_profile">ប្រវត្តិរូប</string>
+    <string name="txt_post">post របស់អ្នក</string>
+    <string name="txt_like">ចូលចិត្តរបស់អ្នក</string>
+    <string name="txt_loan">ប្រាក់កម្ចីរបស់អ្នក</string>
+    <string name="txt_your_order">បញ្ជីល់ផលិតផលorderរបស់អ្នក</string>
+    <string name="txt_report">របាយការណ៍</string>
+    <string name="txt_language">ភាសា</string>
+
+    <string name="txt_approval">ការអនុម័ត</string>
+    <string name="txt_orderlist">បញ្ជីផលិតផល</string>
+    <string name="txt_loanlist">ប្រាក់កម្ចី</string>
+    <string name="txt_postlist">post ផលិតផល</string>
+//frma_camera
+    <string name="cm_toolbar">ដាក់លក់</string>
+    //detail
+    <string name="cm_detail">លំអិត</string>
+    <string name="hit_title">ចំណងជើង</string>
+    <string name="hit_category">ប្រភេទ</string>
+    <string name="hit_tax_type">ប្រភេទពន្ធ</string>
+    <string name="hit_brand">ម៉ាក</string>
+    <string name="hit_year">ឆ្នាំ</string>
+    <string name="hit_condition">លក្ខខណ្ឌ</string>
+    <string name="hit_price">តម្លៃ</string>
+    <string name="hit_description">ការពិពណ៌នា</string>
+    //discount
+    <string name="cm_discount">បញ្ចុះតម្លៃ</string>
+    <string name="hit_discount_type">ប្រភេទបញ្ចុះតម្លៃ</string>
+    <string name="hit_discount_amount">ចំនួនបញ្ចុះតម្លៃ</string>
+    //contact
+    <string name="cm_contact">ទំនាក់ទំនង</string>
+    <string name="hit_name">ឈ្មោះ</string>
+    <string name="hit_phone1">ទូរស័ព្ទ ១</string>
+    <string name="hit_phone2">ទូរស័ព្ទ ២</string>
+    <string name="hit_phone3">ទូរស័ព្ទ ៣</string>
+    <string name="hit_email">អ៊ីម៉ែល</string>
+    <string name="hit_Address">អាសយដ្ឋាន</string>
+    <string name="hit_upload_to_contact">Upload this contact to profile</string>
+    <string name="hit_btnsubmit">ដាក់ស្នើ</string>
+//edit account
+    <string name="txt_account_setting">ការកំណត់​គណនី</string>
+    <string name="hit_fistname">ត្រកូល</string>
+    <string name="hit_lastname">ឈ្មោះ</string>
+    <string name="hit_store">ហាង / ឈ្មោះក្រុមហ៊ុន</string>
+    <string name="hit_about_shop">អំពីហាង / ក្រុមហ៊ុន</string>
+    <string name="hit_wingnumber">គណនីវីង / លេខ</string>
+    <string name="hit_wingaccount">វីងគណនី / ឈ្មោះ</string>
+    <string name="hit_dealer">អ្នកចែកចាយ</string>
+//frame account
+    <string name="txt_upload">Upload</string>
+    <string name="txtpost">ប្រកាស</string>
+    <string name="txtlond">ប្រាក់កម្ចី</string>
+    <string name="txtpending">Pending</string>
+    <string name="txtlike">ចូលចិត្ដ</string>
+    <string name="txtedit">កែប្រែ</string>
+    <string name="txtdelete">លុប</string>
+
+    <string name="txtprice">តម្លៃ:</string>
+    <string name="txtcondition">លក្ខខណ្ឌ:</string>
+    <string name="txtamount_request">សំណើសុំទឹកប្រាក់:</string>
+
+    <string name="btn_dw">ម៉ាក</string>
+    <string name="br_honda">ហុងដា</string>
+    <string name="br_suzuki">ស៊ូហ្សុគី</string>
+    <string name="br_yamaha">យ៉ាម៉ាហា</string>
+    <string name="br_kawasaki">កាវ៉ាសាគី</string>
+
+    <string-array name="sp_brand">
+        <item>ម៉ាក</item>
+        <item>ហុងដា</item>
+        <item>ស៊ូហ្សុគី</item>
+        <item>យ៉ាម៉ាហា</item>
+        <item>កាវ៉ាសាគី</item>
+    </string-array>
+    <string-array name="sp_price">
+        <item>តម្លៃ</item>
+        <item>$១</item>
+        <item>$២</item>
+        <item>$៣</item>
+        <item>$៤</item>
+    </string-array>
+
+    <string-array name="sp_location">
+        <item>ទីតាំង</item>
+        <item>ភ្នំពេញ</item>
+        <item>កំពង់ចាម</item>
+        <item>កំពង់ធំ</item>
+    </string-array>
+    <string-array name="kh_title">
+        <item>ប្រភេទពន្ធ:</item>
+        <item>ម៉ាក:</item>
+        <item>ឆ្នាំផលិត:</item>
+        <item>លក្ខខណ្ឌ:</item>
+    </string-array>
+
+</resources>

@@ -5,15 +5,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar_home"
         android:layout_width="match_parent"
         android:layout_height="40dp">
+
         <ImageView
-            android:scaleType="fitXY"
-            android:src="@drawable/logo"
             android:layout_width="60dp"
-            android:layout_height="25dp" />
+            android:layout_height="25dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/logo" />
+
+        <Button
+            android:id="@+id/btn_language"
+            android:background="@drawable/flag_english"
+            android:layout_marginEnd="2dp"
+            android:layout_gravity="right"
+            android:layout_width="32dp"
+            android:layout_height="32dp" />
     </android.support.v7.widget.Toolbar>
     <ScrollView
         android:fillViewport="true"
@@ -62,7 +72,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="24dp"
-                android:text="BUY"
+                android:text="@string/title_buy"
                 android:textSize="20dp"
                 app:layout_constraintEnd_toStartOf="@+id/txtsell"
                 app:layout_constraintStart_toStartOf="parent"
@@ -71,7 +81,7 @@
                 android:id="@+id/txtsell"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="SELL"
+                android:text="@string/title_sell"
                 android:textSize="20dp"
                 app:layout_constraintBottom_toBottomOf="@+id/txtbuy"
                 app:layout_constraintEnd_toStartOf="@+id/txtrent"
@@ -83,7 +93,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="16dp"
-                android:text="RENT"
+                android:text="@string/title_rent"
                 android:textSize="20dp"
                 app:layout_constraintBottom_toBottomOf="@+id/txtsell"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -100,7 +110,7 @@
                 android:drawableLeft="@drawable/icon_search_30px"
                 android:drawablePadding="8dp"
                 android:gravity="center_vertical"
-                android:hint="Search"
+                android:hint="@string/txt_search"
                 android:inputType="textCapWords"
                 android:padding="10dp"
                 android:singleLine="true"
@@ -110,55 +120,45 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txtbuy" />
 
-            <Button
-                android:id="@+id/btnShow"
-                android:layout_width="120dp"
-                android:layout_height="30dp"
+            <android.support.v7.widget.AppCompatSpinner
+                android:id="@+id/sp_brand"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/spinner_style"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginBottom="16dp"
-                android:background="@drawable/my_border1"
-                android:drawableRight="@drawable/icon_down_25px"
-                android:paddingRight="5dp"
-                android:text="Breand"
-                android:textAllCaps="false"
                 app:layout_constraintBottom_toTopOf="@+id/product_dic"
-                app:layout_constraintEnd_toStartOf="@+id/btn_price"
+                app:layout_constraintEnd_toStartOf="@+id/sp_price"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/edt_search" />
 
-            <Button
-                android:id="@+id/btn_price"
-                android:layout_width="110dp"
-                android:layout_height="30dp"
+            <android.support.v7.widget.AppCompatSpinner
+                android:id="@+id/sp_price"
+                style="@style/spinner_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
-                android:paddingRight="5dp"
-                android:background="@drawable/my_border1"
-                android:drawableEnd="@drawable/icon_down_25px"
-                android:text="Price"
-                android:textAllCaps="false"
-                app:layout_constraintBottom_toBottomOf="@+id/btnShow"
-                app:layout_constraintEnd_toStartOf="@+id/btn_location"
-                app:layout_constraintStart_toEndOf="@+id/btnShow"
-                app:layout_constraintTop_toTopOf="@+id/btnShow" />
-            <Button
-                android:id="@+id/btn_location"
-                android:layout_width="135dp"
-                android:layout_height="30dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="8dp"
-                android:paddingRight="5dp"
-                android:textAllCaps="false"
-                android:background="@drawable/my_border1"
-                android:drawableEnd="@drawable/icon_down_25px"
-                android:text="Location"
-                app:layout_constraintBottom_toBottomOf="@+id/btn_price"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/btn_price"
-                app:layout_constraintTop_toTopOf="@+id/btn_price" />
+                app:layout_constraintBottom_toBottomOf="@+id/sp_brand"
+                app:layout_constraintEnd_toStartOf="@+id/sp_location"
+                app:layout_constraintStart_toEndOf="@+id/sp_brand"
+                app:layout_constraintTop_toTopOf="@+id/sp_brand" />
 
+            <Spinner
+                android:id="@+id/sp_location"
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                style="@style/spinner_style"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintBottom_toBottomOf="@+id/sp_price"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/sp_price"
+                app:layout_constraintTop_toTopOf="@+id/sp_price">
+
+            </Spinner>
             <TextView
                 android:id="@+id/product_dic"
                 android:layout_width="match_parent"
@@ -166,11 +166,11 @@
                 android:layout_marginTop="16dp"
                 android:background="#D3DBDBDB"
                 android:paddingLeft="10dp"
-                android:text="Product Discount"
+                android:text="@string/txt_dic"
                 android:textSize="20dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/btnShow" />
+                app:layout_constraintTop_toBottomOf="@+id/sp_brand" />
             <RelativeLayout
                 android:id="@+id/horizontal_layout"
                 android:layout_width="match_parent"
@@ -190,7 +190,7 @@
                 android:layout_height="wrap_content"
                 android:background="#D3DBDBDB"
                 android:paddingLeft="10dp"
-                android:text="New Post"
+                android:text="@string/txt_new"
                 android:textSize="20dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
@@ -204,12 +204,15 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/new_post">
+
                 <android.support.v7.widget.RecyclerView
                     android:id="@+id/recy_vertical"
-                    android:orientation="vertical"
-                    android:paddingBottom="15dp"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:overScrollMode="always"
+                    android:paddingBottom="15dp">
+
                 </android.support.v7.widget.RecyclerView>
                 <Button
                     android:id="@+id/insert"

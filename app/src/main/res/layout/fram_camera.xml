@@ -5,29 +5,23 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
-
     <android.support.v7.widget.Toolbar
         android:id="@+id/tbBack"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:accessibilityPaneTitle="Post add"
+        android:layout_height="40dp"
         android:background="#2043FF"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         app:layout_collapseMode="pin"
         app:theme="@style/ThemeOverlay.AppCompat">
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Post Ad"
+            android:text="@string/cm_toolbar"
             android:textSize="20dp"
             android:gravity="center"
             android:layout_gravity="center"
-            android:textStyle="bold"
-            />
+            android:textStyle="bold" />
     </android.support.v7.widget.Toolbar>
-
-
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -63,9 +57,7 @@
 
                         </include>
 
-
                     </LinearLayout>
-
 
                 </HorizontalScrollView>
             </LinearLayout>
@@ -76,17 +68,15 @@
                 android:layout_height="match_parent"
                 android:background="#fff"
                 android:orientation="vertical">
-
                 <TextView
                     android:id="@+id/title_detail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="#BDBABA"
-                    android:text="DETAIL"
+                    android:text="@string/cm_detail"
                     android:textColor="#0C0707"
                     android:textSize="20dp"
                     android:textStyle="bold" />
-
                 <ImageView
                     android:id="@+id/imgTitle"
                     android:layout_width="20dp"
@@ -109,13 +99,10 @@
                         android:layout_height="wrap_content"
                         android:background="@drawable/underline"
                         android:gravity="center_vertical"
-                        android:hint="Title"
+                        android:hint="@string/hit_title"
                         android:paddingLeft="8dp"
                         android:textSize="19dp" />
                 </android.support.design.widget.TextInputLayout>
-
-
-
 
                 <android.support.design.widget.TextInputLayout
                     android:id="@+id/tilCategory"
@@ -138,19 +125,13 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="-30dp"
                         android:gravity="center_vertical"
-                        android:hint=" Choose Category"
+                        android:hint="@string/hit_category"
                         android:inputType="text"
                         android:paddingLeft="25dp"
                         android:paddingRight="15dp"
                         android:textSize="19dp"
                         android:drawableRight="@drawable/arrow_down_black_24dp"/>
-
                 </android.support.design.widget.TextInputLayout>
-
-
-
-
-
                 <android.support.design.widget.TextInputLayout
                     android:id="@+id/tilTax"
                     android:layout_width="match_parent"
@@ -171,19 +152,14 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="-30dp"
                         android:gravity="center_vertical"
-                        android:hint=" Tax Type"
+                        android:hint="@string/hit_tax_type"
                         android:inputType="text"
                         android:paddingLeft="25dp"
                         android:textSize="19dp"
                         android:paddingRight="10dp"
                         android:drawableRight="@drawable/arrow_down_black_24dp"/>
 
-
-
                 </android.support.design.widget.TextInputLayout>
-
-
-
 
                 <android.support.design.widget.TextInputLayout
                     android:id="@+id/tilBrand"
@@ -191,7 +167,6 @@
                     android:layout_height="35dp"
                     android:layout_below="@+id/tilTax"
                     android:background="@drawable/underline">
-
 
                     <ImageView
                         android:id="@+id/imgBrand"
@@ -205,7 +180,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="-30dp"
                         android:gravity="center_vertical"
-                        android:hint=" Brand"
+                        android:hint="@string/hit_brand"
                         android:inputType="text"
                         android:paddingLeft="25dp"
                         android:textSize="19dp"
@@ -215,16 +190,12 @@
 
                 </android.support.design.widget.TextInputLayout>
 
-
-
-
                 <android.support.design.widget.TextInputLayout
                     android:id="@+id/tilYear"
                     android:layout_width="match_parent"
                     android:layout_height="35dp"
                     android:layout_below="@+id/tilBrand"
                     android:background="@drawable/underline">
-
 
                     <ImageView
                         android:id="@+id/imgYear"
@@ -239,7 +210,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="-30dp"
                         android:gravity="center_vertical"
-                        android:hint=" Year"
+                        android:hint="@string/hit_year"
                         android:inputType="text"
                         android:paddingLeft="25dp"
                         android:textSize="19dp"
@@ -248,16 +219,12 @@
 
                 </android.support.design.widget.TextInputLayout>
 
-
-
-
                 <android.support.design.widget.TextInputLayout
                     android:id="@+id/tilCondition"
                     android:layout_width="match_parent"
                     android:layout_height="35dp"
                     android:layout_below="@+id/tilYear"
                     android:background="@drawable/underline">
-
 
                     <ImageView
                         android:id="@+id/imgCondition"
@@ -272,13 +239,12 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="-30dp"
                         android:gravity="center_vertical"
-                        android:hint=" Condition"
+                        android:hint="@string/hit_condition"
                         android:inputType="text"
                         android:paddingLeft="25dp"
                         android:textSize="19dp"
                         android:paddingRight="10dp"
                         android:drawableRight="@drawable/arrow_down_black_24dp"/>
-
 
                 </android.support.design.widget.TextInputLayout>
 
@@ -297,14 +263,12 @@
                     android:layout_below="@+id/tilCondition"
                     android:layout_toRightOf="@+id/imgPrice"
                     android:background="@drawable/underline">
-
-
                     <EditText
                         android:id="@+id/etPrice"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@drawable/underline"
-                        android:hint="  Price" />
+                        android:hint="@string/hit_price" />
 
                 </android.support.design.widget.TextInputLayout>
 
@@ -330,10 +294,9 @@
                         android:layout_height="55dp"
                         android:background="#ffff"
                         android:gravity="top"
-                        android:hint="  Description"
+                        android:hint="@string/hit_description"
                         android:textSize="19dp" />
                 </android.support.design.widget.TextInputLayout>
-
 
             </RelativeLayout>
 
@@ -349,7 +312,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="#BDBABA"
-                    android:text="Discount"
+                    android:text="@string/cm_discount"
                     android:textColor="#0C0707"
                     android:textSize="20dp"
                     android:textStyle="bold" />
@@ -374,13 +337,11 @@
                         android:id="@+id/etDisType"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-
                         android:background="@drawable/underline"
                         android:gravity="center_vertical"
-                        android:hint="  Discount Type"
+                        android:hint="@string/hit_discount_type"
                         android:textSize="19dp" />
                 </android.support.design.widget.TextInputLayout>
-
                 <ImageView
                     android:id="@+id/imgDisAmount"
                     android:layout_width="20dp"
@@ -388,7 +349,6 @@
                     android:layout_below="@+id/tilDisType"
                     android:background="#ffff"
                     android:src="@drawable/icon_circle_null_24" />
-
                 <android.support.design.widget.TextInputLayout
                     android:id="@+id/tilDisAmount"
                     android:layout_width="match_parent"
@@ -403,13 +363,11 @@
                         android:layout_height="55dp"
                         android:background="@drawable/underline"
                         android:gravity="top"
-                        android:hint="  Discount Amount"
+                        android:hint="@string/hit_discount_amount"
                         android:inputType="number"
                         android:textSize="19dp" />
 
                 </android.support.design.widget.TextInputLayout>
-
-
             </RelativeLayout>
 
             <RelativeLayout
@@ -423,11 +381,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="#BDBABA"
-                    android:text=" Contact"
+                    android:text="@string/cm_contact"
                     android:textColor="#0C0707"
                     android:textSize="20dp"
                     android:textStyle="bold" />
-
 
                 <android.support.design.widget.TextInputLayout
                     android:id="@+id/tilName"
@@ -449,11 +406,10 @@
                         android:layout_height="wrap_content"
                         android:background="@drawable/underline"
                         android:gravity="center_vertical"
-                        android:hint="  Name"
+                        android:hint="@string/hit_name"
                         android:paddingLeft="25dp"
                         android:textSize="19dp" />
                 </android.support.design.widget.TextInputLayout>
-
 
                 <ImageButton
                     android:id="@+id/btnAdd"
@@ -473,7 +429,6 @@
                     android:layout_toLeftOf="@+id/btnAdd"
                     android:background="@drawable/underline">
 
-
                     <ImageView
                         android:id="@+id/imgPhone"
                         android:layout_width="20dp"
@@ -487,14 +442,11 @@
                         android:layout_height="wrap_content"
                         android:background="@drawable/underline"
                         android:gravity="center_vertical"
-                        android:hint="  Phone1"
+                        android:hint="@string/hit_phone1"
                         android:inputType="phone"
                         android:paddingLeft="25dp"
                         android:textSize="19dp" />
-
                 </android.support.design.widget.TextInputLayout>
-
-
                 <ImageButton
                     android:id="@+id/btnAdd2"
                     android:layout_width="30dp"
@@ -511,8 +463,6 @@
                     android:layout_below="@+id/tilPhone"
                     android:layout_toLeftOf="@+id/btnAdd2"
                     android:background="@drawable/underline">
-
-
                     <ImageView
                         android:id="@+id/imgPhone2"
                         android:layout_width="20dp"
@@ -526,13 +476,12 @@
                         android:layout_height="wrap_content"
                         android:background="@drawable/underline"
                         android:gravity="center_vertical"
-                        android:hint="  Phone2"
+                        android:hint="@string/hit_phone2"
                         android:inputType="phone"
                         android:paddingLeft="25dp"
                         android:textSize="19dp" />
 
                 </android.support.design.widget.TextInputLayout>
-
 
                 <android.support.design.widget.TextInputLayout
                     android:id="@+id/tilPhone3"
@@ -540,7 +489,6 @@
                     android:layout_height="35dp"
                     android:layout_below="@+id/tilPhone2"
                     android:background="@drawable/underline">
-
                     <ImageView
                         android:id="@+id/imgPhone3"
                         android:layout_width="20dp"
@@ -554,13 +502,12 @@
                         android:layout_height="wrap_content"
                         android:background="@drawable/underline"
                         android:gravity="center_vertical"
-                        android:hint="  Phone3"
+                        android:hint="@string/hit_phone3"
                         android:inputType="phone"
                         android:paddingLeft="25dp"
                         android:textSize="19dp" />
 
                 </android.support.design.widget.TextInputLayout>
-
 
                 <android.support.design.widget.TextInputLayout
                     android:id="@+id/tilEmail"
@@ -582,12 +529,11 @@
                         android:layout_height="wrap_content"
                         android:background="@drawable/underline"
                         android:gravity="center_vertical"
-                        android:hint="  E-mail"
+                        android:hint="@string/hit_email"
                         android:inputType="textEmailAddress"
                         android:paddingLeft="25dp"
                         android:textSize="19dp" />
                 </android.support.design.widget.TextInputLayout>
-
 
                 <ImageView
                     android:id="@+id/imgAddress"
@@ -609,11 +555,10 @@
                         android:layout_width="match_parent"
                         android:layout_height="35dp"
                         android:drawableRight="@drawable/ic_keyboard_arrow_right_black_24dp"
-                        android:text="   Address"
+                        android:text="@string/hit_Address"
                         android:textSize="19dp" />
 
                 </android.support.design.widget.TextInputLayout>
-
 
                 <fragment
                     android:id="@+id/mapView"
@@ -621,8 +566,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="176dp"
                     android:layout_below="@+id/tilAddress" />
-
-
                 <ImageView
                     android:id="@+id/imgUploat"
                     android:layout_width="20dp"
@@ -631,7 +574,6 @@
                     android:layout_marginTop="10dp"
                     android:background="@drawable/underline"
                     android:src="@drawable/icon_circle_null_24" />
-
                 <android.support.design.widget.TextInputLayout
                     android:id="@+id/tilUpload"
                     android:layout_width="match_parent"
@@ -640,16 +582,13 @@
                     android:layout_marginTop="10dp"
                     android:layout_toRightOf="@+id/imgUploat"
                     android:background="@drawable/underline">
-
                     <Switch
                         android:id="@+id/swUploat"
                         android:layout_width="match_parent"
                         android:layout_height="35dp"
-                        android:hint="  Upload this contact to profile"
-                        android:textSize="19dp"
-                      />
+                        android:hint="@string/hit_upload_to_contact"
+                        android:textSize="19dp" />
                 </android.support.design.widget.TextInputLayout>
-
                 <android.support.design.widget.TextInputLayout
                     android:id="@+id/tilSubmit"
                     android:layout_width="match_parent"
@@ -659,14 +598,21 @@
 
                     <Button
                         android:id="@+id/btnSubmit"
-                        android:layout_width="300dp"
-                        android:layout_height="50dp"
-                        android:layout_gravity="center"
-                        android:background="#3248CF"
-                        android:text="Submit"
-                        android:textSize="20dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="35dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:background="@drawable/shap_ratangle"
+                        android:text="@string/hit_btnsubmit"
                         android:textAllCaps="false"
-                        android:textColor="#fff" />
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/mapView" />
                 </android.support.design.widget.TextInputLayout>
 
                 <android.support.design.widget.TextInputLayout
@@ -675,10 +621,7 @@
                     android:layout_below="@+id/tilSubmit">
 
                 </android.support.design.widget.TextInputLayout>
-
-
             </RelativeLayout>
-
 
         </LinearLayout>
 

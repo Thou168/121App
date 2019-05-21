@@ -44,16 +44,16 @@ public class fram_notification extends Fragment implements Adapter_in_order.Item
         if(getArguments()!=null) {
             notificationType = getArguments().getString("type");
             if(notificationType.equals("post")){
-                toolbar_title.setText("Pending Product Posting");
+                toolbar_title.setText(getString(R.string.txt_postlist));
             }
             else if(notificationType.equals("loan")){
-                toolbar_title.setText("Pending Loan Approval");
+                toolbar_title.setText(getString(R.string.txt_loanlist));
             }
             else if(notificationType.equals("order")){
-                toolbar_title.setText("Product Order List");
+                toolbar_title.setText(getString(R.string.txt_your_order));
             }
         }else
-            toolbar_title.setText("All Pending Approval");
+            toolbar_title.setText(getString(R.string.txt_approval));
 
         createItem();
         RecyclerView recy_vertical = (RecyclerView) view.findViewById(R.id.recy_notification);

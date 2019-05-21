@@ -1,14 +1,13 @@
 package com.example.a121firstapp;
 
 import android.content.Intent;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.os.Bundle;
-import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -17,12 +16,14 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -50,10 +51,16 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
+import java.util.Objects;
 
 public class fram_home extends Fragment implements NavigationView.OnNavigationItemSelectedListener,
         Vertical.ItemListener,PopupMenu.OnMenuItemClickListener  {
 
+    Locale myLocale;
+    String currentLanguage = "en", currentLang;
+    int khmer,english=R.drawable.flag_english;
+    TextView tvbuy,tvsell,tvrent,tvdic,tvnew;
     Toolbar toolbar;
     DrawerLayout drawer;
     Spinner sp_breand,sp_price,sp_loca;
@@ -64,7 +71,7 @@ public class fram_home extends Fragment implements NavigationView.OnNavigationIt
     private SliderView sliderView;
     private LinearLayout mLinearLayout;
     EditText edtsearch;
-    Button btn_breand,btn_price,btn_loca,btn_insert;
+    Button btn_breand,btn_price,btn_loca,btn_insert,btn_language;
 
     RecyclerView recy_vertical;
 
@@ -76,12 +83,30 @@ public class fram_home extends Fragment implements NavigationView.OnNavigationIt
 
         toolbar = (Toolbar)view.findViewById(R.id.toolbar_home);
         toolbar.setTitle("");
-        ((AppCompatActivity)getActivity()).setSupportActionBar(toolbar);
+        ((AppCompatActivity) Objects.requireNonNull(getActivity())).setSupportActionBar(toolbar);
         setHasOptionsMenu(true);
 
+        currentLanguage = getActivity().getIntent().getStringExtra(currentLang);
+
+        khmer = getActivity().getIntent().getIntExtra("khmer",R.drawable.flag_english);
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference table = database.getReference("Product");
 
+        tvbuy = (TextView)view.findViewById(R.id.txtbuy);
+        tvsell = (TextView)view.findViewById(R.id.txtsell);
+        tvrent = (TextView)view.findViewById(R.id.txtrent);
+        tvdic = (TextView)view.findViewById(R.id.product_dic);
+        tvnew = (TextView)view.findViewById(R.id.new_post);
+
+        btn_language = (Button)view.findViewById(R.id.btn_language);
+        btn_language.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setLocale("km");
+
+            }
+        });
+        btn_language.setBackgroundResource(khmer);
         btn_insert = (Button) view.findViewById(R.id.insert);
         btn_insert.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -107,36 +132,23 @@ public class fram_home extends Fragment implements NavigationView.OnNavigationIt
         mLinearLayout = (LinearLayout) view.findViewById(R.id.pagesContainer);
         setupSlider();
 //dropdwon
-        btn_breand = (Button) view.findViewById(R.id.btnShow);
-        btn_breand.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                PopupMenu popup = new PopupMenu(getContext(), v);
-                popup.setOnMenuItemClickListener(fram_home.this);
-                popup.inflate(R.menu.popup_breand);
-                popup.show();
-            }
-        });
-        btn_price = (Button) view.findViewById(R.id.btn_price);
-        btn_price.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                PopupMenu popup = new PopupMenu(getContext(), v);
-                popup.setOnMenuItemClickListener(fram_home.this);
-                popup.inflate(R.menu.popup_price);
-                popup.show();
-            }
-        });
-        btn_loca = (Button) view.findViewById(R.id.btn_location);
-        btn_loca.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                PopupMenu popup = new PopupMenu(getContext(), v);
-                popup.setOnMenuItemClickListener(fram_home.this);
-                popup.inflate(R.menu.popup_location);
-                popup.show();
-            }
-        });
+        sp_breand = (Spinner) view.findViewById(R.id.sp_brand);
+        String[] st_brand =getResources().getStringArray(R.array.sp_brand);
+        ArrayAdapter<String> ad_brand= new ArrayAdapter<String>(getActivity(),android.R.layout.simple_spinner_item, st_brand);
+        ad_brand.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        sp_breand.setAdapter(ad_brand);
+
+        sp_price = (Spinner)view.findViewById(R.id.sp_price);
+        String[] st_price =getResources().getStringArray(R.array.sp_price);
+        ArrayAdapter<String> ad_price= new ArrayAdapter<String>(getActivity(),android.R.layout.simple_spinner_item, st_price);
+        ad_price.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        sp_price.setAdapter(ad_price);
+
+        sp_loca = (Spinner)view.findViewById(R.id.sp_location);
+        String[] countries=getResources().getStringArray(R.array.sp_location);
+        ArrayAdapter<String> gameKindArray= new ArrayAdapter<String>(getActivity(),android.R.layout.simple_spinner_item, countries);
+        gameKindArray.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        sp_loca.setAdapter(gameKindArray);
 
 //Horizontal
         ItemHorizontal();
@@ -147,13 +159,14 @@ public class fram_home extends Fragment implements NavigationView.OnNavigationIt
         recy_horizontal.setLayoutManager(layoutManager);
         recy_horizontal.setAdapter(adapter);
 //Vertical
-//       ItemVertical();
+       ItemVertical();
         recy_vertical = (RecyclerView) view.findViewById(R.id.recy_vertical);
+        recy_vertical.setHasFixedSize(true);
+//        recy_vertical.setNestedScrollingEnabled(false);
 //       Vertical adapter1 = new Vertical(getContext(), item, this);
 //        recy_vertical.setAdapter(adapter1);
         GridLayoutManager manager = new GridLayoutManager(getContext(), 2, GridLayoutManager.VERTICAL, false);
         recy_vertical.setLayoutManager(manager);
-        recy_vertical.setHasFixedSize(true);
 
         FirebaseRecyclerAdapter<Item_product,MovieViewHolder> adapter1 = new FirebaseRecyclerAdapter<Item_product, MovieViewHolder>(Item_product.class,
                 R.layout.image_product,MovieViewHolder.class,table) {
@@ -174,8 +187,11 @@ public class fram_home extends Fragment implements NavigationView.OnNavigationIt
 
         recy_vertical.setAdapter(adapter1);
 
+
         return view;
     }
+
+
     private void ItemVertical(){
         item = new ArrayList<>();
         item.add( new Item_vertical(R.drawable.image_zoomer_x_2017,"Zoomer X hfghdgfhfh hfghggf hhfghdghffd gfhfghdfgh hfhfghfgdh hfdhfdghgfh 2017",2050));
@@ -250,28 +266,32 @@ public class fram_home extends Fragment implements NavigationView.OnNavigationIt
         return false;
     }
 
-    @Override
-    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        inflater.inflate(R.menu.home_page_item,menu);
-        super.onCreateOptionsMenu(menu, inflater);
-    }
-//change language
-    boolean click = true;
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()){
-            case R.id.action_english:
-                if(click){
-                    item.setIcon(R.drawable.flag_khmer);
-                    click = false;
-                }
-                else {
-                    item.setIcon(R.drawable.flag_english);
-                    click = true;
-                }
-                break;
+    public void setLocale(String lang) {
+        if (!lang.equals(currentLanguage)) {
+            myLocale = new Locale(lang);
+            Resources res = getResources();
+            DisplayMetrics dm = res.getDisplayMetrics();
+            Configuration conf = res.getConfiguration();
+            conf.locale = myLocale;
+            res.updateConfiguration(conf, dm);
+            Intent refresh = new Intent(getContext(), MainActivity.class);
+            refresh.putExtra(currentLang, lang);
+            refresh.putExtra("khmer",R.drawable.flag_khmer);
+            startActivity(refresh);
         }
-        return super.onOptionsItemSelected(item);
+        else {
+            myLocale = new Locale("en");
+            Resources res = getResources();
+            DisplayMetrics dm = res.getDisplayMetrics();
+            Configuration conf = res.getConfiguration();
+            conf.locale = myLocale;
+            res.updateConfiguration(conf, dm);
+            Intent refresh = new Intent(getContext(), MainActivity.class);
+            refresh.putExtra(currentLang, "en");
+            refresh.putExtra("khmer",R.drawable.flag_english);
+            startActivity(refresh);
+        }
+
     }
 
     @Override

@@ -1,15 +1,88 @@
 <resources>
     <string name="app_name">121FirstApp</string>
 
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="navigation_drawer_open" >Open navigation drawer</string>
+    <string name="navigation_drawer_close" >Close navigation drawer</string>
+
+    <string name="title_sell">Sell</string>
+    <string name="title_buy">Buy</string>
+    <string name="title_rent">Rent</string>
+    <string name="txt_search">Search</string>
+    <string name="txt_dic">Product Discount</string>
+    <string name="txt_new">New Post</string>
+
+    <string name="txt_profile">Your Profile</string>
+    <string name="txt_post">Your Post</string>
+    <string name="txt_like">Your Like</string>
+    <string name="txt_loan">Your Loan</string>
+    <string name="txt_your_order">Your Product Order List</string>
+    <string name="txt_report">Report</string>
+    <string name="txt_language">Language</string>
+
+    <string name="txt_approval">All Pending Approval</string>
+    <string name="txt_orderlist">Product Order List</string>
+    <string name="txt_loanlist">Pending Loan Approval</string>
+    <string name="txt_postlist">Pending Product Posting</string>
+//frma_camera
+    <string name="cm_toolbar">Post Ad</string>
+    //detail
+    <string name="cm_detail">Detail</string>
+    <string name="hit_title">Title</string>
+    <string name="hit_category">Category</string>
+    <string name="hit_tax_type">Tax Type</string>
+    <string name="hit_brand">Brand</string>
+    <string name="hit_year">Year</string>
+    <string name="hit_condition">Condition</string>
+    <string name="hit_price">Price</string>
+    <string name="hit_description">Description</string>
+    //discount
+    <string name="cm_discount">Discount</string>
+    <string name="hit_discount_type">Descount Type</string>
+    <string name="hit_discount_amount">Discount Amount</string>
+    //contact
+    <string name="cm_contact">Contact</string>
+    <string name="hit_name">Name</string>
+    <string name="hit_phone1">Phone 1</string>
+    <string name="hit_phone2">Phone 2</string>
+    <string name="hit_phone3">Phone 3</string>
+    <string name="hit_email">E-mail</string>
+    <string name="hit_Address">Address</string>
+    <string name="hit_upload_to_contact">Upload this contact to profile</string>
+    <string name="hit_btnsubmit">Submit</string>
+//edit account
+    <string name="txt_account_setting">Account Setting</string>
+    <string name="hit_fistname">Fist Name</string>
+    <string name="hit_lastname">Last Name</string>
+    <string name="hit_store">Store/Company Name</string>
+    <string name="hit_about_shop">About Shop/Company</string>
+    <string name="hit_wingnumber">Wing Account / Number</string>
+    <string name="hit_wingaccount">Wing Account / Name</string>
+    <string name="hit_dealer">Dealer</string>
+//frame account
+    <string name="txt_upload">Upload</string>
+    <string name="txtpost">Post</string>
+    <string name="txtlond">Loan</string>
+    <string name="txtpending">Pending</string>
+    <string name="txtlike">Like</string>
+    <string name="txtedit">Edit</string>
+    <string name="txtdelete">Delete</string>
+
+    <string name="txtprice">Price:</string>
+    <string name="txtcondition">Condition:</string>
+    <string name="txtamount_request">Amount Request:</string>
+
+    <string name="btn_dw">Brand</string>
+    <string name="br_honda">Honda</string>
+    <string name="br_suzuki">Suzuki</string>
+    <string name="br_yamaha">Yamaha</string>
+    <string name="br_kawasaki">Kavasaki</string>
 
     <string-array name="sp_brand">
         <item>Brand</item>
         <item>Honda</item>
         <item>Suzuki</item>
         <item>Yamaha</item>
-        <item>Other</item>
+        <item>Kavasaki</item>
     </string-array>
     <string-array name="sp_price">
         <item>Price</item>
@@ -20,11 +93,10 @@
     </string-array>
     <string-array name="sp_location">
         <item>Location</item>
-        <item>Phnom Penh</item>
-        <item>Kompong Cham</item>
-        <item>Kompong Thom</item>
+        <item>PP</item>
+        <item>KPC</item>
+        <item>KPT</item>
     </string-array>
-
     <string-array name="kh_title">
         <item>ប្រភេទពន្ធ:</item>
         <item>ម៉ាក:</item>

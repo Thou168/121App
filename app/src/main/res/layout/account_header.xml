@@ -42,7 +42,7 @@
         android:background="#83616161"
         android:drawableStart="@drawable/ic_camera"
         android:gravity="center"
-        android:text="Upload"
+        android:text="@string/txt_upload"
         android:paddingLeft="8dp"
         android:textAllCaps="false"
         android:textColor="#FFFFFF"
