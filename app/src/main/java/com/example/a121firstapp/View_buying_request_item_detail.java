@@ -1,7 +1,6 @@
 package com.example.a121firstapp;
 
 import android.Manifest;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
@@ -29,7 +28,6 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.zip.Inflater;
 
 public class View_buying_request_item_detail extends AppCompatActivity {
 
@@ -157,7 +155,12 @@ public class View_buying_request_item_detail extends AppCompatActivity {
         price.setText(Double.toString(getIntent().getDoubleExtra("price",1)));
 
         kh_title = getResources().getStringArray(R.array.kh_title);
-        detail = new String[]{String.valueOf(Double.toString(getIntent().getDoubleExtra("price",1))),String.valueOf(getIntent().getStringExtra("brand")),String.valueOf("2019"),String.valueOf("Good")};
+        detail = new String[]{
+                String.valueOf(Double.toString(getIntent().getDoubleExtra("price",1))),
+                String.valueOf(getIntent().getStringExtra("brand")),
+                String.valueOf("2019"),
+                String.valueOf("Good")
+        };
         final List<HashMap<String,String>> alist = new ArrayList<HashMap<String,String>>();
         for(int i=0;i<4;i++){
             HashMap<String,String> hm = new HashMap<String, String>();

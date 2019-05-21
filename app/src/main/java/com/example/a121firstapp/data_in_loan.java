@@ -9,14 +9,9 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import com.example.a121firstapp.Class_Adapter.Adapter_in_loan;
-import com.example.a121firstapp.Class_Adapter.Adapter_in_post;
-import com.example.a121firstapp.Class_Adapter.Vertical;
 import com.example.a121firstapp.Class_item.Item_in_loan;
-import com.example.a121firstapp.Class_item.Item_in_post;
-import com.example.a121firstapp.Class_item.Item_vertical;
 
 import java.util.ArrayList;
 

@@ -24,17 +24,17 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/image_header"
                 android:layout_alignParentEnd="true"
-                android:padding="10dp"
+                android:padding="8dp"
                 android:text="Honda Dream c125"
-                android:textSize="20dp"
-                android:textStyle="bold" />
+                android:textSize="14sp" />
             <TextView
                 android:id="@+id/name_addr"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/name_product"
                 android:layout_alignParentEnd="true"
-                android:paddingLeft="10dp"
+                android:paddingLeft="8dp"
+                android:textSize="8sp"
                 android:text="Phnom Penh - 1H ago" />
     <TextView
         android:id="@+id/name_price"
@@ -46,7 +46,7 @@
         android:padding="10dp"
         android:text="$1750"
         android:textColor="#E90B0B"
-        android:textSize="20dp"
+        android:textSize="16dp"
         android:textStyle="bold" />
     <TextView
         android:id="@+id/name_price_dic"
@@ -59,7 +59,7 @@
         android:padding="10dp"
         android:text="Discount"
         android:textColor="#777575"
-        android:textSize="20dp"
+        android:textSize="16dp"
         android:textStyle="bold" />
             <TextView
                 android:id="@+id/name_view"
@@ -79,14 +79,16 @@
                     android:layout_alignParentTop="true"
                     android:layout_alignParentEnd="true"
                     android:background="@drawable/my_border"
-                    android:padding="10dp"
-                    android:text="description"
-                    android:textSize="18dp" />
+                    android:padding="8dp"
+                    android:text="Description"
+                    android:textStyle="bold"
+                    android:textSize="12sp" />
                 <ListView
                     android:id="@+id/list_view"
                     android:nestedScrollingEnabled="false"
                     android:layout_width="match_parent"
                     android:layout_height="200dp"
+                    android:textAlignment="center"
                     android:layout_below="@+id/name_decsription">
                 </ListView>
             </RelativeLayout>

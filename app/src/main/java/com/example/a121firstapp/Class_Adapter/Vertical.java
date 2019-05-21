@@ -33,29 +33,27 @@ public class Vertical extends RecyclerView.Adapter<Vertical.ViewHolder> {
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-
-        private TextView txtbreand,txtprice;
+        private TextView txtbreand,txtprice,txtLocation;
         private ImageView imageView;
         private RelativeLayout relativeLayout;
         private Item_vertical item;
-
         public ViewHolder(View v) {
             super(v);
             v.setOnClickListener(this);
             txtbreand = (TextView) v.findViewById(R.id.txtbrand);
+            txtLocation=(TextView) v.findViewById(R.id.txtlocation);
             txtprice = (TextView) v.findViewById(R.id.txtprice);
             imageView = (ImageView) v.findViewById(R.id.image_view);
             relativeLayout = (RelativeLayout) v.findViewById(R.id.relativeLayout);
         }
-
         public void setData(Item_vertical item) {
             this.item = item;
             txtbreand.setText(item.getBrand());
+            txtLocation.setText(item.getLocation());
             txtprice.setText(Double.toString(item.getPrice()));
             imageView.setImageResource(item.getImage_view());
             //relativeLayout.setBackgroundColor(Color.parseColor(item.color));
         }
-
         @Override
         public void onClick(View view) {
             if (mListener != null) {

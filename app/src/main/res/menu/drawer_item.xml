@@ -5,25 +5,25 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_profile"
-            android:title="@string/txt_profile" />
+            android:title="Your Profile" />
         <item
             android:id="@+id/nav_your_post"
-            android:title="@string/txt_post" />
+            android:title="Your Post" />
         <item
             android:id="@+id/nav_your_like"
-            android:title="@string/txt_like" />
+            android:title="Your Like" />
         <item
             android:id="@+id/nav_loan"
-            android:title="@string/txt_loan" />
+            android:title="Your Loan" />
         <item
             android:id="@+id/nav_product_order"
-            android:title="@string/txt_your_order" />
+            android:title="Your Product Order List" />
         <item
             android:id="@+id/nav_report"
-            android:title="@string/txt_report" />
+            android:title="Report" />
         <item
             android:id="@+id/nav_language"
-            android:title="@string/txt_language" />
+            android:title="Language" />
     </group>
 
 </menu>

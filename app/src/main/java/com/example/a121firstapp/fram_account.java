@@ -23,7 +23,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import com.example.a121firstapp.Class_Adapter.Utility;
 import com.squareup.picasso.Picasso;
@@ -55,7 +54,7 @@ public class fram_account extends Fragment {
 //Toolbar
         toolbar = (Toolbar) view.findViewById(R.id.toolbar);
         toolbar.setTitle("");
-        toolbar.setNavigationIcon(R.drawable.icon_account_30px);
+        toolbar.setNavigationIcon(R.drawable.account_edit);
         ((AppCompatActivity)getContext()).setSupportActionBar(toolbar);
         setHasOptionsMenu(true);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
