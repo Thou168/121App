@@ -1,13 +1,5 @@
 package com.example.a121firstapp.Class_item;
 
-import android.content.Intent;
-import android.content.res.Configuration;
-import android.content.res.Resources;
-import android.util.DisplayMetrics;
-import android.widget.Toast;
-import com.example.a121firstapp.ChangeLanguageActivity;
-import java.util.Locale;
-
 public class CommomClass {
 
     /*

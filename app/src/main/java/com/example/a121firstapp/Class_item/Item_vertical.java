@@ -7,12 +7,13 @@ public class Item_vertical {
     private double dic;
     private String location;
 
-    public Item_vertical(int image_view, String brand, double price,String location) {
+    public Item_vertical(int image_view, String brand, double price) {
         this.image_view = image_view;
         this.brand = brand;
         this.price = price;
         this.location=location;
     }
+
     public int getImage_view() {
         return image_view;
     }

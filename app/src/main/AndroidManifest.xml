@@ -29,6 +29,7 @@
             android:name="com.google.android.maps.v2.API_KEY"
             android:value="AIzaSyA4GHayq3AVbLLaSeipU3lC63tzDF8DWY4" />
 
+        <!--
         <meta-data android:name="com.facebook.sdk.ApplicationId"
             android:value="@string/facebook_app_id"/>
 
@@ -36,8 +37,7 @@
             android:configChanges=
                 "keyboard|keyboardHidden|screenLayout|screenSize|orientation"
             android:label="@string/app_name" />
-
-        <activity android:name="com.example.a121firstapp.ChangeLanguageActivity" />
+        -->
         <activity android:name="com.example.a121firstapp.Edit_account" />
         <activity android:name="com.example.a121firstapp.View_buying_request_item_detail" />
         <activity android:name="com.example.a121firstapp.MainActivity">
