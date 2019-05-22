@@ -10,6 +10,12 @@
     <string name="txt_search">ស្វែងរក</string>
     <string name="txt_dic">បញ្ចុះតម្លៃ</string>
     <string name="txt_new">ថ្មី</string>
+//Button
+
+    <string name="btn_call">ហៅ</string>
+    <string name="btn_chat">Chat</string>
+    <string name="btn_order">Order</string>
+    <string name="btn_loand">កម្ចី</string>
 
     <string name="txt_profile">ប្រវត្តិរូប</string>
     <string name="txt_post">post របស់អ្នក</string>
@@ -76,6 +82,39 @@
     <string name="br_suzuki">ស៊ូហ្សុគី</string>
     <string name="br_yamaha">យ៉ាម៉ាហា</string>
     <string name="br_kawasaki">កាវ៉ាសាគី</string>
+//user account registration
+    <string name="title_registration">ចុះឈ្មោះដើម្បីប្រកាសផ្សាយពាណិជ្ជកម្មដោយឥតគិតថ្លៃ</string>
+    <string name="phone_number">លេខទូរសព្ទ</string>
+    <string name="Password">ពាក្យសម្ងាត់</string>
+    <string name="confirm">បញ្ជាក់ពាក្យសម្ងាត់</string>
+    <string name="or">ឬ</string>
+    <string name="register_by_facebook">ចុះឈ្មោះដោយប្រើគណនី Facebook របស់អ្នក</string>
+//user account register facebook
+    <string name="login_or_register">ចូលឬចុះឈ្មោះជាមួយលេខទូរស័ព្ទរបស់អ្នក</string>
+    <string name="btn_login">ចូល</string>
+    <string name="btn_register">ចុះឈ្មោះ</string>
+    <string name="connect_facebook">ភ្ជាប់ទំនាក់ទំនងរហ័សជាមួយហ្វេសប៊ុក</string>
+
+//create_loan_request
+    <string name="title_fill_information">បំពេញព័ត៌មាន</string>
+    <string name="txt_clr_detail">លម្អិត</string>
+    <string name="hit_username">ឈ្មោះ​អ្នកប្រើប្រាស់</string>
+    <string name="hit_gender">ភេទ</string>
+    <string name="hit_age">អាយុ</string>
+    <string name="hit_job">ការងារ</string>
+    <string name="hit_mon_income">ចំណូលមធ្យមប្រចាំខែ</string>
+    <string name="hit_mon_expense">ចំណាយមធ្យមប្រចាំខែ</string>
+    <string name="txt_clr_information">ព័ត៌មានកម្ចី</string>
+    <string name="hit_loan_amount">ចំនួនប្រាក់កម្ចី</string>
+    <string name="hit_loan_duration">ថិរវេលាឥណទាន(ខែ)</string>
+    <string name="hit_purpos">គោលបំណងឥណទាន</string>
+    <string name="hit_phone">ទូរស័ព្ទ</string>
+    <string name="hit_status">ស្ថានភាព</string>
+    <string name="txt_clr_supporting">ឯកសារគាំទ្រប្រាក់កម្ចី</string>
+    <string name="hit_state_id">លេខសម្គាល់រដ្ឋ</string>
+    <string name="hit_family_book">សៀវភៅគ្រួសារ</string>
+    <string name="hit_staffid">លេខសម្គាល់បុគ្គលិក / ប្រាក់ខែ sip</string>
+    <string name="hit_hourse">ផ្ទះឈើ</string>
 
     <string-array name="sp_brand">
         <item>ម៉ាក</item>

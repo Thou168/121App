@@ -55,7 +55,7 @@ import java.util.Locale;
 import java.util.Objects;
 
 public class fram_home extends Fragment implements NavigationView.OnNavigationItemSelectedListener,
-        Vertical.ItemListener,PopupMenu.OnMenuItemClickListener  {
+        Vertical.ItemListener {
 
     Locale myLocale;
     String currentLanguage = "en", currentLang;
@@ -302,58 +302,6 @@ public class fram_home extends Fragment implements NavigationView.OnNavigationIt
         intent.putExtra("brand",item.getBrand());
         intent.putExtra("price",item.getPrice());
         startActivity(intent);
-    }
-//PopupMenu
-    @Override
-    public boolean onMenuItemClick(MenuItem item) {
-        Toast.makeText(getContext(), "Selected Item: " +item.getTitle(), Toast.LENGTH_SHORT).show();
-        switch (item.getItemId()) {
-            case R.id.honda:
-                // do your code
-                btn_breand.setText(item.getTitle());
-                return true;
-            case R.id.yamaha:
-                // do your code
-                btn_breand.setText(item.getTitle());
-                return true;
-            case R.id.suzuki:
-                // do your code
-                btn_breand.setText(item.getTitle());
-                return true;
-            case R.id.kawasaki:
-                // do your code
-                btn_breand.setText(item.getTitle());
-                return true;
- //Price
-            case R.id.one:
-                // do your code
-                btn_price.setText(item.getTitle());
-                return true;
-            case R.id.two:
-                // do your code
-                btn_price.setText(item.getTitle());
-                return true;
-            case R.id.three:
-                // do your code
-                btn_price.setText(item.getTitle());
-                return true;
-            case R.id.four:
-                // do your code
-                btn_price.setText(item.getTitle());
-                return true;
-//Location
-            case R.id.pp:
-                btn_loca.setText(item.getTitle());
-                return true;
-            case R.id.kpc:
-                btn_loca.setText(item.getTitle());
-                return true;
-            case R.id.kpt:
-                btn_loca.setText(item.getTitle());
-                return true;
-            default:
-                return false;
-        }
     }
     public static class MovieViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
