@@ -5,7 +5,7 @@
     android:id="@+id/cardView"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="4dp"
+    android:layout_marginTop="4dp"
     card_view:cardCornerRadius="4dp">
     <RelativeLayout
         android:id="@+id/relativeLayout"
@@ -13,35 +13,53 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:layout_gravity="center">
+
         <ImageView
             android:id="@+id/image_view"
             android:layout_width="160dp"
-            android:layout_height="120dp"
+            android:layout_height="100dp"
             android:scaleType="centerCrop" />
         <TextView
             android:id="@+id/txtbrand"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_toStartOf="@+id/btn_next"
             android:layout_toEndOf="@+id/image_view"
+            android:textSize="11sp"
+            android:text="Title"
+            android:layout_marginTop="8dp"
             android:paddingLeft="10dp" />
+
+        <TextView
+            android:id="@+id/txtLocation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/image_view"
+            android:layout_marginTop="28dp"
+            android:layout_marginBottom="8dp"
+            android:paddingLeft="10dp"
+            android:textSize="8sp"
+            android:text="Phnom Penh" />
+
         <TextView
             android:id="@+id/txttotal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/image_view"
-            android:layout_alignParentEnd="true"
-            android:layout_marginBottom="0dp"
+            android:layout_marginBottom="8dp"
             android:layout_toEndOf="@+id/image_view"
             android:paddingLeft="10dp"
+            android:textSize="12sp"
+            android:text="$ 10"
             android:textColor="#FF0000" />
+
         <ImageButton
-            android:src="@drawable/icon_black_heart_30px"
             android:id="@+id/btn_next"
             android:layout_width="30dp"
             android:layout_height="30dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
             android:background="#00FFFFFC"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true" />
+            android:layout_alignRight="@id/txttotal"
+            android:src="@drawable/cards_heart_16" />
     </RelativeLayout>
 </android.support.v7.widget.CardView>

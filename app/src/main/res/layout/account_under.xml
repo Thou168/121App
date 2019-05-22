@@ -14,20 +14,22 @@
             <include
             android:id="@+id/include"
             layout="@layout/account_header"/>
+
             <android.support.design.widget.TabLayout
                 android:layout_below="@+id/include"
                 android:id="@+id/tabLayout"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
-                android:background="#7367">
+                app:tabTextAppearance="@style/MyCustomTabText"
+                android:background="#FFFFFF">
                 <android.support.design.widget.TabItem
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/txtpost" />
+                android:text="Post (0)" />
                 <android.support.design.widget.TabItem
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/txtlond" />
+                android:text="LIKE (0)" />
             </android.support.design.widget.TabLayout>
             <FrameLayout
                 android:id="@+id/framlayout"

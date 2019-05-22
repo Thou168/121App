@@ -80,7 +80,7 @@ public class fram_account extends Fragment {
                 switch(tab.getPosition()){
                     case 0 : fragment = new data_in_post1();
                         break;
-                    case 1 : fragment = new data_in_loan();
+                    case 1 : fragment = new data_in_like();
                         break;
                 }
                 FragmentManager fm = getActivity().getSupportFragmentManager();

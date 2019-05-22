@@ -18,12 +18,15 @@
         <item
             android:id="@+id/nav_product_order"
             android:title="@string/txt_your_order" />
+        <!--
         <item
             android:id="@+id/nav_report"
             android:title="@string/txt_report" />
         <item
             android:id="@+id/nav_language"
             android:title="@string/txt_language" />
+            android:title="Your Product Order List" />
+    -->
     </group>
 
 </menu>

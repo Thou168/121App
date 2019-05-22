@@ -3,9 +3,9 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
-    <string name="title_sell">Sell</string>
-    <string name="title_buy">Buy</string>
-    <string name="title_rent">Rent</string>
+    <string name="title_sell">SELL</string>
+    <string name="title_buy">BUY</string>
+    <string name="title_rent">RENT</string>
     <string name="txt_search">Search</string>
     <string name="txt_dic">Product Discount</string>
     <string name="txt_new">New Post</string>

@@ -87,7 +87,6 @@ public class fram_home extends Fragment implements NavigationView.OnNavigationIt
         setHasOptionsMenu(true);
 
         currentLanguage = getActivity().getIntent().getStringExtra(currentLang);
-
         khmer = getActivity().getIntent().getIntExtra("khmer",R.drawable.flag_english);
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference table = database.getReference("Product");
@@ -107,6 +106,7 @@ public class fram_home extends Fragment implements NavigationView.OnNavigationIt
             }
         });
         btn_language.setBackgroundResource(khmer);
+        /*
         btn_insert = (Button) view.findViewById(R.id.insert);
         btn_insert.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -115,7 +115,7 @@ public class fram_home extends Fragment implements NavigationView.OnNavigationIt
                 startActivity(intent);
             }
         });
-
+        */
         edtsearch = (EditText) view.findViewById(R.id.edt_search);
         edtsearch.setSelected(false);
 
@@ -127,11 +127,12 @@ public class fram_home extends Fragment implements NavigationView.OnNavigationIt
 
         NavigationView navigationView = (NavigationView) view.findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-//sliderview
+        //sliderview
         sliderView = (SliderView) view.findViewById(R.id.sliderView);
         mLinearLayout = (LinearLayout) view.findViewById(R.id.pagesContainer);
         setupSlider();
-//dropdwon
+        //dropdwon
+        /*
         sp_breand = (Spinner) view.findViewById(R.id.sp_brand);
         String[] st_brand =getResources().getStringArray(R.array.sp_brand);
         ArrayAdapter<String> ad_brand= new ArrayAdapter<String>(getActivity(),android.R.layout.simple_spinner_item, st_brand);
@@ -149,7 +150,7 @@ public class fram_home extends Fragment implements NavigationView.OnNavigationIt
         ArrayAdapter<String> gameKindArray= new ArrayAdapter<String>(getActivity(),android.R.layout.simple_spinner_item, countries);
         gameKindArray.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         sp_loca.setAdapter(gameKindArray);
-
+        */
 //Horizontal
         ItemHorizontal();
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
@@ -162,12 +163,13 @@ public class fram_home extends Fragment implements NavigationView.OnNavigationIt
        ItemVertical();
         recy_vertical = (RecyclerView) view.findViewById(R.id.recy_vertical);
         recy_vertical.setHasFixedSize(true);
-//        recy_vertical.setNestedScrollingEnabled(false);
-//       Vertical adapter1 = new Vertical(getContext(), item, this);
-//        recy_vertical.setAdapter(adapter1);
+        recy_vertical.setNestedScrollingEnabled(false);
+        Vertical adapter1 = new Vertical(getContext(), item, this);
+        recy_vertical.setAdapter(adapter1);
         GridLayoutManager manager = new GridLayoutManager(getContext(), 2, GridLayoutManager.VERTICAL, false);
         recy_vertical.setLayoutManager(manager);
 
+        /*
         FirebaseRecyclerAdapter<Item_product,MovieViewHolder> adapter1 = new FirebaseRecyclerAdapter<Item_product, MovieViewHolder>(Item_product.class,
                 R.layout.image_product,MovieViewHolder.class,table) {
             @Override
@@ -186,7 +188,7 @@ public class fram_home extends Fragment implements NavigationView.OnNavigationIt
         };
 
         recy_vertical.setAdapter(adapter1);
-
+        */
 
         return view;
     }
@@ -194,11 +196,11 @@ public class fram_home extends Fragment implements NavigationView.OnNavigationIt
 
     private void ItemVertical(){
         item = new ArrayList<>();
-        item.add( new Item_vertical(R.drawable.image_zoomer_x_2017,"Zoomer X hfghdgfhfh hfghggf hhfghdghffd gfhfghdfgh hfhfghfgdh hfdhfdghgfh 2017",2050));
+        item.add( new Item_vertical(R.drawable.image_zoomer_x_2017,"Zoomer X 2017",2050));
         item.add( new Item_vertical(R.drawable.image_honda_dream,"Honda Dream c125",2000));
         item.add( new Item_vertical(R.drawable.image_honda_click125i_19,"Click 2019",1900));
         item.add( new Item_vertical(R.drawable.image_zoomer_x_2017,"Zoomer X 2017",2050));
-        item.add( new Item_vertical(R.drawable.image_macbook_pro_2018,"Macbookfasdf fdsfsaf fsfdsfsfsdfdfd Pro 2018",2300));
+        item.add( new Item_vertical(R.drawable.image_macbook_pro_2018,"MacbookPro 2018",2300));
         item.add( new Item_vertical(R.drawable.image_nex,"Nex 2019",1800));
         item.add( new Item_vertical(R.drawable.image_hybrid_2017,"Honda Hybrid 2017",35000));
     }
@@ -254,12 +256,14 @@ public class fram_home extends Fragment implements NavigationView.OnNavigationIt
             case R.id.nav_product_order:
                 Toast.makeText(getContext(),"Your Product Order",Toast.LENGTH_SHORT).show();
                 return true;
+                /*
             case R.id.nav_report:
                 Toast.makeText(getContext(),"Report",Toast.LENGTH_SHORT).show();
                 return true;
             case R.id.nav_language:
                 Toast.makeText(getContext(),"Language",Toast.LENGTH_SHORT).show();
                 return true;
+                */
         }
         DrawerLayout drawer = (DrawerLayout) getView().findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
@@ -303,6 +307,8 @@ public class fram_home extends Fragment implements NavigationView.OnNavigationIt
         intent.putExtra("price",item.getPrice());
         startActivity(intent);
     }
+    //PopupMenu
+
     public static class MovieViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
         TextView tvName,tvprice;
