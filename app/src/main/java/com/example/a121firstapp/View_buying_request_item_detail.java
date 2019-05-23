@@ -1,7 +1,6 @@
 package com.example.a121firstapp;
 
 import android.Manifest;
-import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
@@ -36,23 +35,22 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import static java.security.AccessController.getContext;
 
 public class View_buying_request_item_detail extends AppCompatActivity {
 
     String[] kh_title,detail;
-    ImageView imageView;
     TextView breand,price;
     Button btn_call,btn_chat,btn_order,btn_loan, phone1,phone2,cancel;
     BottomSheetDialog bottomSheetDialog;
     private static final int REQUEST_CALL = 1;
 
     List<Integer> image;
-
     ViewPager viewPager;
     TabLayout indicator;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,6 +79,10 @@ public class View_buying_request_item_detail extends AppCompatActivity {
 
         viewPager.setAdapter(new SliderAdapter(this,image));
         indicator.setupWithViewPager(viewPager, true);
+
+        Timer timer = new Timer();
+        timer.scheduleAtFixedRate(new SliderTimer(), 8000, 8000);
+
 // action button
         btn_call = (Button)findViewById(R.id.btn_call);
         btn_call.setOnClickListener(new View.OnClickListener() {
@@ -171,12 +173,6 @@ public class View_buying_request_item_detail extends AppCompatActivity {
             }
         });
 
-/// finish buttom
-
-//        imageView = (ImageView)findViewById(R.id.image_header);
-//        imageView.setImageResource(getIntent().getIntExtra("img_header",0));
-
-
         breand = (TextView)findViewById(R.id.name_product);
         breand.setText(getIntent().getStringExtra("brand"));
         price = (TextView)findViewById(R.id.name_price);
@@ -206,6 +202,21 @@ public class View_buying_request_item_detail extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_detail_product, menu);
         return super.onCreateOptionsMenu(menu);
+    }
+    private class SliderTimer extends TimerTask {
+        @Override
+        public void run() {
+            View_buying_request_item_detail.this.runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    if (viewPager.getCurrentItem() < image.size() - 1) {
+                        viewPager.setCurrentItem(viewPager.getCurrentItem() + 1);
+                    } else {
+                        viewPager.setCurrentItem(0);
+                    }
+                }
+            });
+        }
     }
 
     public void bottomsheet(View v){

@@ -18,41 +18,35 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.PopupMenu;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.a121firstapp.Class_Adapter.ItemClickListener;
 import com.example.a121firstapp.Class_Adapter.Vertical;
-import com.example.a121firstapp.Class_item.Item_product;
 import com.example.a121firstapp.Class_item.Item_vertical;
 import com.example.a121firstapp.Class_item.Item_horizotal;
 import com.example.a121firstapp.Class_Adapter.Horizontal;
-import com.example.a121firstapp._sliders.FragmentSlider;
-import com.example.a121firstapp._sliders.SliderIndicator;
-import com.example.a121firstapp._sliders.SliderPagerAdapter;
-import com.example.a121firstapp._sliders.SliderView;
-import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.squareup.picasso.Picasso;
 
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 import java.util.Objects;
+
+import ss.com.bannerslider.banners.Banner;
+import ss.com.bannerslider.banners.DrawableBanner;
+import ss.com.bannerslider.banners.RemoteBanner;
+import ss.com.bannerslider.views.BannerSlider;
 
 public class fram_home extends Fragment implements NavigationView.OnNavigationItemSelectedListener,
         Vertical.ItemListener {
@@ -64,15 +58,11 @@ public class fram_home extends Fragment implements NavigationView.OnNavigationIt
     Toolbar toolbar;
     DrawerLayout drawer;
     Spinner sp_breand,sp_price,sp_loca;
-    private SliderPagerAdapter mAdapter;
-    private SliderIndicator mIndicator;
     private ArrayList<Item_horizotal> items;
     private ArrayList<Item_vertical> item;
-    private SliderView sliderView;
     private LinearLayout mLinearLayout;
     EditText edtsearch;
     Button btn_breand,btn_price,btn_loca,btn_insert,btn_language;
-
     RecyclerView recy_vertical;
 
     @Nullable
@@ -85,6 +75,15 @@ public class fram_home extends Fragment implements NavigationView.OnNavigationIt
         toolbar.setTitle("");
         ((AppCompatActivity) Objects.requireNonNull(getActivity())).setSupportActionBar(toolbar);
         setHasOptionsMenu(true);
+//slider
+        BannerSlider slider = (BannerSlider) view.findViewById(R.id.bannerSlider);
+        List<Banner> banners=new ArrayList<>();
+        //add banner using image url
+        banners.add(new RemoteBanner("https://assets.materialup.com/uploads/dcc07ea4-845a-463b-b5f0-4696574da5ed/preview.jpg"));
+        banners.add(new RemoteBanner("https://assets.materialup.com/uploads/20ded50d-cc85-4e72-9ce3-452671cf7a6d/preview.jpg"));
+        //add banner using resource drawable
+        banners.add(new DrawableBanner(R.drawable.image_slider_1));
+        slider.setBanners(banners);
 
         currentLanguage = getActivity().getIntent().getStringExtra(currentLang);
         khmer = getActivity().getIntent().getIntExtra("khmer",R.drawable.flag_english);
@@ -127,10 +126,7 @@ public class fram_home extends Fragment implements NavigationView.OnNavigationIt
 
         NavigationView navigationView = (NavigationView) view.findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-        //sliderview
-        sliderView = (SliderView) view.findViewById(R.id.sliderView);
-        mLinearLayout = (LinearLayout) view.findViewById(R.id.pagesContainer);
-        setupSlider();
+
         //dropdwon
         /*
         sp_breand = (Spinner) view.findViewById(R.id.sp_brand);
@@ -213,20 +209,6 @@ public class fram_home extends Fragment implements NavigationView.OnNavigationIt
         items.add( new Item_horizotal(R.drawable.image_macbook_pro_2018,"Macbook Pro 2018",2300,1700));
         items.add( new Item_horizotal(R.drawable.image_nex,"Nex 2019",1800,1000));
         items.add( new Item_horizotal(R.drawable.image_hybrid_2017,"Honda Hybrid 2017",35000,3000));
-    }
-    private void setupSlider() {
-        sliderView.setDurationScroll(800);
-        List<Fragment> fragments = new ArrayList<>();
-        fragments.add(FragmentSlider.newInstance("http://www.menucool.com/slider/prod/image-slider-1.jpg"));
-        fragments.add(FragmentSlider.newInstance("http://www.menucool.com/slider/prod/image-slider-2.jpg"));
-        fragments.add(FragmentSlider.newInstance("http://www.menucool.com/slider/prod/image-slider-3.jpg"));
-        fragments.add(FragmentSlider.newInstance("http://www.menucool.com/slider/prod/image-slider-4.jpg"));
-        //getActivity().getSupportFragmentManager()
-        mAdapter = new SliderPagerAdapter(getFragmentManager(), fragments);
-        sliderView.setAdapter(mAdapter);
-        mIndicator = new SliderIndicator(getContext(), mLinearLayout, sliderView, R.drawable.indicator_circle);
-        mIndicator.setPageCount(fragments.size());
-        mIndicator.show();
     }
 
     Fragment fragment;
