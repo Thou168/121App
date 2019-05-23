@@ -31,35 +31,24 @@
             android:background="@color/browser_actions_bg_grey"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-            <RelativeLayout
-                android:id="@+id/relativelayout"
+
+            <ss.com.bannerslider.views.BannerSlider
+                android:id="@+id/bannerSlider"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
+                android:layout_marginBottom="8dp"
+                app:interval="2000"
+                app:defaultIndicators="round_square"
+                app:loopSlides="true"
+                app:indicatorSize="10dp"
+                app:animateIndicators="true"
+                app:layout_constraintBottom_toTopOf="@+id/txtbuy"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
-                <FrameLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-                    <com.example.a121firstapp._sliders.SliderView
-                        android:id="@+id/sliderView"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent" />
-                </FrameLayout>
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/bg_indicator" />
-                <LinearLayout
-                    android:id="@+id/pagesContainer"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:layout_gravity="bottom"
-                    android:layout_marginBottom="8dp"
-                    android:gravity="center_horizontal"
-                    android:orientation="horizontal" />
-            </RelativeLayout>
+
+            </ss.com.bannerslider.views.BannerSlider>
+
             <TextView
                 android:id="@+id/txtbuy"
                 android:layout_width="wrap_content"
@@ -70,7 +59,7 @@
                 android:textSize="14sp"
                 app:layout_constraintEnd_toStartOf="@+id/txtsell"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/relativelayout" />
+                app:layout_constraintTop_toBottomOf="@+id/bannerSlider" />
             <TextView
                 android:id="@+id/txtsell"
                 android:layout_width="wrap_content"
