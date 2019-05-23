@@ -23,7 +23,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import com.example.a121firstapp.Class_Adapter.Utility;
 import com.squareup.picasso.Picasso;
@@ -81,7 +80,7 @@ public class fram_account extends Fragment {
                 switch(tab.getPosition()){
                     case 0 : fragment = new data_in_post1();
                         break;
-                    case 1 : fragment = new data_in_loan();
+                    case 1 : fragment = new data_in_like();
                         break;
                 }
                 FragmentManager fm = getActivity().getSupportFragmentManager();

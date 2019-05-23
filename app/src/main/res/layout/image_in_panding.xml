@@ -67,10 +67,10 @@
             android:layout_alignParentStart="true"
             android:drawableStart="@drawable/icon_edit_25px"
             android:gravity="center"
-            android:text="Edit"
+            android:text="@string/txtedit"
             android:textAllCaps="false" />
         <Button
-            android:text="Delete"
+            android:text="@string/txtdelete"
             android:background="#00FFFFFF"
             android:id="@+id/btn_delete"
             android:textAllCaps="false"

@@ -1,6 +1,5 @@
 package com.example.a121firstapp;
 
-import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

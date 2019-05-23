@@ -1,7 +1,7 @@
 package com.example.a121firstapp;
 
 import android.Manifest;
-import android.content.DialogInterface;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
@@ -9,8 +9,10 @@ import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomSheetDialog;
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -26,10 +28,16 @@ import android.widget.SimpleAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
+//import com.daimajia.slider.library.SliderAdapter;
+
+import com.example.a121firstapp._sliders.SliderAdapter;
+
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
-import java.util.zip.Inflater;
+
+import static java.security.AccessController.getContext;
 
 public class View_buying_request_item_detail extends AppCompatActivity {
 
@@ -39,6 +47,12 @@ public class View_buying_request_item_detail extends AppCompatActivity {
     Button btn_call,btn_chat,btn_order,btn_loan, phone1,phone2,cancel;
     BottomSheetDialog bottomSheetDialog;
     private static final int REQUEST_CALL = 1;
+
+    List<Integer> image;
+
+    ViewPager viewPager;
+    TabLayout indicator;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,9 +69,19 @@ public class View_buying_request_item_detail extends AppCompatActivity {
                 finish();
             }
         });
+//Slider
+        viewPager = (ViewPager) findViewById(R.id.viewPager);
+        indicator = (TabLayout) findViewById(R.id.indicator);
 
+        image = new ArrayList<>();
+        image.add(getIntent().getIntExtra("img_header",0));
+        image.add(R.drawable.image_nex);
+        image.add(R.drawable.image_slider_1);
+        image.add(R.drawable.image_macbook_pro_2018);
+
+        viewPager.setAdapter(new SliderAdapter(this,image));
+        indicator.setupWithViewPager(viewPager, true);
 // action button
-
         btn_call = (Button)findViewById(R.id.btn_call);
         btn_call.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -149,15 +173,22 @@ public class View_buying_request_item_detail extends AppCompatActivity {
 
 /// finish buttom
 
-        imageView = (ImageView)findViewById(R.id.image_header);
-        imageView.setImageResource(getIntent().getIntExtra("img_header",0));
+//        imageView = (ImageView)findViewById(R.id.image_header);
+//        imageView.setImageResource(getIntent().getIntExtra("img_header",0));
+
+
         breand = (TextView)findViewById(R.id.name_product);
         breand.setText(getIntent().getStringExtra("brand"));
         price = (TextView)findViewById(R.id.name_price);
         price.setText(Double.toString(getIntent().getDoubleExtra("price",1)));
 
         kh_title = getResources().getStringArray(R.array.kh_title);
-        detail = new String[]{String.valueOf(Double.toString(getIntent().getDoubleExtra("price",1))),String.valueOf(getIntent().getStringExtra("brand")),String.valueOf("2019"),String.valueOf("Good")};
+        detail = new String[]{
+                String.valueOf(Double.toString(getIntent().getDoubleExtra("price",1))),
+                String.valueOf(getIntent().getStringExtra("brand")),
+                String.valueOf("2019"),
+                String.valueOf("Good")
+        };
         final List<HashMap<String,String>> alist = new ArrayList<HashMap<String,String>>();
         for(int i=0;i<4;i++){
             HashMap<String,String> hm = new HashMap<String, String>();

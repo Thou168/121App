@@ -2,6 +2,8 @@ package com.example.a121firstapp.Class_Adapter;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
+import android.graphics.Paint;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -16,6 +18,7 @@ import android.widget.TextView;
 
 import com.example.a121firstapp.Class_item.Item_horizotal;
 import com.example.a121firstapp.R;
+import com.example.a121firstapp.View_buying_request_item_detail;
 
 import java.util.ArrayList;
 
@@ -55,6 +58,7 @@ public class Horizontal extends RecyclerView.Adapter<Horizontal.ReyclerViewHolde
         holder.brand.setText(item.getBrand());
         holder.price.setText(Double.toString(item.getPrice()));
         holder.dic.setText(Double.toString(item.getDic()));
+        holder.dic.setPaintFlags(holder.dic.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
         holder.relativeLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -66,12 +70,13 @@ public class Horizontal extends RecyclerView.Adapter<Horizontal.ReyclerViewHolde
 //                fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
 //                fragmentTransaction.commit();
 
-//                Intent intent = new Intent(v.getContext(),View_buying_request.class);
-//                intent.putExtra("img_header",item.getImage_view());
-//                intent.putExtra("brand",item.getBrand());
-//                intent.putExtra("price",item.getPrice());
-//                intent.putExtra("dic",item.getDic());
-//                v.getContext().startActivity(intent);
+               Intent intent = new Intent(v.getContext(),View_buying_request_item_detail.class);
+               intent.putExtra("img_header",item.getImage_view());
+               intent.putExtra("brand",item.getBrand());
+               intent.putExtra("price",item.getPrice());
+               intent.putExtra("dic",item.getDic());
+               v.getContext().startActivity(intent);
+
             }
         });
     }

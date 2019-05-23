@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
     <item android:id="@+id/honda"
-        android:title="HONDA" />
+        android:title="@string/br_honda" />
     <item android:id="@+id/yamaha"
-        android:title="YAMAHA" />
+        android:title="@string/br_suzuki" />
     <item android:id="@+id/suzuki"
-        android:title="SUZUKI" />
+        android:title="@string/br_yamaha" />
     <item android:id="@+id/kawasaki"
-        android:title="KAWASAKI" />
+        android:title="@string/br_kawasaki" />
 </menu>
