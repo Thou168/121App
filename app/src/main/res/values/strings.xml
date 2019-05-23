@@ -1,8 +1,22 @@
 <resources>
+    <string name="app_name" translatable="false">121FirstApp</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
+
+    <string name="facebook_app_id" translatable="false">317399495624020</string>
+    <string name="fb_login_protocol_scheme" translatable="false">fb317399495624020</string>
+
+    <string name="bottom_sheet_option_Vehicle" translatable="false">Vehicle</string>
+
+    <string name="bottom_sheet_option_Home" translatable="false">Home</string>
+
+    <string name="bottom_sheet_option_Electronic" translatable="false">Electronic</string>
+
+    <string name="bottom_sheet_option_Phone_and_Tablet" translatable="false">Phone and Tablet</string>
+
+    <string name="bottom_sheet_option_Computer_and_Accessories" translatable="false">Computer and Accessories</string>
     <string name="title_sell">SELL</string>
     <string name="title_buy">BUY</string>
     <string name="title_rent">RENT</string>

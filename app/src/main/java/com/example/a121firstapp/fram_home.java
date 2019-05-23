@@ -96,6 +96,33 @@ public class fram_home extends Fragment implements NavigationView.OnNavigationIt
         tvdic = (TextView)view.findViewById(R.id.product_dic);
         tvnew = (TextView)view.findViewById(R.id.new_post);
 
+        tvbuy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getContext(),"Buy",Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getContext(),fram_home_buy.class);
+                startActivity(intent);
+            }
+        });
+
+        tvsell.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getContext(),"Sell",Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getContext(),fram_home_sell.class);
+                startActivity(intent);
+            }
+        });
+
+        tvrent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getContext(),"Rent",Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getContext(),fram_home_rent.class);
+                startActivity(intent);
+            }
+        });
+
         btn_language = (Button)view.findViewById(R.id.btn_language);
         btn_language.setOnClickListener(new View.OnClickListener() {
             @Override

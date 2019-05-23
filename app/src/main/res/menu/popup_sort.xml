@@ -3,19 +3,19 @@
 
     <item
         android:id="@+id/one"
-        android:title="One">
+        android:title="Honda">
     </item>
     <item android:id="@+id/two"
-        android:title="Two">
+        android:title="Suzuki">
     </item>
     <item android:id="@+id/three"
-        android:title="Three">
+        android:title="Yamaha">
     </item>
     <item android:id="@+id/four"
-        android:title="Four">
+        android:title="TNT">
     </item>
     <item android:id="@+id/five"
-        android:title="Five">
+        android:title="Ducati">
     </item>
 
 </menu>

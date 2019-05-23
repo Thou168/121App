@@ -12,10 +12,22 @@
         android:layout_height="wrap_content">
 
         <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
+            android:id="@+id/toolbar_view_buying_request"
             android:layout_width="match_parent"
+            android:minHeight="?attr/actionBarSize"
             android:layout_height="?attr/actionBarSize"
-            android:background="#1F6AFF"/>
+            android:background="#1F6AFF">
+
+            <TextView
+                android:id="@+id/toolbar_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textColor="@color/color_black"
+                android:text="Buying Request"
+                android:textSize="@dimen/dp_16"
+                android:textStyle="normal|bold" />
+        </android.support.v7.widget.Toolbar>
 
     </android.support.design.widget.AppBarLayout>
 

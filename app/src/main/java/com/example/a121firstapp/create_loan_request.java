@@ -26,14 +26,13 @@ public class create_loan_request extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.create_loan_request);
 
-
         loan_toolbar = (Toolbar)findViewById(R.id.toolbar_fill_information);
         loan_toolbar.setTitle("");
 
         Window window = this.getWindow();
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
         window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-        window.setStatusBarColor(this.getResources().getColor(R.color.blue));
+        window.setStatusBarColor(this.getResources().getColor(R.color.grey));
 
         setSupportActionBar(loan_toolbar);
         loan_toolbar.setNavigationIcon(R.drawable.icon_back_30px);

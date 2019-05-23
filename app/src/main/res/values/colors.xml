@@ -10,7 +10,14 @@
     <color name="no_select">#FFFFFF</color>
     <color name="grey">#f3f1f1</color>
     <color name="grey2">#424242</color>
+    <color name="color_white">#FFFFFF</color>
+    <color name="color_black">#000000</color>
+    <color name="color_red">#ff0006</color>
     <color name="WHITE">#FFFFFF</color>
+
+    <color name="md_bottom_sheet_title_color">#000</color>
+    <color name="md_bottom_sheet_text_color">#000</color>
+    <color name="grayTextColor">#607C7575</color>
 
     <color name="backgroundfragment">#B2BEB5</color>
 </resources>

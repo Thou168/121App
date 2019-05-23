@@ -21,7 +21,8 @@ import java.util.ArrayList;
  * Created by BOUMZEBRA on 27/02/2018.
  */
 
-public class ListViewAdapter extends BaseAdapter implements Filterable {private Context context;
+public class ListViewAdapter extends BaseAdapter implements Filterable {
+    private Context context;
     private int layout;
     ArrayList<Article> arrayList;
     ArrayList<Article> mStringFilterList;

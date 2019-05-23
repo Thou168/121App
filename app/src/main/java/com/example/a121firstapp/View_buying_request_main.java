@@ -52,7 +52,7 @@ public class View_buying_request_main extends AppCompatActivity {
 //    private ArrayAdapter aAdapter;
 
     public void initToolBar() {
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar = (Toolbar) findViewById(R.id.toolbar_view_buying_request);
         setTitle("Mortorbike");
         toolbar.setTitleTextColor(Color.WHITE);
         setSupportActionBar(toolbar);
@@ -233,6 +233,8 @@ public class View_buying_request_main extends AppCompatActivity {
         articleList.add(new Article(9, "Scoopy New 2019", "Posted: 22 hrs ago", R.drawable.scopy_2019,"2250 $", "Color: WHITE","Brand: HONDA", "Category: Motorbike", "2019"));
         articleList.add(new Article(10, "Zoomer X 2019", "Posted: 22 hrs ago", R.drawable.zoomer_x,"2250 $", "Color: WHITE","Brand: HONDA", "Category: Motorbike", "2019"));
         return articleList;
+
+
     }
 
 
@@ -249,8 +251,9 @@ public class View_buying_request_main extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(final Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_search_and_swap, menu);
+        getMenuInflater().inflate(R.menu.menu_search_and_shop, menu);
         MenuItem search_item = menu.findItem(R.id.action_search);
+        MenuItem shop_item = menu.findItem(R.id.action_Shop);
 
         SearchView searchView = (SearchView) search_item.getActionView();
         searchView.setFocusable(false);
@@ -275,6 +278,14 @@ public class View_buying_request_main extends AppCompatActivity {
                     gridViewAdapter.getFilter().filter(s);
                 }
                 return false;
+            }
+        });
+
+        shop_item.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                Toast.makeText(View_buying_request_main.this,"Shop View",Toast.LENGTH_SHORT).show();
+                return true;
             }
         });
 

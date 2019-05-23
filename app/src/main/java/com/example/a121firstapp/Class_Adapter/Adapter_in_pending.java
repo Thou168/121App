@@ -3,6 +3,7 @@ package com.example.a121firstapp.Class_Adapter;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.a121firstapp.Class_item.Item_in_pending;
 import com.example.a121firstapp.R;
@@ -39,7 +41,7 @@ public class Adapter_in_pending extends RecyclerView.Adapter<Adapter_in_pending.
         private TextView txtbreand,txtposton,txtrenew,txtprice;
         private ImageView imageView;
         private Item_in_pending item;
-        private Button delete,edit;
+        private Button delete,edit,share;
 
         public ViewHolder(View v) {
             super(v);
@@ -51,6 +53,7 @@ public class Adapter_in_pending extends RecyclerView.Adapter<Adapter_in_pending.
             txtposton = (TextView) v.findViewById(R.id.txtposton);
             delete = (Button)v.findViewById(R.id.btn_delete);
             edit = (Button)v.findViewById(R.id.btn_edit);
+            share = (Button)v.findViewById(R.id.btn_share);
         }
 
         public void setData(final Item_in_pending item) {
@@ -74,6 +77,9 @@ public class Adapter_in_pending extends RecyclerView.Adapter<Adapter_in_pending.
                                     mValues.remove(item);
                                     notifyItemRemoved(which);
                                     notifyItemRangeChanged(which,mValues.size());
+//                                    mValues.remove(item);
+//                                    notifyItemRemoved(which);
+//                                    notifyItemRangeChanged(which,mValues.size());
                                     break;
 
                                 case DialogInterface.BUTTON_NEGATIVE:
@@ -86,6 +92,24 @@ public class Adapter_in_pending extends RecyclerView.Adapter<Adapter_in_pending.
                     AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
                     builder.setMessage("Are you sure to delete this item?").setPositiveButton("Yes", dialogClickListener)
                             .setNegativeButton("No", dialogClickListener).show();
+                }
+            });
+
+            edit.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(v.getContext(),"Edit",Toast.LENGTH_SHORT).show();
+                }
+            });
+
+            share.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(Intent.ACTION_SEND);
+                    intent.setType("text/plain");
+                    String ShareSubject = ("Your Subject here");
+                    intent.putExtra(Intent.EXTRA_SUBJECT,ShareSubject);
+                    v.getContext().startActivity(Intent.createChooser(intent,"Share"));
                 }
             });
         }
@@ -107,6 +131,7 @@ public class Adapter_in_pending extends RecyclerView.Adapter<Adapter_in_pending.
     @Override
     public void onBindViewHolder(ViewHolder viewHolder, int position) {
         viewHolder.setData(mValues.get(position));
+
     }
 
     @Override

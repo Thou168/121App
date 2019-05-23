@@ -15,10 +15,6 @@ import com.example.a121firstapp.R;
 
 import java.util.ArrayList;
 
-/**
- * Created by BOUMZEBRA on 27/02/2018.
- */
-
 public class GridViewAdapter extends BaseAdapter implements Filterable {
 
     private Context context;

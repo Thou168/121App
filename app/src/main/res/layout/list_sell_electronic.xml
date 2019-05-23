@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/img_sell_electronic"
+                android:layout_width="120dp"
+                android:scaleType="fitXY"
+                android:layout_height="100dp"/>
+
+            <TextView
+                android:id="@+id/txt_name_electronic"
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:textColor="@color/color_black"
+                android:layout_toRightOf="@+id/img_sell_electronic"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:textSize="@dimen/dp_16"
+                android:text="Title"/>
+
+            <TextView
+                android:id="@+id/txt_price_electronic"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_below="@+id/txt_name_electronic"
+                android:layout_marginTop="20dp"
+                android:textStyle="bold"
+                android:layout_toRightOf="@+id/img_sell_electronic"
+                android:textColor="@color/color_red"
+                android:textSize="20dp"
+                android:layout_marginLeft="10dp"
+                android:text="Price"
+                />
+            </RelativeLayout>
+
+</TableLayout>

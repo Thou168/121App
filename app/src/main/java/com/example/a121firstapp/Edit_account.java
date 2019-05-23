@@ -12,6 +12,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -25,8 +26,9 @@ public class Edit_account extends AppCompatActivity  implements OnMapReadyCallba
     TextInputLayout phone2,phone3;
     Button btn_one,btn_two;
     ImageView img1;
-    ImageView img_fname,img_lname,img_store,img_bc,img_wingnum,img_wingname,img_dealer,img_phone1,img_phone2,img_phone3;
-    EditText edit_fname,edit_lname,edit_store,edit_bc,edit_wingnum,edit_wingname,edit_dealer,edit_phone1,edit_phone2,edit_phone3;
+    ImageView img_type_acc,img_name_acc,img_gender,img_dob,img_pob,img_marital,img_wing_num,img_phone1,img_phone2,img_phone3;
+    EditText edit_type,edit_name_acc,edit_gender,edit_dob,edit_pob,edit_marital,edit_wing_num,edit_phone1,edit_phone2,edit_phone3;
+    TextView txt_type;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -87,134 +89,134 @@ public class Edit_account extends AppCompatActivity  implements OnMapReadyCallba
         googleMap.moveCamera(CameraUpdateFactory.newLatLng(PhnomPenh));
     }
     public void comf(){
-        edit_fname = (EditText)findViewById(R.id.edit_fname);
-        img_fname = (ImageView)findViewById(R.id.img_fimage);
-        edit_fname.addTextChangedListener(new TextWatcher() {
+        edit_type = (EditText) findViewById(R.id.edit_fname);
+        img_type_acc = (ImageView)findViewById(R.id.img_fimage);
+        edit_type.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
             }
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 if(s.length() == 0)
-                    img_fname.setImageResource(R.drawable.icon_circle_null_24);
+                    img_type_acc.setImageResource(R.drawable.icon_circle_null_24);
                 else if (s.length()<3)
-                    img_fname.setImageResource(R.drawable.ic_error_black_24dp);
+                    img_type_acc.setImageResource(R.drawable.ic_error_black_24dp);
                 else
-                    img_fname.setImageResource(R.drawable.icon_ok_24px);
+                    img_type_acc.setImageResource(R.drawable.icon_ok_24px);
             }
             @Override
             public void afterTextChanged(Editable s) {
             }
         });
-        edit_lname = (EditText)findViewById(R.id.edit_lname);
-        img_lname = (ImageView)findViewById(R.id.img_limage);
-        edit_lname.addTextChangedListener(new TextWatcher() {
+        edit_name_acc = (EditText)findViewById(R.id.edit_lname);
+        img_name_acc = (ImageView)findViewById(R.id.img_limage);
+        edit_name_acc.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
             }
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 if(s.length() == 0)
-                    img_lname.setImageResource(R.drawable.icon_circle_null_24);
+                    img_name_acc.setImageResource(R.drawable.icon_circle_null_24);
                 else if (s.length()<3)
-                    img_lname.setImageResource(R.drawable.ic_error_black_24dp);
+                    img_name_acc.setImageResource(R.drawable.ic_error_black_24dp);
                 else
-                    img_lname.setImageResource(R.drawable.icon_ok_24px);
+                    img_name_acc.setImageResource(R.drawable.icon_ok_24px);
             }
             @Override
             public void afterTextChanged(Editable s) {
             }
         });
-        edit_store = (EditText)findViewById(R.id.edit_lstore);
-        img_store = (ImageView)findViewById(R.id.img_store);
-        edit_store.addTextChangedListener(new TextWatcher() {
+        edit_gender = (EditText)findViewById(R.id.edit_lstore);
+        img_gender = (ImageView)findViewById(R.id.img_store);
+        edit_gender.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
             }
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 if(s.length() == 0)
-                    img_store.setImageResource(R.drawable.icon_circle_null_24);
+                    img_gender.setImageResource(R.drawable.icon_circle_null_24);
                 else if (s.length()<3)
-                    img_store.setImageResource(R.drawable.ic_error_black_24dp);
+                    img_gender.setImageResource(R.drawable.ic_error_black_24dp);
                 else
-                    img_store.setImageResource(R.drawable.icon_ok_24px);
+                    img_gender.setImageResource(R.drawable.icon_ok_24px);
             }
             @Override
             public void afterTextChanged(Editable s) {
             }
         });
-        edit_bc = (EditText)findViewById(R.id.edit_lb_shop);
-        img_bc = (ImageView)findViewById(R.id.img_lb_shop);
-        edit_bc.addTextChangedListener(new TextWatcher() {
+        edit_dob = (EditText)findViewById(R.id.edit_lb_shop);
+        img_dob = (ImageView)findViewById(R.id.img_lb_shop);
+        edit_dob.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
             }
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 if(s.length() == 0)
-                    img_bc.setImageResource(R.drawable.icon_circle_null_24);
+                    img_dob.setImageResource(R.drawable.icon_circle_null_24);
                 else if (s.length()<3)
-                    img_bc.setImageResource(R.drawable.ic_error_black_24dp);
+                    img_dob.setImageResource(R.drawable.ic_error_black_24dp);
                 else
-                    img_bc.setImageResource(R.drawable.icon_ok_24px);
+                    img_dob.setImageResource(R.drawable.icon_ok_24px);
             }
             @Override
             public void afterTextChanged(Editable s) {
             }
         });
-        edit_wingnum = (EditText)findViewById(R.id.edit_wingnumber);
-        img_wingnum = (ImageView)findViewById(R.id.img_wingnumber);
-        edit_wingnum.addTextChangedListener(new TextWatcher() {
+        edit_pob = (EditText)findViewById(R.id.edit_wingnumber);
+        img_pob = (ImageView)findViewById(R.id.img_wingnumber);
+        edit_pob.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
             }
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 if(s.length() == 0)
-                    img_wingnum.setImageResource(R.drawable.icon_circle_null_24);
+                    img_pob.setImageResource(R.drawable.icon_circle_null_24);
                 else if (s.length()<8 || s.length()>8)
-                    img_wingnum.setImageResource(R.drawable.ic_error_black_24dp);
+                    img_pob.setImageResource(R.drawable.ic_error_black_24dp);
                 else
-                    img_wingnum.setImageResource(R.drawable.icon_ok_24px);
+                    img_pob.setImageResource(R.drawable.icon_ok_24px);
             }
             @Override
             public void afterTextChanged(Editable s) {
             }
         });
-        edit_wingname = (EditText)findViewById(R.id.edit_wingname);
-        img_wingname = (ImageView)findViewById(R.id.img_wingname);
-        edit_wingname.addTextChangedListener(new TextWatcher() {
+        edit_marital = (EditText)findViewById(R.id.edit_wingname);
+        img_marital = (ImageView)findViewById(R.id.img_wingname);
+        edit_marital.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
             }
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 if(s.length() == 0)
-                    img_wingname.setImageResource(R.drawable.icon_circle_null_24);
+                    img_marital.setImageResource(R.drawable.icon_circle_null_24);
                 else if (s.length()<3)
-                    img_wingname.setImageResource(R.drawable.ic_error_black_24dp);
+                    img_marital.setImageResource(R.drawable.ic_error_black_24dp);
                 else
-                    img_wingname.setImageResource(R.drawable.icon_ok_24px);
+                    img_marital.setImageResource(R.drawable.icon_ok_24px);
             }
             @Override
             public void afterTextChanged(Editable s) {
             }
         });
-        edit_dealer = (EditText)findViewById(R.id.edit_dealer);
-        img_dealer = (ImageView)findViewById(R.id.img_dealer);
-        edit_dealer.addTextChangedListener(new TextWatcher() {
+        edit_wing_num = (EditText)findViewById(R.id.edit_dealer);
+        img_wing_num = (ImageView)findViewById(R.id.img_dealer);
+        edit_wing_num.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
             }
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 if(s.length() == 0)
-                    img_dealer.setImageResource(R.drawable.icon_circle_null_24);
+                    img_wing_num.setImageResource(R.drawable.icon_circle_null_24);
                 else if (s.length()<3)
-                    img_dealer.setImageResource(R.drawable.ic_error_black_24dp);
+                    img_wing_num.setImageResource(R.drawable.ic_error_black_24dp);
                 else
-                    img_dealer.setImageResource(R.drawable.icon_ok_24px);
+                    img_wing_num.setImageResource(R.drawable.icon_ok_24px);
             }
             @Override
             public void afterTextChanged(Editable s) {
