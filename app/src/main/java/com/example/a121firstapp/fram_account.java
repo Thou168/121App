@@ -54,7 +54,7 @@ public class fram_account extends Fragment {
 //Toolbar
         toolbar = (Toolbar) view.findViewById(R.id.toolbar);
         toolbar.setTitle("");
-        toolbar.setNavigationIcon(R.drawable.account_edit);
+        toolbar.setNavigationIcon(R.drawable.icon_account_30px);
         ((AppCompatActivity)getContext()).setSupportActionBar(toolbar);
         setHasOptionsMenu(true);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
@@ -80,7 +80,7 @@ public class fram_account extends Fragment {
                 switch(tab.getPosition()){
                     case 0 : fragment = new data_in_post1();
                         break;
-                    case 1 : fragment = new data_in_loan();
+                    case 1 : fragment = new data_in_like();
                         break;
                 }
                 FragmentManager fm = getActivity().getSupportFragmentManager();

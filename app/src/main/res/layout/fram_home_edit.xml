@@ -14,6 +14,13 @@
             android:src="@drawable/logo"
             android:layout_width="60dp"
             android:layout_height="25dp" />
+        <Button
+            android:id="@+id/btn_language"
+            android:background="@drawable/flag_english"
+            android:layout_marginEnd="2dp"
+            android:layout_gravity="right"
+            android:layout_width="32dp"
+            android:layout_height="32dp" />
     </android.support.v7.widget.Toolbar>
     <ScrollView
         android:fillViewport="true"
@@ -24,55 +31,40 @@
             android:background="@color/browser_actions_bg_grey"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-            <RelativeLayout
-                android:id="@+id/relativelayout"
+
+            <ss.com.bannerslider.views.BannerSlider
+                android:id="@+id/bannerSlider"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
+                android:layout_marginBottom="8dp"
+                app:interval="2000"
+                app:defaultIndicators="round_square"
+                app:loopSlides="true"
+                app:indicatorSize="10dp"
+                app:animateIndicators="true"
+                app:layout_constraintBottom_toTopOf="@+id/txtbuy"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
-                <FrameLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+            </ss.com.bannerslider.views.BannerSlider>
 
-                    <com.example.a121firstapp._sliders.SliderView
-                        android:id="@+id/sliderView"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent" />
-                </FrameLayout>
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/bg_indicator" />
-
-                <LinearLayout
-                    android:id="@+id/pagesContainer"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:layout_gravity="bottom"
-                    android:layout_marginBottom="8dp"
-                    android:gravity="center_horizontal"
-                    android:orientation="horizontal" />
-            </RelativeLayout>
             <TextView
                 android:id="@+id/txtbuy"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
-                android:text="@string/buy"
+                android:text="@string/title_buy"
                 android:textSize="14sp"
                 app:layout_constraintEnd_toStartOf="@+id/txtsell"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/relativelayout" />
+                app:layout_constraintTop_toBottomOf="@+id/bannerSlider" />
             <TextView
                 android:id="@+id/txtsell"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="SELL"
+                android:text="@string/title_sell"
                 android:textSize="14sp"
                 app:layout_constraintBottom_toBottomOf="@+id/txtbuy"
                 app:layout_constraintEnd_toStartOf="@+id/txtrent"
@@ -84,7 +76,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="16dp"
-                android:text="RENT"
+                android:text="@string/title_rent"
                 android:textSize="14sp"
                 app:layout_constraintBottom_toBottomOf="@+id/txtsell"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -101,7 +93,7 @@
                 android:drawableLeft="@drawable/icons_search_24"
                 android:drawablePadding="8dp"
                 android:gravity="center_vertical"
-                android:hint="Search"
+                android:hint="@string/txt_search"
                 android:inputType="textCapWords"
                 android:padding="4dp"
                 android:singleLine="true"
@@ -110,6 +102,7 @@
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txtbuy" />
+
             <!--
             <Button
                 android:id="@+id/btnShow"
@@ -122,13 +115,13 @@
                 android:background="@drawable/my_border1"
                 android:drawableRight="@drawable/icon_down_25px"
                 android:paddingRight="5dp"
+                android:text="Breand"
                 android:text="Brand"
                 android:textAllCaps="false"
                 app:layout_constraintBottom_toTopOf="@+id/product_dic"
-
+                app:layout_constraintEnd_toStartOf="@+id/btn_price"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/edt_search" />
-
             <Button
                 android:id="@+id/btn_price"
                 android:layout_width="110dp"
@@ -159,6 +152,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/btn_price"
                 app:layout_constraintTop_toTopOf="@+id/btn_price" />
+
             -->
             <TextView
                 android:id="@+id/product_dic"

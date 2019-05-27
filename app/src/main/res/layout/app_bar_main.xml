@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.a121firstapp.View_buying_request_main">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/arround_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar_view_buying_request"
+            android:layout_width="match_parent"
+            android:minHeight="?attr/actionBarSize"
+            android:layout_height="?attr/actionBarSize"
+            android:background="#1F6AFF">
+
+            <TextView
+                android:id="@+id/toolbar_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textColor="@color/color_black"
+                android:text="Buying Request"
+                android:textSize="@dimen/dp_16"
+                android:textStyle="normal|bold" />
+        </android.support.v7.widget.Toolbar>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <HorizontalScrollView
+        android:id="@+id/horizontalscroolview"
+        android:layout_width="fill_parent"
+        android:layout_height="70dp"
+        android:background="#1F6AFF"
+        android:scrollbars="horizontal"
+        android:layout_below="@+id/arround_toolbar">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="51dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="9dp"
+            android:background="#1F6AFF"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnHondaList"
+                android:layout_width="90dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginRight="5dp"
+                android:text="+ Honda"
+                android:textColor="#000"
+                android:background="@color/WHITE"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/btnYamahaList"
+                android:layout_width="90dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="20dp"
+                android:text="+ Yamaha"
+                android:textColor="#000"
+                android:background="@color/WHITE"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/btnSuzukiList"
+                android:layout_width="90dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="20dp"
+                android:text="+ Suzuki"
+                android:textColor="#000"
+                android:background="@color/WHITE"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/btnPCXlist"
+                android:layout_width="90dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="20dp"
+                android:text="+ PCX"
+                android:textColor="#000"
+                android:background="@color/WHITE"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/btnFinoList"
+                android:layout_width="90dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="20dp"
+                android:text="+ Fino"
+                android:textColor="#000"
+                android:background="@color/WHITE"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/btnMSXlist"
+                android:layout_width="90dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="20dp"
+                android:text="+ MSX"
+                android:textColor="#000"
+                android:background="@color/WHITE"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/btnSmashList"
+                android:layout_width="90dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="20dp"
+                android:text="+ Smash"
+                android:textColor="#000"
+                android:background="@color/WHITE"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/btnDreamList"
+                android:layout_width="90dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="20dp"
+                android:text="+ Dream"
+                android:textColor="#000"
+                android:background="@color/WHITE"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/btnScoopyList"
+                android:layout_width="90dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="20dp"
+                android:text="+ Scoopy"
+                android:textColor="#000"
+                android:background="@color/WHITE"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/btnXRlist"
+                android:layout_width="90dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="20dp"
+                android:text="+ XR"
+                android:textColor="#000"
+                android:background="@color/WHITE"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <LinearLayout
+        android:id="@+id/layoutWindow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/horizontalscroolview"
+        android:layout_marginLeft="2dp"
+        android:orientation="horizontal"
+        android:clickable="true">
+
+        <ImageButton
+            android:id="@+id/ibtSwap"
+            android:layout_width="50dp"
+            android:layout_height="48dp"
+            android:background="@color/WHITE"
+            android:src="@drawable/ic_view_grid" />
+
+        <Button
+            android:id="@+id/btnSort"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@color/WHITE"
+            android:text="Sort"
+            android:textStyle="normal">
+        </Button>
+
+
+        <Button
+            android:id="@+id/btnFilter"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:layout_marginLeft="0dp"
+            android:background="@color/WHITE"
+            android:gravity="center"
+            android:text="Filter"
+            android:textStyle="normal"/>
+
+    </LinearLayout>
+
+    <include layout="@layout/content_main"
+        android:layout_below="@+id/layoutWindow"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <!--<android.support.design.widget.FloatingActionButton-->
+        <!--android:id="@+id/fab"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="bottom|end"-->
+        <!--android:layout_margin="@dimen/fab_margin"-->
+        <!--app:srcCompat="@android:drawable/ic_dialog_email" />-->
+
+</RelativeLayout>

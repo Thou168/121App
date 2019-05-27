@@ -56,6 +56,7 @@ public class AppNavigation {
                 fragementClass=fram_notification.class;
                 notificationType="order";
                 break;
+                /*
             case R.id.nav_report:
                 fragementClass=null;
                 Toast.makeText(context,"Report",Toast.LENGTH_SHORT).show();
@@ -64,6 +65,7 @@ public class AppNavigation {
                 fragementClass=null;
                 Toast.makeText(context,"Language",Toast.LENGTH_SHORT).show();
                 break;
+                */
             default:
                 fragementClass= fram_home.class;
         }

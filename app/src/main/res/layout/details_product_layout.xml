@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView
+        android:id="@+id/image_header"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="0dp"
+        android:background="@drawable/my_border"
+        android:scaleType="fitXY"
+        android:src="@drawable/image_honda_dream" />
+    <TextView
+        android:id="@+id/name_product"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/image_header"
+        android:layout_alignParentEnd="true"
+        android:padding="10dp"
+        android:text="Honda Dream c125"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+    <TextView
+        android:id="@+id/name_addr"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/name_product"
+        android:layout_alignParentEnd="true"
+        android:paddingLeft="10dp"
+        android:text="Phnom Penh - 1H ago" />
+    <TextView
+        android:id="@+id/name_price"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/name_addr"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="0dp"
+        android:padding="10dp"
+        android:text="$1750"
+        android:textColor="#E90B0B"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+    <TextView
+        android:id="@+id/name_view"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:layout_below="@+id/name_price"
+        android:layout_alignParentEnd="true"
+        android:background="#DADADA" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="240dp"
+        android:layout_below="@id/name_view">
+        <TextView
+            android:id="@+id/name_decsription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/my_border"
+            android:padding="10dp"
+            android:text="description"
+            android:textSize="18dp"/>
+        <RelativeLayout
+            android:id="@+id/list_detail"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_below="@+id/name_decsription">
+            <TextView
+                android:id="@+id/tax_type_title"
+                android:text="Tex Type : "
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_width="65dp"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/tax_type"
+                android:text=" Plate Number"
+                android:layout_toRightOf="@+id/tax_type_title"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/brand_title"
+                android:text="Brand : "
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_below="@+id/tax_type_title"
+                android:layout_width="65dp"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/brand"
+                android:text=" Brand"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/brand_title"
+                android:layout_below="@+id/tax_type"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/year_title"
+                android:text="Year : "
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_below="@+id/brand_title"
+                android:layout_width="65dp"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/year"
+                android:text=" 2018"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/year_title"
+                android:layout_below="@+id/brand"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/condition_title"
+                android:text="Condition: "
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_below="@+id/year_title"
+                android:layout_width="65dp"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/condition"
+                android:text=" Used"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/condition_title"
+                android:layout_below="@+id/year"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/price_title"
+                android:text="Price: "
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_below="@+id/condition_title"
+                android:layout_width="65dp"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/price"
+                android:text=" 1700$"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/price_title"
+                android:layout_below="@+id/condition"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+        <Button
+            android:id="@+id/approve_detail"
+            android:layout_width="202dp"
+            android:layout_below="@+id/list_detail"
+            android:layout_marginLeft="1dp"
+            android:text="Approve"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/reject_detail"
+            android:layout_width="202dp"
+            android:layout_below="@+id/list_detail"
+            android:text="Reject"
+            android:layout_toRightOf="@+id/approve_detail"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+</RelativeLayout>

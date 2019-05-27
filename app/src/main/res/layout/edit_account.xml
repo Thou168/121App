@@ -21,7 +21,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:text="Account Setting"
+            android:text="@string/txt_account_setting"
             android:textColor="@android:color/white"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -52,7 +52,7 @@
                     android:id="@+id/edit_fname"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
-                    android:hint="   Fist Name"
+                    android:hint="@string/hit_fistname"
                     android:inputType="text"
                     android:paddingLeft="30dp" />
             </android.support.design.widget.TextInputLayout>
@@ -76,7 +76,7 @@
                     android:id="@+id/edit_lname"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
-                    android:hint="   Last Name"
+                    android:hint="@string/hit_lastname"
                     android:inputType="text"
                     android:paddingLeft="30dp" />
             </android.support.design.widget.TextInputLayout>
@@ -100,7 +100,7 @@
                     android:id="@+id/edit_lstore"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
-                    android:hint="   Store/Company Name"
+                    android:hint="@string/hit_store"
                     android:inputType="text"
                     android:paddingLeft="30dp" />
             </android.support.design.widget.TextInputLayout>
@@ -124,7 +124,7 @@
                     android:id="@+id/edit_lb_shop"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
-                    android:hint="   About Shop/Company"
+                    android:hint="@string/hit_about_shop"
                     android:inputType="text"
                     android:paddingLeft="30dp" />
             </android.support.design.widget.TextInputLayout>
@@ -149,7 +149,7 @@
                     android:id="@+id/edit_wingnumber"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
-                    android:hint="   Wing Account/Number"
+                    android:hint="@string/hit_wingnumber"
                     android:inputType="number"
                     android:paddingLeft="30dp" />
             </android.support.design.widget.TextInputLayout>
@@ -173,7 +173,7 @@
                     android:id="@+id/edit_wingname"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
-                    android:hint="   Wing Account/Name"
+                    android:hint="@string/hit_wingaccount"
                     android:inputType="text"
                     android:paddingLeft="30dp" />
             </android.support.design.widget.TextInputLayout>
@@ -197,7 +197,7 @@
                     android:id="@+id/edit_dealer"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
-                    android:hint="   Dealer"
+                    android:hint="@string/hit_dealer"
                     android:inputType="text"
                     android:paddingLeft="30dp" />
             </android.support.design.widget.TextInputLayout>
@@ -228,12 +228,13 @@
                     android:paddingLeft="16dp"
                     android:paddingRight="16dp"
                     android:paddingTop="5dp"
+                    android:background="#00FFFFFF"
                     android:drawableTop="@drawable/icon_plus_25px" />
                 <EditText
                     android:id="@+id/edit_numone"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
-                    android:hint="   Phone Number one"
+                    android:hint="@string/hit_phone1"
                     android:inputType="number"
                     android:paddingLeft="30dp" />
             </android.support.design.widget.TextInputLayout>
@@ -260,6 +261,7 @@
                     android:id="@+id/btn_two"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
+                    android:background="#00FFFFFF"
                     android:layout_gravity="right"
                     android:layout_marginTop="-30dp"
                     android:drawableTop="@drawable/icon_plus_25px"
@@ -272,7 +274,7 @@
                     android:id="@+id/edit_numtwo"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
-                    android:hint="   Phone Number two"
+                    android:hint="@string/hit_phone2"
                     android:inputType="number"
                     android:paddingLeft="30dp" />
             </android.support.design.widget.TextInputLayout>
@@ -296,7 +298,7 @@
                     android:id="@+id/edit_three"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
-                    android:hint="   Phone Number three"
+                    android:hint="@string/hit_phone3"
                     android:inputType="number"
                     android:paddingLeft="30dp" />
             </android.support.design.widget.TextInputLayout>
@@ -321,7 +323,7 @@
                 android:layout_marginEnd="8dp"
                 android:layout_marginBottom="8dp"
                 android:background="@drawable/shap_ratangle"
-                android:text="Submit"
+                android:text="@string/hit_btnsubmit"
                 android:textAllCaps="false"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"

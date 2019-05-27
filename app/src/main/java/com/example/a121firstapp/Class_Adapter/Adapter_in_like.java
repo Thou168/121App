@@ -13,12 +13,6 @@ import com.example.a121firstapp.R;
 
 import java.util.ArrayList;
 
-/*
- * Created by Sambhaji Karad on 04-Jan-18
- * Mobile 9423476192
- * Email sambhaji2134@gmail.com/
-*/
-
 public class Adapter_in_like extends RecyclerView.Adapter<Adapter_in_like.ViewHolder> {
 
     private ArrayList<Item_in_like> mValues;
@@ -33,7 +27,7 @@ public class Adapter_in_like extends RecyclerView.Adapter<Adapter_in_like.ViewHo
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-        private TextView txtbreand,txttotal;
+        private TextView txtbreand,txttotal,txtLocation;
         private ImageView imageView;
         private Item_in_like item;
 
@@ -43,6 +37,7 @@ public class Adapter_in_like extends RecyclerView.Adapter<Adapter_in_like.ViewHo
             txtbreand = (TextView) v.findViewById(R.id.txtbrand);
             imageView = (ImageView) v.findViewById(R.id.image_view);
             txttotal = (TextView) v.findViewById(R.id.txttotal);
+            txtLocation=(TextView) v.findViewById(R.id.txtLocation);
         }
 
         public void setData(Item_in_like item) {
@@ -50,6 +45,7 @@ public class Adapter_in_like extends RecyclerView.Adapter<Adapter_in_like.ViewHo
             txtbreand.setText(item.getBrand());
             imageView.setImageResource(item.getImage_view());
             txttotal.setText(Integer.toString(item.getTotal()));
+            txtLocation.setText(item.getLocation());
             //relativeLayout.setBackgroundColor(Color.parseColor(item.color));
         }
 

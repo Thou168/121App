@@ -68,10 +68,11 @@ public class Adapter_in_order extends RecyclerView.Adapter<Adapter_in_order.View
             txtamount.setText(Double.toString(item.getAmt_request()));
         //    txtprice.setText(Double.toString(item.getPrice()));
             //relativeLayout.setBackgroundColor(Color.parseColor(item.color));
+
             btn_showdetail.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(v.getContext(),"detail  "+item.getBrand(),Toast.LENGTH_LONG).show();
+                    Toast.makeText(v.getContext(),"Detail  "+item.getBrand(),Toast.LENGTH_LONG).show();
                 }
             });
 

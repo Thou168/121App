@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar_buy"
+            android:layout_width="match_parent"
+            android:minHeight="?attr/actionBarSize"
+            android:layout_height="?attr/actionBarSize"
+            android:background="#1F6AFF">
+            <TextView
+                android:id="@+id/toolbar_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textColor="@color/WHITE"
+                android:text="BUY"
+                android:textSize="@dimen/dp_32"
+                android:textStyle="normal" />
+        </android.support.v7.widget.Toolbar>
+
+    </android.support.design.widget.AppBarLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/txt_add_vehicle"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_48"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="10dp"
+            android:backgroundTint="@android:color/white"
+            android:drawablePadding="@dimen/dp_32"
+            android:drawableStart="@drawable/ic_motorcycle_black_24dp"
+            android:drawableTint="@color/md_bottom_sheet_text_color"
+            android:gravity="start|center_vertical"
+            android:text="@string/bottom_sheet_option_Vehicle"
+            android:textColor="@color/md_bottom_sheet_text_color"
+            android:textSize="16sp"
+            android:drawableLeft="@drawable/ic_motorcycle_black_24dp" />
+        <View
+            style="@style/Divider"
+            />
+
+        <TextView
+            android:id="@+id/txt_add_electronic"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="10dp"
+            android:backgroundTint="@android:color/white"
+            android:drawablePadding="@dimen/dp_32"
+            android:drawableStart="@drawable/ic_tv_black_24dp"
+            android:drawableTint="@color/md_bottom_sheet_text_color"
+            android:gravity="start|center_vertical"
+            android:text="@string/bottom_sheet_option_Electronic"
+            android:textColor="@color/md_bottom_sheet_text_color"
+            android:textSize="16sp"
+            android:drawableLeft="@drawable/ic_tv_black_24dp" />
+        <View
+            style="@style/Divider"
+            />
+
+        <TextView
+            android:id="@+id/txt_add_phone_tablet"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="10dp"
+            android:backgroundTint="@android:color/white"
+            android:drawablePadding="@dimen/dp_32"
+            android:drawableStart="@drawable/ic_phone_android_black_24dp"
+            android:drawableTint="@color/md_bottom_sheet_text_color"
+            android:gravity="start|center_vertical"
+            android:text="@string/bottom_sheet_option_Phone_and_Tablet"
+            android:textColor="@color/md_bottom_sheet_text_color"
+            android:textSize="16sp"
+            android:drawableLeft="@drawable/ic_phone_android_black_24dp" />
+        <View
+            style="@style/Divider"
+            />
+
+        <TextView
+            android:id="@+id/txt_add_computer_accessories"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="10dp"
+            android:backgroundTint="@android:color/white"
+            android:drawablePadding="@dimen/dp_32"
+            android:drawableStart="@drawable/ic_computer_black_24dp"
+            android:drawableTint="@color/md_bottom_sheet_text_color"
+            android:gravity="start|center_vertical"
+            android:text="@string/bottom_sheet_option_Computer_and_Accessories"
+            android:textColor="@color/md_bottom_sheet_text_color"
+            android:textSize="16sp"
+            android:drawableLeft="@drawable/ic_computer_black_24dp" />
+        <View
+            style="@style/Divider"
+            />
+    </LinearLayout>
+
+</LinearLayout>

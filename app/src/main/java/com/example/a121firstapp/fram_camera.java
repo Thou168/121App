@@ -38,55 +38,41 @@ public class fram_camera extends Fragment {
     private static final int IMAGE5=5;
 
     Context context;
-
     private Uri ImageUri;
     Toolbar toolbar;
     ImageView imageView1,imageView2,imageView3,imageView4,imageView5;
-
     ImageView imgTitle,imgCategory,imgTax,imgBrand,imgYear,imgCondition,imgPrice,
             imgDescription,imgDisType,imgDisAmount,imgName,imgPhone,imgPhone2,imgPhone3,imgEmail,imgAddress;
     TextView  category,Brand,TaxType,Year,Condition,Address;
     EditText Title,Price,Description,DiscoutnType,DiscountAmount,Name,Phone,Phone2,Phone3,Email;
     ImageButton add,add2;
     Button submit;
-
-
     TextInputLayout tilPhone2,tilPhone3;
-
-
     GoogleMap map;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-
         View view = inflater.inflate(R.layout.fram_camera,container,false);
-
-// Detail
+        // Detail
         Title =     (EditText)    view.findViewById(R.id.etTitle);
         category =  (TextView) view.findViewById(R.id.etCategory);
         Brand =     (TextView)    view.findViewById(R.id.etBrand);
         TaxType =   (TextView)  view.findViewById(R.id.etTax);
         Year =      (TextView)     view.findViewById(R.id.etYear);
         Condition = (TextView)view.findViewById(R.id.etCondition);
-
         Price =       (EditText)       view.findViewById(R.id.etPrice);
         Description = (EditText) view.findViewById(R.id.etDiscription);
-
-
-
-//Discount
+        //Discount
         DiscoutnType =   (EditText)   view.findViewById(R.id.etDisType);
         DiscountAmount = (EditText) view.findViewById(R.id.etDisAmount);
-
-//Contact
+        //Contact
         Name =  (EditText)  view.findViewById(R.id.etName);
         Phone = (EditText) view.findViewById(R.id.etPhone);
         Phone2= (EditText)  view.findViewById(R.id.etPhone2);
         Phone3= (EditText)  view.findViewById(R.id.etPhone3);
         Email = (EditText) view.findViewById(R.id.etEmail);
-        //   Address = (TextView) findViewById(R.id.et);
-
-//image Detail
+        //   Address = (TextView) findViewById(R.id.et)
+        //image Detail
         imgTitle = (ImageView)    view.findViewById(R.id.imgTitle);
         imgCategory = (ImageView) view.findViewById(R.id.imgCategory);
         imgBrand = (ImageView)    view.findViewById(R.id.imgBrand);
@@ -98,35 +84,28 @@ public class fram_camera extends Fragment {
         //
         imgDisType = (ImageView)  view.findViewById(R.id.imgDiscountType);
         imgDisAmount = (ImageView)view.findViewById(R.id.imgDisAmount);
-
         // image contact
         imgName=  (ImageView)  view.findViewById(R.id.imgName);
         imgPhone= (ImageView) view.findViewById(R.id.imgPhone);
         imgPhone2=(ImageView)view.findViewById(R.id.imgPhone2);
         imgPhone3=(ImageView)view.findViewById(R.id.imgPhone3);
         imgEmail= (ImageView) view.findViewById(R.id.imgEmail);
-
         //    imgAddress = (ImageView) findViewById(R.id.imgAddress);
-
-
-//add phone
+        //add phone
         tilPhone2=(TextInputLayout)view.findViewById(R.id.tilPhone2);
         tilPhone3=(TextInputLayout)view.findViewById(R.id.tilPhone3);
         add= (ImageButton)   view.findViewById(R.id.btnAdd);
         add2=(ImageButton)  view.findViewById(R.id.btnAdd2);
-//toolbar and submit
+        //toolbar and submit
         toolbar=(Toolbar) view.findViewById(R.id.tbBack);
         submit= (Button)   view.findViewById(R.id.btnSubmit);
-// add image
+        // add image
         imageView1=(ImageView)view.findViewById(R.id.Picture1);
         imageView2=(ImageView)view.findViewById(R.id.Picture2);
         imageView3=(ImageView)view.findViewById(R.id.Picture3);
         imageView4=(ImageView)view.findViewById(R.id.Picture4);
         imageView5=(ImageView)view.findViewById(R.id.Picture5);
-
-//***Receive data from frame account ( action edit )
-
-
+        //***Receive data from frame account ( action edit )
         BackToolbar();
         TextEvent();
         DropList();
@@ -149,10 +128,9 @@ public class fram_camera extends Fragment {
     }
 
     private void BackToolbar() {
-
         toolbar.setTitle("");
         //  setSupportActionBar(toolbar);
-        toolbar.setNavigationIcon(R.drawable.icon_back_30px);
+        toolbar.setNavigationIcon(R.drawable.chevron_left_36);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -161,12 +139,9 @@ public class fram_camera extends Fragment {
                 transaction.replace(R.id.frameLayout, someFragment );
                 transaction.addToBackStack(null);
                 transaction.commit();
-
-
             }
         });
     }
-
 
     private void TextEvent(){
         // Title
@@ -191,8 +166,7 @@ public class fram_camera extends Fragment {
             }
         }); // title
 
-
-// Category
+        // Category
         category.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -214,7 +188,7 @@ public class fram_camera extends Fragment {
             }
         }); // categorylist
 
-// TaxType
+        // TaxType
         TaxType.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -236,7 +210,7 @@ public class fram_camera extends Fragment {
             }
         }); // TaxType
 
-// Brand
+        // Brand
         Brand.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {

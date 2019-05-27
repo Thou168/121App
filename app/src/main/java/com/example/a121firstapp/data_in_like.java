@@ -33,10 +33,10 @@ public class data_in_like extends Fragment implements Adapter_in_like.ItemListen
     }
     private void creatItem(){
         items = new ArrayList<>();
-        items.add( new Item_in_like(R.drawable.image_honda_click125i_19,"Click 125",1500));
-        items.add( new Item_in_like(R.drawable.image_honda_dream,"Honda dream",1900));
-        items.add( new Item_in_like(R.drawable.image_nex,"Nex 2019",1400));
-        items.add( new Item_in_like(R.drawable.image_zoomer_x_2017,"Honda Zoomer X",2100));
+        items.add( new Item_in_like(R.drawable.image_honda_click125i_19,"Click 125",1500,"Phnom Penh"));
+        items.add( new Item_in_like(R.drawable.image_honda_dream,"Honda dream",1900,"Phnom Penh"));
+        items.add( new Item_in_like(R.drawable.image_nex,"Nex 2019",1400,"Phnom Penh"));
+        items.add( new Item_in_like(R.drawable.image_zoomer_x_2017,"Honda Zoomer X",2100,"Phnom Penh"));
     }
     @Override
     public void onItemClick(Item_in_like item) {

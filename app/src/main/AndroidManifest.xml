@@ -7,9 +7,11 @@
     <uses-permission android:name="android.permission.CALL_PHONE" /> <!-- google map -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
     <permission
         android:name="com.example.permission.MAPS_RECEIVE"
         android:protectionLevel="signature" />
+
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="com.example.permission.MAPS_RECEIVE" />
 
@@ -20,33 +22,43 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.example.a121firstapp.Insertdata"></activity>
-        <activity android:name="com.example.a121firstapp.UserAccountRegisterFacebookActivity" />
-        <activity android:name="com.example.a121firstapp.UserAccountRegistrationActivity" />
-        <activity android:name="com.example.a121firstapp.create_loan_request" />
+        <activity android:name=".data_sell_computer_details"></activity>
+        <activity android:name=".Insertdata" />
+        <activity android:name=".UserAccountRegisterFacebookActivity" />
+        <activity android:name=".UserAccountRegistrationActivity" />
+        <activity android:name=".create_loan_request" />
 
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
             android:value="AIzaSyA4GHayq3AVbLLaSeipU3lC63tzDF8DWY4" />
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
 
-        <meta-data android:name="com.facebook.sdk.ApplicationId"
-            android:value="@string/facebook_app_id"/>
-
-        <activity android:name="com.facebook.FacebookActivity"
-            android:configChanges=
-                "keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+        <activity
+            android:name="com.facebook.FacebookActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
             android:label="@string/app_name" />
-
-        <activity android:name="com.example.a121firstapp.ChangeLanguageActivity" />
-        <activity android:name="com.example.a121firstapp.Edit_account" />
-        <activity android:name="com.example.a121firstapp.View_buying_request_item_detail" />
-        <activity android:name="com.example.a121firstapp.MainActivity">
+        <activity android:name=".Edit_account" />
+        <activity android:name=".fram_home_buy"/>
+        <activity android:name=".fram_home_sell" />
+        <activity android:name=".fram_home_rent"/>
+        <activity android:name=".View_buying_request_item_detail" />
+        <activity android:name=".View_buying_request_main" />
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".data_electronic_click" />
+        <activity android:name=".data_sell_vehicle" />
+        <activity android:name=".data_sell_electronic" />
+        <activity android:name=".data_sell_phone_and_tablet" />
+        <activity android:name=".data_sell_computer_and_accessories" />
+
     </application>
 
 </manifest>

@@ -11,13 +11,12 @@
         android:id="@+id/toolbar_fill_information"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:background="#3F5BEB"
+        android:background="#0BA0E4"
         >
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Fill in information"
+            android:text="@string/title_fill_information"
             android:textColor="#ffff"
             android:textSize="20dp"
             android:gravity="center"
@@ -35,13 +34,13 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:text="    DETAIL"
+                android:text="@string/txt_clr_detail"
+                android:paddingLeft="20dp"
                 android:textSize="20dp"
                 android:textStyle="bold"
                 android:gravity="center_vertical"
                 android:background="#9CE9E7E7"
                 />
-
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
@@ -57,7 +56,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:layout_marginLeft="22dp"
-                    android:hint="User name"
+                    android:hint="@string/hit_username"
 
                     />
 
@@ -80,14 +79,12 @@
                     android:layout_height="30dp"
                     android:layout_marginLeft="22dp"
                     android:layout_marginTop="-29dp"
-                    android:hint="Gender"
+                    android:hint="@string/hit_gender"
                     android:paddingLeft="5dp"
                     android:textSize="17dp"
                     android:paddingTop="7dp"
                     android:drawableRight="@drawable/arrow_down_black_24dp"
                     android:paddingRight="15dp"
-
-
                     />
 
             </android.support.design.widget.TextInputLayout>
@@ -107,9 +104,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:layout_marginLeft="22dp"
-                    android:hint="Age"
+                    android:hint="@string/hit_age"
                     android:inputType="number"
-
                     />
 
             </android.support.design.widget.TextInputLayout>
@@ -129,7 +125,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:layout_marginLeft="22dp"
-                    android:hint="Job"
+                    android:hint="@string/hit_job"
                     />
 
             </android.support.design.widget.TextInputLayout>
@@ -149,7 +145,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:layout_marginLeft="22dp"
-                    android:hint="Monthly Average income"
+                    android:hint="@string/hit_mon_income"
                     android:inputType="number"
                     />
 
@@ -171,7 +167,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:layout_marginLeft="22dp"
-                    android:hint="Monthly Average Expense"
+                    android:hint="@string/hit_mon_expense"
                     android:inputType="number"
                     />
 
@@ -192,7 +188,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:layout_marginLeft="22dp"
-                    android:hint="Phone"
+                    android:hint="@string/hit_phone"
                     android:inputType="phone"
 
                     />
@@ -215,7 +211,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="35dp"
                     android:layout_marginLeft="22dp"
-                    android:hint=" Address"
+                    android:hint="@string/hit_Address"
                     android:inputType="textPostalAddress"
                     android:background="@null"
                     />
@@ -225,8 +221,9 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:text="    LOAN INFORMATION"
+                android:text="@string/txt_clr_information"
                 android:textSize="20dp"
+                android:paddingLeft="20dp"
                 android:textStyle="bold"
                 android:gravity="center_vertical"
                 android:layout_marginTop="5dp"
@@ -248,7 +245,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:layout_marginLeft="22dp"
-                    android:hint="Loan Amount"
+                    android:hint="@string/hit_loan_amount"
                     />
 
             </android.support.design.widget.TextInputLayout>
@@ -268,7 +265,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:layout_marginLeft="22dp"
-                    android:hint="Loan Duration(month)"
+                    android:hint="@string/hit_loan_duration"
                     />
 
             </android.support.design.widget.TextInputLayout>
@@ -288,7 +285,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:layout_marginLeft="22dp"
-                    android:hint="Loan purpose"
+                    android:hint="@string/hit_purpos"
 
                     />
 
@@ -312,19 +309,17 @@
                     android:layout_width="match_parent"
                     android:layout_height="35dp"
                     android:layout_marginLeft="22dp"
-                    android:hint=" Status"
+                    android:hint="@string/hit_status"
                     android:inputType="textPostalAddress"
                     android:background="@null"
                     />
 
             </android.support.design.widget.TextInputLayout>
-
-
-
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:text="   LOAN SUPPORTING DOCUMENT"
+                android:paddingLeft="20dp"
+                android:text="@string/txt_clr_supporting"
                 android:textSize="20dp"
                 android:textStyle="bold"
                 android:layout_marginTop="5dp"
@@ -345,7 +340,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:layout_marginLeft="22dp"
-                    android:hint=" State ID"
+                    android:hint="@string/hit_state_id"
                     android:textSize="17dp"
                     android:layout_marginTop="-30dp"
                     android:drawableRight="@drawable/arrow_down_black_24dp"
@@ -370,7 +365,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:layout_marginLeft="22dp"
-                    android:hint=" Family block"
+                    android:hint="@string/hit_family_book"
                     android:textSize="17dp"
                     android:layout_marginTop="-30dp"
                     android:drawableRight="@drawable/arrow_down_black_24dp"
@@ -395,7 +390,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:layout_marginLeft="22dp"
-                    android:hint=" Staff ID / Salary sip"
+                    android:hint="@string/hit_staffid"
                     android:textSize="17dp"
                     android:layout_marginTop="-30dp"
                     android:drawableRight="@drawable/arrow_down_black_24dp"
@@ -414,40 +409,34 @@
                     android:layout_width="20dp"
                     android:layout_height="40dp"
                     android:src="@drawable/icon_circle_null_24"
-
                     />
                 <TextView
                     android:id="@+id/etHours"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:layout_marginLeft="22dp"
-                    android:hint=" Hourse plant"
+                    android:hint="@string/hit_hourse"
                     android:textSize="17dp"
                     android:layout_marginTop="-30dp"
                     android:drawableRight="@drawable/arrow_down_black_24dp"
                     android:paddingRight="15dp"
-
-
                     />
 
             </android.support.design.widget.TextInputLayout>
-
-
             <Button
                 android:id="@+id/btnsubmit"
-                android:layout_width="350dp"
-                android:layout_height="50dp"
-                android:text="Submit"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/shap_ratangle"
+                android:text="@string/hit_btnsubmit"
                 android:textSize="20dp"
                 android:textAllCaps="false"
-                android:background="#3B56EB"
                 android:layout_marginTop="50dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginBottom="20dp"
                 />
-
-
-
         </LinearLayout>
     </ScrollView>
 </LinearLayout>
