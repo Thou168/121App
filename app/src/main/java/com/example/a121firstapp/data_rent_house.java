@@ -10,40 +10,39 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.example.a121firstapp.Class_Adapter.List_Adapter_Rent_House;
-import com.example.a121firstapp.Class_Adapter.List_Adapter_Sell_Vehicle;
 
 public class data_rent_house extends AppCompatActivity {
     ListView list;
     Toolbar toolbar;
 
     String[] name = {
-            "Honda dream red",
-            "Duke C390 2019",
-            "Scoopy 2019",
-            "Hybrid 2019",
-            "Zoomer X 2019",
-            "MSX 2019",
-            "Roll Royce"
+            "Bedroom house for rent in BKK",
+            "Thai house",
+            "Villa for rent in phnom penh",
+            "Shophouse in phnom penh",
+            "Nest cambodia house",
+            "Hotel in takeo",
+            "Apartment BKK"
     } ;
 
     String[] price = {
             "$ 2000",
             "$ 5000",
             "$ 2300",
-            "$ 12000",
+            "$ 6000",
             "$ 2200",
             "$ 2350",
-            "$ 1000000"
+            "$ 5000"
     } ;
 
     Integer[] imageId = {
-            R.drawable.dream_red,
-            R.drawable.duke_c390_2019,
-            R.drawable.scopy_2019,
-            R.drawable.image_hybrid_2017,
-            R.drawable.zoomer_x,
-            R.drawable.msx_2019,
-            R.drawable.roll_royce_2019
+            R.drawable.bedroom_house_for_rent_in_bangkok,
+            R.drawable.thai_house_style,
+            R.drawable.villa_for_rent_in_phnom_penh,
+            R.drawable.shophouse_in_phnom_penh,
+            R.drawable.nest_cambodia_house,
+            R.drawable.hotel_in_takeo,
+            R.drawable.apartment_bkk
 
     };
 
@@ -78,7 +77,7 @@ public class data_rent_house extends AppCompatActivity {
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(v.getContext(), "Sell", Toast.LENGTH_SHORT).show();
+                Toast.makeText(v.getContext(), "Rent", Toast.LENGTH_SHORT).show();
                 finish();
             }
         });

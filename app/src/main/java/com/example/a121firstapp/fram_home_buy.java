@@ -27,7 +27,7 @@ public class fram_home_buy extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Toast.makeText(v.getContext(),"Vehicle",Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(v.getContext(),data_sell_vehicle.class);
+                Intent intent = new Intent(v.getContext(),data_buy_vehicle.class);
                 startActivity(intent);
             }
         });
@@ -37,7 +37,7 @@ public class fram_home_buy extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Toast.makeText(v.getContext(),"Electronic",Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(v.getContext(),data_sell_electronic.class);
+                Intent intent = new Intent(v.getContext(),data_buy_electronic.class);
                 startActivity(intent);
             }
         });
@@ -47,7 +47,7 @@ public class fram_home_buy extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Toast.makeText(v.getContext(),"Phone & Tablet",Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(v.getContext(),data_sell_phone_and_tablet.class);
+                Intent intent = new Intent(v.getContext(),data_buy_phone_and_tablet.class);
                 startActivity(intent);
             }
         });
@@ -57,7 +57,7 @@ public class fram_home_buy extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Toast.makeText(v.getContext(),"Computer & Accessories",Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(v.getContext(),data_sell_computer_and_accessories.class);
+                Intent intent = new Intent(v.getContext(),data_buy_computer_and_accessories.class);
                 startActivity(intent);
             }
         });

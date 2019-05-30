@@ -21,9 +21,12 @@
     <string name="title_buy">BUY</string>
     <string name="title_rent">RENT</string>
     <string name="txt_search">Search</string>
+    <string name="action_search">Search</string>
+    <string name="search_hint">Search for Products, Brands and More</string>
     <string name="txt_dic">Product Discount</string>
+    <string name="title_activity_main2">MaterialSearchBar C.S.A</string>
     <string name="txt_new">New Post</string>
-//Button
+    //Button
 
     <string name="btn_call">Call</string>
     <string name="btn_chat">Chat</string>
@@ -101,7 +104,7 @@
     <string name="btn_login">Login</string>
     <string name="btn_register">Register</string>
     <string name="connect_facebook">Quick Connect with Facebook</string>
-//create_loan_request
+    //create_loan_request
     <string name="title_fill_information">Fill in information</string>
     <string name="txt_clr_detail">DETAIL</string>
     <string name="hit_username">User Name</string>
@@ -127,6 +130,7 @@
     <string name="br_suzuki">Suzuki</string>
     <string name="br_yamaha">Yamaha</string>
     <string name="br_kawasaki">Kavasaki</string>
+
 
     <string-array name="sp_brand">
         <item>Brand</item>

@@ -3,7 +3,10 @@ package com.example.a121firstapp.Class_Adapter;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.content.Intent;
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,6 +18,7 @@ import android.widget.Toast;
 
 import com.example.a121firstapp.Class_item.Item_in_pending;
 import com.example.a121firstapp.R;
+import com.example.a121firstapp.fram_camera;
 
 import java.util.ArrayList;
 
@@ -22,7 +26,7 @@ import java.util.ArrayList;
  * Created by Sambhaji Karad on 04-Jan-18
  * Mobile 9423476192
  * Email sambhaji2134@gmail.com/
-*/
+ */
 
 public class Adapter_in_pending extends RecyclerView.Adapter<Adapter_in_pending.ViewHolder> {
 
@@ -41,19 +45,18 @@ public class Adapter_in_pending extends RecyclerView.Adapter<Adapter_in_pending.
         private TextView txtbreand,txtposton,txtrenew,txtprice;
         private ImageView imageView;
         private Item_in_pending item;
-        private Button delete,edit,share;
+        private Button delete,edit;
 
         public ViewHolder(View v) {
             super(v);
             v.setOnClickListener(this);
-            txtbreand = (TextView) v.findViewById(R.id.txtbreand);
+            txtbreand = (TextView) v.findViewById(R.id.txtbrand);
             txtprice = (TextView) v.findViewById(R.id.txtprice);
             imageView = (ImageView) v.findViewById(R.id.image_view);
             txtrenew = (TextView) v.findViewById(R.id.txtrenew);
             txtposton = (TextView) v.findViewById(R.id.txtposton);
             delete = (Button)v.findViewById(R.id.btn_delete);
             edit = (Button)v.findViewById(R.id.btn_edit);
-            share = (Button)v.findViewById(R.id.btn_share);
         }
 
         public void setData(final Item_in_pending item) {
@@ -65,6 +68,21 @@ public class Adapter_in_pending extends RecyclerView.Adapter<Adapter_in_pending.
             imageView.setImageResource(item.getImage_view());
             //relativeLayout.setBackgroundColor(Color.parseColor(item.color));
 
+            edit.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(v.getContext(), "edit", Toast.LENGTH_SHORT).show();
+                    Fragment fragment = new fram_camera();
+                    FragmentTransaction transaction = ((AppCompatActivity)mContext).getSupportFragmentManager().beginTransaction();
+                    Bundle bundle = new Bundle();
+                    bundle.putString("brand",item.getBrand());
+                    bundle.putDouble("price",item.getPrice());
+                    fragment.setArguments(bundle);
+                    transaction.replace(R.id.frameLayout,fragment);
+                    transaction.addToBackStack(null);
+                    transaction.commit();
+                }
+            });
             delete.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -77,9 +95,6 @@ public class Adapter_in_pending extends RecyclerView.Adapter<Adapter_in_pending.
                                     mValues.remove(item);
                                     notifyItemRemoved(which);
                                     notifyItemRangeChanged(which,mValues.size());
-//                                    mValues.remove(item);
-//                                    notifyItemRemoved(which);
-//                                    notifyItemRangeChanged(which,mValues.size());
                                     break;
 
                                 case DialogInterface.BUTTON_NEGATIVE:
@@ -92,24 +107,6 @@ public class Adapter_in_pending extends RecyclerView.Adapter<Adapter_in_pending.
                     AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
                     builder.setMessage("Are you sure to delete this item?").setPositiveButton("Yes", dialogClickListener)
                             .setNegativeButton("No", dialogClickListener).show();
-                }
-            });
-
-            edit.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Toast.makeText(v.getContext(),"Edit",Toast.LENGTH_SHORT).show();
-                }
-            });
-
-            share.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent intent = new Intent(Intent.ACTION_SEND);
-                    intent.setType("text/plain");
-                    String ShareSubject = ("Your Subject here");
-                    intent.putExtra(Intent.EXTRA_SUBJECT,ShareSubject);
-                    v.getContext().startActivity(Intent.createChooser(intent,"Share"));
                 }
             });
         }
@@ -131,7 +128,6 @@ public class Adapter_in_pending extends RecyclerView.Adapter<Adapter_in_pending.
     @Override
     public void onBindViewHolder(ViewHolder viewHolder, int position) {
         viewHolder.setData(mValues.get(position));
-
     }
 
     @Override

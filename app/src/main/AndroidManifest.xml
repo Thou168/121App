@@ -22,7 +22,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".data_sell_computer_details"></activity>
+        <activity android:name=".Detail_item_home"></activity>
+        <activity android:name=".data_sell_computer_details" />
         <activity android:name=".Insertdata" />
         <activity android:name=".UserAccountRegisterFacebookActivity" />
         <activity android:name=".UserAccountRegistrationActivity" />
@@ -40,9 +41,10 @@
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
             android:label="@string/app_name" />
         <activity android:name=".Edit_account" />
-        <activity android:name=".fram_home_buy"/>
+        <activity android:name=".fram_home_buy" />
         <activity android:name=".fram_home_sell" />
-        <activity android:name=".fram_home_rent"/>
+        <activity android:name=".fram_home_rent" />
+        <activity android:name=".SearchResultActivity"/>
         <activity android:name=".View_buying_request_item_detail" />
         <activity android:name=".View_buying_request_main" />
         <activity android:name=".MainActivity">
@@ -54,11 +56,21 @@
         </activity>
 
         <activity android:name=".data_electronic_click" />
+
+        <activity android:name=".data_buy_vehicle" />
+        <activity android:name=".data_buy_electronic" />
+        <activity android:name=".data_buy_phone_and_tablet" />
+        <activity android:name=".data_buy_computer_and_accessories" />
+
         <activity android:name=".data_sell_vehicle" />
         <activity android:name=".data_sell_electronic" />
         <activity android:name=".data_sell_phone_and_tablet" />
         <activity android:name=".data_sell_computer_and_accessories" />
-
+        
+        <activity android:name=".data_rent_house" />
+        <activity android:name=".data_rent_electronic" />
+        <activity android:name=".data_rent_phone_and_tablet" />
+        <activity android:name=".data_rent_computer_and_accessories" />
     </application>
 
 </manifest>

@@ -95,43 +95,43 @@ public class View_buying_request_main extends AppCompatActivity {
             }
         });
 
-        Button btnHonda = (Button)findViewById(R.id.btnHondaList);
-        btnHonda.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(View_buying_request_main.this,"Honda Lists", Toast.LENGTH_SHORT).show();
-            }
-        });
+//        Button btnHonda = (Button) findViewById(R.id.btnHondaList);
+//        btnHonda.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Toast.makeText(View_buying_request_main.this, "Honda Lists", Toast.LENGTH_SHORT).show();
+//            }
+//        });
+//
+//        Button btnYamaha = (Button) findViewById(R.id.btnYamahaList);
+//        btnYamaha.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Toast.makeText(View_buying_request_main.this, "Yamaha Lists", Toast.LENGTH_SHORT).show();
+//            }
+//        });
+//
+//        Button btnSuzuki = (Button) findViewById(R.id.btnSuzukiList);
+//        btnSuzuki.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Toast.makeText(View_buying_request_main.this, "Suzuki Lists", Toast.LENGTH_SHORT).show();
+//            }
+//        });
 
-        Button btnYamaha = (Button)findViewById(R.id.btnYamahaList);
-        btnYamaha.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(View_buying_request_main.this,"Yamaha Lists", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        Button btnSuzuki = (Button)findViewById(R.id.btnSuzukiList);
-        btnSuzuki.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(View_buying_request_main.this,"Suzuki Lists", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        button1 = (Button)findViewById(R.id.btnSort);
-        button2 = (Button)findViewById(R.id.btnFilter);
+        button1 = (Button) findViewById(R.id.btnSort);
+        button2 = (Button) findViewById(R.id.btnFilter);
 
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                PopupMenu popupMenu1 = new PopupMenu(View_buying_request_main.this,button1);
+                PopupMenu popupMenu1 = new PopupMenu(View_buying_request_main.this, button1);
                 popupMenu1.getMenuInflater().inflate(R.menu.popup_sort, popupMenu1.getMenu());
 
                 popupMenu1.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
                     @Override
                     public boolean onMenuItemClick(MenuItem item1) {
-                        Toast.makeText(View_buying_request_main.this,"" + item1.getTitle(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(View_buying_request_main.this, "" + item1.getTitle(), Toast.LENGTH_SHORT).show();
                         return true;
                     }
                 });
@@ -142,13 +142,13 @@ public class View_buying_request_main extends AppCompatActivity {
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                PopupMenu popupMenu2 = new PopupMenu(View_buying_request_main.this,button2);
+                PopupMenu popupMenu2 = new PopupMenu(View_buying_request_main.this, button2);
                 popupMenu2.getMenuInflater().inflate(R.menu.popup_filter, popupMenu2.getMenu());
 
                 popupMenu2.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
                     @Override
                     public boolean onMenuItemClick(MenuItem item2) {
-                        Toast.makeText(View_buying_request_main.this,"" + item2.getTitle(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(View_buying_request_main.this, "" + item2.getTitle(), Toast.LENGTH_SHORT).show();
                         return true;
                     }
                 });
@@ -187,8 +187,18 @@ public class View_buying_request_main extends AppCompatActivity {
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
-                Article article = (Article)lv.getItemAtPosition(position);
-                Toast.makeText(View_buying_request_main.this,"" + ""+article.getName(), Toast.LENGTH_SHORT).show();
+                Article article = (Article) lv.getItemAtPosition(position);
+                Toast.makeText(View_buying_request_main.this, "" + "" + article.getName(), Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
+        final GridView gv = (GridView) findViewById(R.id.mygridview);
+        gv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+                Article article = (Article) gv.getItemAtPosition(position);
+                Toast.makeText(View_buying_request_main.this, "" + "" + article.getName(), Toast.LENGTH_SHORT).show();
             }
         });
 

@@ -33,6 +33,8 @@ dependencies {
     implementation 'com.android.support:support-v4:28.0.0'
     implementation 'com.squareup.picasso:picasso:2.3.2'
     implementation 'com.nineoldandroids:library:2.4.0'
+
+    implementation 'com.miguelcatalan:materialsearchview:1.4.0'
     implementation 'com.daimajia.slider:library:1.1.5@aar'
     //gridview
     implementation "com.android.support:gridlayout-v7:28.0.+"
@@ -47,7 +49,16 @@ dependencies {
     implementation 'com.nineoldandroids:library:2.4.0'
     implementation 'com.squareup.picasso:picasso:2.3.2'
 
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+    implementation 'com.miguelcatalan:materialsearchview:1.4.0'
+    //dexter permissions
+    implementation "com.karumi:dexter:5.0.0"
+    //Butterknife
+    implementation 'com.jakewharton:butterknife:8.8.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+    // circular imageview
+    implementation 'com.mikhaellopez:circularimageview:3.2.0'
+
+    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     implementation 'com.facebook.android:facebook-login:5.0.0'
@@ -59,5 +70,7 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+
 }
 apply plugin: 'com.google.gms.google-services'

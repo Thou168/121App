@@ -38,6 +38,8 @@ public class fram_home_rent extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Toast.makeText(v.getContext(),"Electronic",Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(v.getContext(),data_rent_electronic.class);
+                startActivity(intent);
             }
         });
 
@@ -46,6 +48,8 @@ public class fram_home_rent extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Toast.makeText(v.getContext(),"Phone & Tablet",Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(v.getContext(),data_rent_phone_and_tablet.class);
+                startActivity(intent);
             }
         });
 
@@ -54,6 +58,8 @@ public class fram_home_rent extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Toast.makeText(v.getContext(),"Computer & Accessories",Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(v.getContext(),data_rent_computer_and_accessories.class);
+                startActivity(intent);
             }
         });
 

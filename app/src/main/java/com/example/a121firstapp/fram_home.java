@@ -19,12 +19,14 @@ import android.support.v7.widget.Toolbar;
 import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
+import android.view.SearchEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.SearchView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -61,7 +63,6 @@ public class fram_home extends Fragment implements NavigationView.OnNavigationIt
     private ArrayList<Item_horizotal> items;
     private ArrayList<Item_vertical> item;
     private LinearLayout mLinearLayout;
-    EditText edtsearch;
     Button btn_breand,btn_price,btn_loca,btn_insert,btn_language;
     RecyclerView recy_vertical;
 
@@ -142,8 +143,15 @@ public class fram_home extends Fragment implements NavigationView.OnNavigationIt
             }
         });
         */
-        edtsearch = (EditText) view.findViewById(R.id.edt_search);
-        edtsearch.setSelected(false);
+        TextView edtsearch = (TextView) view.findViewById(R.id.edt_search);
+        //edtsearch.setSelected(false);
+        edtsearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(),View_buying_request_main.class);
+                startActivity(intent);
+            }
+        });
 
         drawer = (DrawerLayout) view.findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(getActivity(), drawer, toolbar,
@@ -237,6 +245,16 @@ public class fram_home extends Fragment implements NavigationView.OnNavigationIt
         items.add( new Item_horizotal(R.drawable.image_nex,"Nex 2019",1800,1000));
         items.add( new Item_horizotal(R.drawable.image_hybrid_2017,"Honda Hybrid 2017",35000,3000));
     }
+
+//    @Override
+//    public boolean onOptionsItemSelected(MenuItem item) {
+//        int id = item.getItemId();
+//        if (id == R.id.edt_search) {
+//            startActivity(new Intent(getContext(), SearchResultActivity.class));
+//            return true;
+//        }
+//        return super.onOptionsItemSelected(item);
+//    }
 
     Fragment fragment;
     @Override

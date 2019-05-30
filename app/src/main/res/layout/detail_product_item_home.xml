@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout
+        android:id="@+id/relativelayout"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:orientation="vertical">
+        <android.support.design.widget.TabLayout
+            android:id="@+id/indicator"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            app:tabBackground="@drawable/tab_selector"
+            app:tabGravity="center"
+            app:tabIndicatorHeight="0dp"/>
+    </RelativeLayout>
+    <TextView
+        android:id="@+id/name_product"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/relativelayout"
+        android:layout_alignParentEnd="true"
+        android:padding="8dp"
+        android:text="Honda Dream c125"
+        android:textSize="14sp" />
+    <TextView
+        android:id="@+id/name_addr"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/name_product"
+        android:layout_alignParentEnd="true"
+        android:paddingLeft="8dp"
+        android:textSize="8sp"
+        android:text="Phnom Penh - 1H ago" />
+    <TextView
+        android:id="@+id/name_price"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/name_addr"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="0dp"
+        android:padding="10dp"
+        android:text="$1750"
+        android:textColor="#E90B0B"
+        android:textSize="16dp"
+        android:textStyle="bold" />
+    <TextView
+        android:id="@+id/name_view"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:layout_below="@+id/name_price"
+        android:layout_alignParentEnd="true"
+        android:background="#DADADA" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/name_view">
+        <TextView
+            android:id="@+id/name_decsription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/my_border"
+            android:padding="8dp"
+            android:text="Description"
+            android:textStyle="bold"
+            android:textSize="12sp" />
+        <RelativeLayout
+            android:id="@+id/detail_description"
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            android:layout_below="@+id/name_decsription">
+            <TextView
+                android:id="@+id/txt_tax"
+                android:layout_width="70dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="5dp"
+                android:text="Tax Type: "
+                android:layout_height="20dp" />
+            <TextView
+                android:id="@+id/txt_tax_1"
+                android:layout_width="100dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@+id/txt_tax"/>
+            <TextView
+                android:id="@+id/txt_brand"
+                android:layout_width="70dp"
+                android:layout_marginTop="5dp"
+                android:layout_below="@+id/txt_tax"
+                android:layout_marginLeft="5dp"
+                android:text="Brand: "
+                android:layout_height="20dp" />
+            <TextView
+                android:id="@+id/txt_brand_1"
+                android:layout_width="100dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_below="@+id/txt_tax_1"
+                android:layout_toRightOf="@+id/txt_brand"/>
+            <TextView
+                android:id="@+id/txt_year"
+                android:layout_width="70dp"
+                android:layout_marginTop="5dp"
+                android:layout_below="@+id/txt_brand"
+                android:layout_marginLeft="5dp"
+                android:text="Year: "
+                android:layout_height="20dp" />
+            <TextView
+                android:id="@+id/txt_year_1"
+                android:layout_width="100dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_below="@+id/txt_brand_1"
+                android:layout_toRightOf="@+id/txt_year"/>
+            <TextView
+                android:id="@+id/txt_condition"
+                android:layout_width="70dp"
+                android:layout_marginTop="5dp"
+                android:layout_below="@+id/txt_year"
+                android:layout_marginLeft="5dp"
+                android:text="Condition: "
+                android:layout_height="20dp" />
+            <TextView
+                android:id="@+id/txt_condition_1"
+                android:layout_width="100dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_below="@+id/txt_year_1"
+                android:layout_toRightOf="@+id/txt_condition"/>
+            <TextView
+                android:id="@+id/txt_price"
+                android:layout_width="70dp"
+                android:layout_marginTop="5dp"
+                android:layout_below="@+id/txt_condition"
+                android:layout_marginLeft="5dp"
+                android:text="Price: "
+                android:layout_height="20dp" />
+            <TextView
+                android:id="@+id/txt_price_1"
+                android:layout_width="100dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_below="@+id/txt_condition_1"
+                android:layout_toRightOf="@+id/txt_price"/>
+        </RelativeLayout>
+        <TextView
+            android:id="@+id/txt_view"
+            android:layout_width="70dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_height="wrap_content"
+            android:text="View:"
+            android:layout_below="@+id/detail_description"/>
+        <TextView
+            android:id="@+id/txt_view_1"
+            android:layout_width="100dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/detail_description"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@+id/txt_view"/>
+    </RelativeLayout>
+</RelativeLayout>

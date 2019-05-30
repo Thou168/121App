@@ -38,7 +38,6 @@ import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import static java.security.AccessController.getContext;
 
 public class View_buying_request_item_detail extends AppCompatActivity {
 

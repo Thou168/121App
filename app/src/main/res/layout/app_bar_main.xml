@@ -24,166 +24,165 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:textColor="@color/color_black"
-                android:text="Buying Request"
                 android:textSize="@dimen/dp_16"
                 android:textStyle="normal|bold" />
         </android.support.v7.widget.Toolbar>
 
     </android.support.design.widget.AppBarLayout>
 
-    <HorizontalScrollView
-        android:id="@+id/horizontalscroolview"
-        android:layout_width="fill_parent"
-        android:layout_height="70dp"
-        android:background="#1F6AFF"
-        android:scrollbars="horizontal"
-        android:layout_below="@+id/arround_toolbar">
+    <!--<HorizontalScrollView-->
+        <!--android:id="@+id/horizontalscroolview"-->
+        <!--android:layout_width="fill_parent"-->
+        <!--android:layout_height="70dp"-->
+        <!--android:background="#1F6AFF"-->
+        <!--android:scrollbars="horizontal"-->
+        <!--android:layout_below="@+id/arround_toolbar">-->
 
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="51dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="9dp"
-            android:background="#1F6AFF"
-            android:gravity="center"
-            android:orientation="horizontal">
+        <!--<LinearLayout-->
+            <!--android:layout_width="fill_parent"-->
+            <!--android:layout_height="51dp"-->
+            <!--android:layout_marginLeft="5dp"-->
+            <!--android:layout_marginTop="9dp"-->
+            <!--android:background="#1F6AFF"-->
+            <!--android:gravity="center"-->
+            <!--android:orientation="horizontal">-->
 
-            <Button
-                android:id="@+id/btnHondaList"
-                android:layout_width="90dp"
-                android:layout_height="50dp"
-                android:layout_gravity="center"
-                android:layout_marginRight="5dp"
-                android:text="+ Honda"
-                android:textColor="#000"
-                android:background="@color/WHITE"
-                android:textSize="12sp" />
+            <!--<Button-->
+                <!--android:id="@+id/btnHondaList"-->
+                <!--android:layout_width="90dp"-->
+                <!--android:layout_height="50dp"-->
+                <!--android:layout_gravity="center"-->
+                <!--android:layout_marginRight="5dp"-->
+                <!--android:text="+ Honda"-->
+                <!--android:textColor="#000"-->
+                <!--android:background="@color/WHITE"-->
+                <!--android:textSize="12sp" />-->
 
-            <Button
-                android:id="@+id/btnYamahaList"
-                android:layout_width="90dp"
-                android:layout_height="50dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginBottom="20dp"
-                android:text="+ Yamaha"
-                android:textColor="#000"
-                android:background="@color/WHITE"
-                android:textSize="12sp" />
+            <!--<Button-->
+                <!--android:id="@+id/btnYamahaList"-->
+                <!--android:layout_width="90dp"-->
+                <!--android:layout_height="50dp"-->
+                <!--android:layout_gravity="center"-->
+                <!--android:layout_marginTop="20dp"-->
+                <!--android:layout_marginRight="5dp"-->
+                <!--android:layout_marginBottom="20dp"-->
+                <!--android:text="+ Yamaha"-->
+                <!--android:textColor="#000"-->
+                <!--android:background="@color/WHITE"-->
+                <!--android:textSize="12sp" />-->
 
-            <Button
-                android:id="@+id/btnSuzukiList"
-                android:layout_width="90dp"
-                android:layout_height="50dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginBottom="20dp"
-                android:text="+ Suzuki"
-                android:textColor="#000"
-                android:background="@color/WHITE"
-                android:textSize="12sp" />
+            <!--<Button-->
+                <!--android:id="@+id/btnSuzukiList"-->
+                <!--android:layout_width="90dp"-->
+                <!--android:layout_height="50dp"-->
+                <!--android:layout_gravity="center"-->
+                <!--android:layout_marginTop="20dp"-->
+                <!--android:layout_marginRight="5dp"-->
+                <!--android:layout_marginBottom="20dp"-->
+                <!--android:text="+ Suzuki"-->
+                <!--android:textColor="#000"-->
+                <!--android:background="@color/WHITE"-->
+                <!--android:textSize="12sp" />-->
 
-            <Button
-                android:id="@+id/btnPCXlist"
-                android:layout_width="90dp"
-                android:layout_height="50dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginBottom="20dp"
-                android:text="+ PCX"
-                android:textColor="#000"
-                android:background="@color/WHITE"
-                android:textSize="12sp" />
+            <!--<Button-->
+                <!--android:id="@+id/btnPCXlist"-->
+                <!--android:layout_width="90dp"-->
+                <!--android:layout_height="50dp"-->
+                <!--android:layout_gravity="center"-->
+                <!--android:layout_marginTop="20dp"-->
+                <!--android:layout_marginRight="5dp"-->
+                <!--android:layout_marginBottom="20dp"-->
+                <!--android:text="+ PCX"-->
+                <!--android:textColor="#000"-->
+                <!--android:background="@color/WHITE"-->
+                <!--android:textSize="12sp" />-->
 
-            <Button
-                android:id="@+id/btnFinoList"
-                android:layout_width="90dp"
-                android:layout_height="50dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginBottom="20dp"
-                android:text="+ Fino"
-                android:textColor="#000"
-                android:background="@color/WHITE"
-                android:textSize="12sp" />
+            <!--<Button-->
+                <!--android:id="@+id/btnFinoList"-->
+                <!--android:layout_width="90dp"-->
+                <!--android:layout_height="50dp"-->
+                <!--android:layout_gravity="center"-->
+                <!--android:layout_marginTop="20dp"-->
+                <!--android:layout_marginRight="5dp"-->
+                <!--android:layout_marginBottom="20dp"-->
+                <!--android:text="+ Fino"-->
+                <!--android:textColor="#000"-->
+                <!--android:background="@color/WHITE"-->
+                <!--android:textSize="12sp" />-->
 
-            <Button
-                android:id="@+id/btnMSXlist"
-                android:layout_width="90dp"
-                android:layout_height="50dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginBottom="20dp"
-                android:text="+ MSX"
-                android:textColor="#000"
-                android:background="@color/WHITE"
-                android:textSize="12sp" />
+            <!--<Button-->
+                <!--android:id="@+id/btnMSXlist"-->
+                <!--android:layout_width="90dp"-->
+                <!--android:layout_height="50dp"-->
+                <!--android:layout_gravity="center"-->
+                <!--android:layout_marginTop="20dp"-->
+                <!--android:layout_marginRight="5dp"-->
+                <!--android:layout_marginBottom="20dp"-->
+                <!--android:text="+ MSX"-->
+                <!--android:textColor="#000"-->
+                <!--android:background="@color/WHITE"-->
+                <!--android:textSize="12sp" />-->
 
-            <Button
-                android:id="@+id/btnSmashList"
-                android:layout_width="90dp"
-                android:layout_height="50dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginBottom="20dp"
-                android:text="+ Smash"
-                android:textColor="#000"
-                android:background="@color/WHITE"
-                android:textSize="12sp" />
+            <!--<Button-->
+                <!--android:id="@+id/btnSmashList"-->
+                <!--android:layout_width="90dp"-->
+                <!--android:layout_height="50dp"-->
+                <!--android:layout_gravity="center"-->
+                <!--android:layout_marginTop="20dp"-->
+                <!--android:layout_marginRight="5dp"-->
+                <!--android:layout_marginBottom="20dp"-->
+                <!--android:text="+ Smash"-->
+                <!--android:textColor="#000"-->
+                <!--android:background="@color/WHITE"-->
+                <!--android:textSize="12sp" />-->
 
-            <Button
-                android:id="@+id/btnDreamList"
-                android:layout_width="90dp"
-                android:layout_height="50dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginBottom="20dp"
-                android:text="+ Dream"
-                android:textColor="#000"
-                android:background="@color/WHITE"
-                android:textSize="12sp" />
+            <!--<Button-->
+                <!--android:id="@+id/btnDreamList"-->
+                <!--android:layout_width="90dp"-->
+                <!--android:layout_height="50dp"-->
+                <!--android:layout_gravity="center"-->
+                <!--android:layout_marginTop="20dp"-->
+                <!--android:layout_marginRight="5dp"-->
+                <!--android:layout_marginBottom="20dp"-->
+                <!--android:text="+ Dream"-->
+                <!--android:textColor="#000"-->
+                <!--android:background="@color/WHITE"-->
+                <!--android:textSize="12sp" />-->
 
-            <Button
-                android:id="@+id/btnScoopyList"
-                android:layout_width="90dp"
-                android:layout_height="50dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginBottom="20dp"
-                android:text="+ Scoopy"
-                android:textColor="#000"
-                android:background="@color/WHITE"
-                android:textSize="12sp" />
+            <!--<Button-->
+                <!--android:id="@+id/btnScoopyList"-->
+                <!--android:layout_width="90dp"-->
+                <!--android:layout_height="50dp"-->
+                <!--android:layout_gravity="center"-->
+                <!--android:layout_marginTop="20dp"-->
+                <!--android:layout_marginRight="5dp"-->
+                <!--android:layout_marginBottom="20dp"-->
+                <!--android:text="+ Scoopy"-->
+                <!--android:textColor="#000"-->
+                <!--android:background="@color/WHITE"-->
+                <!--android:textSize="12sp" />-->
 
-            <Button
-                android:id="@+id/btnXRlist"
-                android:layout_width="90dp"
-                android:layout_height="50dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginBottom="20dp"
-                android:text="+ XR"
-                android:textColor="#000"
-                android:background="@color/WHITE"
-                android:textSize="12sp" />
+            <!--<Button-->
+                <!--android:id="@+id/btnXRlist"-->
+                <!--android:layout_width="90dp"-->
+                <!--android:layout_height="50dp"-->
+                <!--android:layout_gravity="center"-->
+                <!--android:layout_marginTop="20dp"-->
+                <!--android:layout_marginRight="5dp"-->
+                <!--android:layout_marginBottom="20dp"-->
+                <!--android:text="+ XR"-->
+                <!--android:textColor="#000"-->
+                <!--android:background="@color/WHITE"-->
+                <!--android:textSize="12sp" />-->
 
-        </LinearLayout>
-    </HorizontalScrollView>
+        <!--</LinearLayout>-->
+    <!--</HorizontalScrollView>-->
 
     <LinearLayout
         android:id="@+id/layoutWindow"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/horizontalscroolview"
+        android:layout_below="@+id/arround_toolbar"
         android:layout_marginLeft="2dp"
         android:orientation="horizontal"
         android:clickable="true">
