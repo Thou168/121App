@@ -1,6 +1,8 @@
 package com.example.a121firstapp.Class_item;
 
-public class Item_horizotal {
+import java.io.Serializable;
+
+public class Item_horizotal implements Serializable {
     private int image_view;
     private String brand;
     private double price;

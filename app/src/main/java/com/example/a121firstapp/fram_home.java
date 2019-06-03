@@ -1,5 +1,6 @@
 package com.example.a121firstapp;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.Resources;
@@ -40,6 +41,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
@@ -56,7 +59,7 @@ public class fram_home extends Fragment implements NavigationView.OnNavigationIt
     Locale myLocale;
     String currentLanguage = "en", currentLang;
     int khmer,english=R.drawable.flag_english;
-    TextView tvbuy,tvsell,tvrent,tvdic,tvnew;
+    TextView tvbuy,tvsell,tvrent,tvdic,tvnew,tvmore;
     Toolbar toolbar;
     DrawerLayout drawer;
     Spinner sp_breand,sp_price,sp_loca;
@@ -153,6 +156,7 @@ public class fram_home extends Fragment implements NavigationView.OnNavigationIt
             }
         });
 
+
         drawer = (DrawerLayout) view.findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(getActivity(), drawer, toolbar,
                 R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -184,6 +188,16 @@ public class fram_home extends Fragment implements NavigationView.OnNavigationIt
         */
 //Horizontal
         ItemHorizontal();
+        view.findViewById(R.id.tv_more).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(),Show_more_data.class);
+                intent.putExtra("items",items);
+                startActivity(intent);
+                //  ((Activity) getContext()).overridePendingTransition(R.anim.slide_in_right,R.anim.slide_in_right);
+
+            }
+        });
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
         Horizontal adapter = new Horizontal(getContext(),items);
         RecyclerView recy_horizontal = (RecyclerView) view.findViewById(R.id.recy_horizontal);
@@ -223,7 +237,6 @@ public class fram_home extends Fragment implements NavigationView.OnNavigationIt
 
         return view;
     }
-
 
     private void ItemVertical(){
         item = new ArrayList<>();
@@ -272,10 +285,13 @@ public class fram_home extends Fragment implements NavigationView.OnNavigationIt
 //                transaction.replace(R.id.frameLayout, someFragment );
 //                transaction.addToBackStack(null);
 //                transaction.commit();
+                Intent yourpost = new Intent(getContext(),See_your_post.class);
+                startActivity(yourpost);
 
                 return true;
             case R.id.nav_your_like:
-                Toast.makeText(getContext(),"Your Like",Toast.LENGTH_SHORT).show();
+                Intent yourlike = new Intent(getContext(),See_your_like.class);
+                startActivity(yourlike);
                 return true;
             case R.id.nav_loan:
                 Toast.makeText(getContext(),"Your Loan",Toast.LENGTH_SHORT).show();

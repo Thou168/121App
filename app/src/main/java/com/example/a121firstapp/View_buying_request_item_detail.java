@@ -38,13 +38,16 @@ import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 
 public class View_buying_request_item_detail extends AppCompatActivity {
 
     String[] kh_title,detail;
-    TextView breand,price;
+    TextView breand,prices,price;
     Button btn_call,btn_chat,btn_order,btn_loan, phone1,phone2,cancel;
     BottomSheetDialog bottomSheetDialog;
+    CircleImageView circleImageView;
     private static final int REQUEST_CALL = 1;
 
     List<Integer> image;
@@ -54,7 +57,7 @@ public class View_buying_request_item_detail extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.view_buying_request_item_detail);
+        setContentView(R.layout.view_buying_request_item_detail1);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_detail);
         toolbar.setTitle("");
@@ -66,6 +69,16 @@ public class View_buying_request_item_detail extends AppCompatActivity {
                 finish();
             }
         });
+
+        circleImageView = (CircleImageView) findViewById(R.id.cr_img);
+        circleImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), See_your_post.class);
+                v.getContext().startActivity(intent);
+            }
+        });
+
 //Slider
         viewPager = (ViewPager) findViewById(R.id.viewPager);
         indicator = (TabLayout) findViewById(R.id.indicator);
@@ -172,30 +185,32 @@ public class View_buying_request_item_detail extends AppCompatActivity {
             }
         });
 
-        breand = (TextView)findViewById(R.id.name_product);
+        breand = (TextView)findViewById(R.id.tv_brand);
         breand.setText(getIntent().getStringExtra("brand"));
-        price = (TextView)findViewById(R.id.name_price);
+        price = (TextView) findViewById(R.id.tv_price);
         price.setText(Double.toString(getIntent().getDoubleExtra("price",1)));
-
-        kh_title = getResources().getStringArray(R.array.kh_title);
-        detail = new String[]{
-                String.valueOf(Double.toString(getIntent().getDoubleExtra("price",1))),
-                String.valueOf(getIntent().getStringExtra("brand")),
-                String.valueOf("2019"),
-                String.valueOf("Good")
-        };
-        final List<HashMap<String,String>> alist = new ArrayList<HashMap<String,String>>();
-        for(int i=0;i<4;i++){
-            HashMap<String,String> hm = new HashMap<String, String>();
-            hm.put("listview_title",kh_title[i]);
-            hm.put("brand",detail[i]);
-            alist.add(hm);
-        }
-        String[] from = {"listview_title","brand"};
-        int[] to = {R.id.listview_item_title,R.id.listview_item_show};
-        SimpleAdapter simpleAdapter = new SimpleAdapter(getBaseContext(), alist, R.layout.single_row, from, to);
-        ListView androidListView = (ListView) findViewById(R.id.list_view);
-        androidListView.setAdapter(simpleAdapter);
+        prices = (TextView)findViewById(R.id.tv_prices);
+        prices.setText(Double.toString(getIntent().getDoubleExtra("price",1)));
+//
+//        kh_title = getResources().getStringArray(R.array.kh_title);
+//        detail = new String[]{
+//                String.valueOf(Double.toString(getIntent().getDoubleExtra("price",1))),
+//                String.valueOf(getIntent().getStringExtra("brand")),
+//                String.valueOf("2019"),
+//                String.valueOf("Good")
+//        };
+//        final List<HashMap<String,String>> alist = new ArrayList<HashMap<String,String>>();
+//        for(int i=0;i<4;i++){
+//            HashMap<String,String> hm = new HashMap<String, String>();
+//            hm.put("listview_title",kh_title[i]);
+//            hm.put("brand",detail[i]);
+//            alist.add(hm);
+//        }
+//        String[] from = {"listview_title","brand"};
+//        int[] to = {R.id.listview_item_title,R.id.listview_item_show};
+//        SimpleAdapter simpleAdapter = new SimpleAdapter(getBaseContext(), alist, R.layout.single_row, from, to);
+//        ListView androidListView = (ListView) findViewById(R.id.list_view);
+//        androidListView.setAdapter(simpleAdapter);
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

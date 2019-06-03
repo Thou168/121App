@@ -119,6 +119,9 @@
     <string name="hit_staffid">លេខសម្គាល់បុគ្គលិក / ប្រាក់ខែ sip</string>
     <string name="hit_hourse">ផ្ទះឈើ</string>
 
+    <string name="txt_pro_discount">ផលិតផលបញ្ចុះតម្លៃ</string>
+    <string name="txt_new_post">ផលិតផលថ្មីៗ</string>
+
     <string-array name="sp_brand">
         <item>ម៉ាក</item>
         <item>ហុងដា</item>

@@ -51,5 +51,4 @@
         <item>@color/dot_dark_screen1</item>
         <item>@color/dot_dark_screen1</item>
     </array>
-    <color name="black">#FFFFFFF</color>
 </resources>

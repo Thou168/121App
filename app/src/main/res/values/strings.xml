@@ -131,6 +131,8 @@
     <string name="br_yamaha">Yamaha</string>
     <string name="br_kawasaki">Kavasaki</string>
 
+    <string name="txt_pro_discount">Product Discount</string>
+    <string name="txt_new_post">New Posts</string>
 
     <string-array name="sp_brand">
         <item>Brand</item>

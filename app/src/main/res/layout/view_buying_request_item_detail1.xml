@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".View_buying_request_item_detail">
+    <ScrollView
+        android:layout_marginBottom="55dp"
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <RelativeLayout
+                android:id="@+id/relativelayout"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:orientation="vertical">
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/viewPager"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+                <android.support.design.widget.TabLayout
+                    android:id="@+id/indicator"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    app:tabBackground="@drawable/tab_selector"
+                    app:tabGravity="center"
+                    app:tabIndicatorHeight="0dp" />
+            </RelativeLayout>
+            <TextView
+                android:paddingLeft="@dimen/dp_4"
+                android:id="@+id/tv_title"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:text="honda click 125c year 2108 new 95% "
+                android:lines="2"
+                android:layout_below="@+id/relativelayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_below="@+id/tv_title"
+                android:lines="1"
+                android:padding="@dimen/dp_4"
+                android:id="@+id/tv_pos_time"
+                android:text="Phnom Pheng - 21m ago"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:textColor="@android:color/holo_red_dark"
+                android:textSize="20dp"
+                android:padding="@dimen/dp_4"
+                android:text="$1993"
+                android:id="@+id/tv_price"
+                android:layout_below="@+id/tv_pos_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <View
+                android:id="@+id/view_line"
+                android:layout_below="@+id/tv_price"
+                android:layout_width="match_parent"
+                android:background="@color/grey_light"
+                android:layout_height="10dp"/>
+            <RelativeLayout
+                android:layout_below="@+id/view_line"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:textSize="@dimen/dp_16"
+                    android:id="@+id/description"
+                    android:text="DESCRIPTION"
+                    android:padding="@dimen/dp_4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:layout_below="@+id/description"
+                    android:text="@string/hit_tax_type"
+                    android:id="@+id/tv_tax"
+                    android:padding="@dimen/dp_4"
+                    android:textSize="@dimen/dt_font"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:layout_below="@+id/description"
+                    android:text="Plate Number"
+                    android:padding="@dimen/dp_4"
+                    android:layout_alignParentRight="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <View
+                    android:id="@+id/line1"
+                    android:layout_below="@+id/tv_tax"
+                    android:layout_width="match_parent"
+                    android:background="@color/grey_light"
+                    android:layout_height="1dp"/>
+                <TextView
+                    android:text="@string/hit_brand"
+                    android:padding="@dimen/dp_4"
+                    android:textSize="@dimen/dt_font"
+                    android:layout_below="@+id/line1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:layout_alignParentRight="true"
+                    android:text="suzuki"
+                    android:padding="@dimen/dp_4"
+                    android:textSize="@dimen/dt_font"
+                    android:id="@+id/tv_brand"
+                    android:layout_below="@+id/line1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <View
+                    android:id="@+id/line2"
+                    android:layout_below="@+id/tv_brand"
+                    android:layout_width="match_parent"
+                    android:background="@color/grey_light"
+                    android:layout_height="1dp"/>
+                <TextView
+                    android:text="@string/hit_year"
+                    android:padding="@dimen/dp_4"
+                    android:layout_below="@+id/line2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:text="2015"
+                    android:id="@+id/tv_year"
+                    android:padding="@dimen/dp_4"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@+id/line2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <View
+                    android:id="@+id/line3"
+                    android:background="@color/grey_light"
+                    android:layout_below="@+id/tv_year"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"/>
+                <TextView
+                    android:padding="@dimen/dp_4"
+                    android:layout_below="@+id/line3"
+                    android:text="@string/hit_condition"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@+id/line3"
+                    android:text="Used"
+                    android:padding="@dimen/dp_4"
+                    android:id="@+id/tv_condition"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <View
+                    android:id="@+id/line4"
+                    android:background="@color/grey_light"
+                    android:layout_below="@+id/tv_condition"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"/>
+                <TextView
+                    android:padding="@dimen/dp_4"
+                    android:text="@string/hit_price"
+                    android:layout_below="@id/line4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:padding="@dimen/dp_4"
+                    android:layout_below="@+id/line4"
+                    android:layout_alignParentRight="true"
+                    android:id="@+id/tv_prices"
+                    android:text="$1190"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <View
+                    android:id="@+id/line5"
+                    android:background="@color/grey_light"
+                    android:layout_below="@+id/tv_prices"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"/>
+                <TextView
+                    android:text="Honda zoomer x year 2019 new 95% motor have full tax 100%"
+                    android:layout_below="@+id/line5"
+                    android:layout_width="match_parent"
+                    android:id="@+id/text"
+                    android:textSize="@dimen/dp_16"
+                    android:paddingLeft="@dimen/dp_4"
+                    android:paddingBottom="@dimen/dp_24"
+                    android:paddingTop="@dimen/dp_24"
+                    android:layout_height="wrap_content" />
+                <View
+                    android:id="@+id/view_line1"
+                    android:layout_below="@+id/text"
+                    android:layout_width="match_parent"
+                    android:background="@color/grey_light"
+                    android:layout_height="10dp"/>
+                <RelativeLayout
+                    android:padding="@dimen/dp_8"
+                    android:layout_below="@+id/view_line1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/cr_img"
+                        android:src="@drawable/image_slider_1"
+                        app:civ_border_width="2dp"
+                        app:civ_border_color="@color/colorPrimary"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp" />
+                    <TextView
+                        android:textSize="@dimen/dp_24"
+                        android:text="Vea Sna"
+                        android:textStyle="bold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_toEndOf="@+id/cr_img" />
+                    <View
+                        android:id="@+id/line7"
+                        android:layout_marginTop="@dimen/dp_4"
+                        android:layout_below="@+id/cr_img"
+                        android:background="@color/grey_light"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"/>
+                    <TextView
+                        android:drawableLeft="@drawable/icon_phone"
+                        android:text="077350356 / 081208272"
+                        android:id="@+id/tv_phone"
+                        android:layout_below="@+id/line7"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                    <View
+                        android:layout_below="@+id/tv_phone"
+                        android:id="@+id/line8"
+                        android:background="@color/grey_light"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"/>
+                    <TextView
+                        android:id="@+id/tv_email"
+                        android:layout_below="@+id/line8"
+                        android:text="Naknake@gmail.com"
+                        android:drawableLeft="@drawable/icon_email"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                    <View
+                        android:layout_below="@+id/tv_email"
+                        android:id="@+id/line9"
+                        android:background="@color/grey_light"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"/>
+                </RelativeLayout>
+            </RelativeLayout>
+        </RelativeLayout>
+    </ScrollView>
+    <android.support.constraint.ConstraintLayout
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="55dp">
+        <Button
+            android:id="@+id/btn_call"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:background="@drawable/shap_ratangle"
+            android:text="@string/btn_call"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btn_chat"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <Button
+            android:id="@+id/btn_chat"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:background="@drawable/shap_ratangle"
+            android:text="@string/btn_chat"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_call"
+            app:layout_constraintEnd_toStartOf="@+id/btn_order"
+            app:layout_constraintStart_toEndOf="@+id/btn_call"
+            app:layout_constraintTop_toTopOf="@+id/btn_call" />
+        <Button
+            android:id="@+id/btn_order"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:background="@drawable/shap_ratangle1"
+            android:text="@string/btn_order"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_chat"
+            app:layout_constraintEnd_toStartOf="@+id/btn_loan"
+            app:layout_constraintStart_toEndOf="@+id/btn_chat"
+            app:layout_constraintTop_toTopOf="@+id/btn_chat" />
+        <Button
+            android:id="@+id/btn_loan"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:background="@drawable/shap_ratangle1"
+            android:text="@string/btn_loand"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_order"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btn_order"
+            app:layout_constraintTop_toTopOf="@+id/btn_order" />
+    </android.support.constraint.ConstraintLayout>
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_detail"
+        android:layout_width="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_height="40dp"
+        android:background="#72999999"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+    </android.support.v7.widget.Toolbar>
+</RelativeLayout>

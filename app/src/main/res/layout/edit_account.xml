@@ -49,6 +49,7 @@
                     android:layout_marginTop="-25dp"
                     android:src="@drawable/icon_circle_null_24" />
                 <EditText
+                    android:textSize="@dimen/sp_14"
                     android:id="@+id/edit_fname"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
@@ -73,6 +74,7 @@
                     android:layout_marginTop="-25dp"
                     android:src="@drawable/icon_circle_null_24" />
                 <EditText
+                    android:textSize="@dimen/sp_14"
                     android:id="@+id/edit_lname"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
@@ -97,6 +99,7 @@
                     android:layout_marginTop="-25dp"
                     android:src="@drawable/icon_circle_null_24" />
                 <EditText
+                    android:textSize="@dimen/sp_14"
                     android:id="@+id/edit_lstore"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
@@ -121,6 +124,7 @@
                     android:layout_marginTop="-25dp"
                     android:src="@drawable/icon_circle_null_24" />
                 <EditText
+                    android:textSize="@dimen/sp_14"
                     android:id="@+id/edit_lb_shop"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
@@ -146,6 +150,7 @@
                     android:layout_marginTop="-25dp"
                     android:src="@drawable/icon_circle_null_24" />
                 <EditText
+                    android:textSize="@dimen/sp_14"
                     android:id="@+id/edit_wingnumber"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
@@ -170,6 +175,7 @@
                     android:layout_marginTop="-25dp"
                     android:src="@drawable/icon_circle_null_24" />
                 <EditText
+                    android:textSize="@dimen/sp_14"
                     android:id="@+id/edit_wingname"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
@@ -194,6 +200,7 @@
                     android:layout_marginTop="-25dp"
                     android:src="@drawable/icon_circle_null_24" />
                 <EditText
+                    android:textSize="@dimen/sp_14"
                     android:id="@+id/edit_dealer"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
@@ -231,6 +238,7 @@
                     android:background="#00FFFFFF"
                     android:drawableTop="@drawable/icon_plus_25px" />
                 <EditText
+                    android:textSize="@dimen/sp_14"
                     android:id="@+id/edit_numone"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
@@ -271,6 +279,7 @@
                     android:paddingRight="16dp"
                     android:paddingBottom="5dp" />
                 <EditText
+                    android:textSize="@dimen/sp_14"
                     android:id="@+id/edit_numtwo"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
@@ -295,6 +304,7 @@
                     android:layout_marginTop="-25dp"
                     android:src="@drawable/icon_circle_null_24" />
                 <EditText
+                    android:textSize="@dimen/sp_14"
                     android:id="@+id/edit_three"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
