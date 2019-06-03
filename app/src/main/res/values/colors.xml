@@ -15,6 +15,11 @@
     <color name="color_red">#ff0006</color>
     <color name="WHITE">#FFFFFF</color>
 
+    <color name="white">#ffffffff</color>
+    <color name="black">#ff000000</color>
+    <color name="gray">#ff888888</color>
+    <color name="white_ish">#fffefefe</color>
+
     <color name="md_bottom_sheet_title_color">#000</color>
     <color name="md_bottom_sheet_text_color">#000</color>
     <color name="grayTextColor">#607C7575</color>
