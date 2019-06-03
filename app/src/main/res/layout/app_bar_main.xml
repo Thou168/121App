@@ -16,7 +16,7 @@
             android:layout_width="match_parent"
             android:minHeight="?attr/actionBarSize"
             android:layout_height="?attr/actionBarSize"
-            android:background="#1F6AFF">
+            android:background="#9C9494">
 
             <TextView
                 android:id="@+id/toolbar_title"
@@ -26,6 +26,7 @@
                 android:textColor="@color/color_black"
                 android:textSize="@dimen/dp_16"
                 android:textStyle="normal|bold" />
+
         </android.support.v7.widget.Toolbar>
 
     </android.support.design.widget.AppBarLayout>
@@ -177,6 +178,8 @@
 
         <!--</LinearLayout>-->
     <!--</HorizontalScrollView>-->
+
+
 
     <LinearLayout
         android:id="@+id/layoutWindow"

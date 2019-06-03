@@ -1,6 +1,8 @@
 package com.example.a121firstapp;
 
+import android.app.SearchManager;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -60,7 +62,7 @@ public class View_buying_request_main extends AppCompatActivity {
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(View_buying_request_main.this, "back!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(View_buying_request_main.this, "Home", Toast.LENGTH_SHORT).show();
                 finish();
             }
         });
@@ -231,17 +233,17 @@ public class View_buying_request_main extends AppCompatActivity {
 
     public List<Article> getArticleList() {
         articleList = new ArrayList<>();
-        articleList.add(new Article(0, "Click 2019", "Posted: 22 hrs ago", R.drawable.click_2019, "2250 $", "Color: WHITE","Brand: HONDA", "Category: Motorbike", "2019"));
-        articleList.add(new Article(1, "Dream Red New", "Posted: 22 hrs ago", R.drawable.dream_red,"2250 $", "Color: WHITE","Brand: HONDA", "Category: Motorbike", "2019"));
-        articleList.add(new Article(2, "Duke C390 2019", "Posted: 22 hrs ago", R.drawable.duke_c390_2019,"2250 $", "Color: WHITE","Brand: HONDA", "Category: Motorbike", "2019"));
-        articleList.add(new Article(3, "Fino New 2019", "Posted: 22 hrs ago", R.drawable.fino_2019,"2250 $", "Color: WHITE","Brand: HONDA", "Category: Motorbike", "2019"));
-        articleList.add(new Article(4, "Dream Gold New", "Posted: 22 hrs ago", R.drawable.gold_dream,"2250 $", "Color: WHITE","Brand: HONDA", "Category: Motorbike", "2019"));
-        articleList.add(new Article(5, "GSX250OR SUZUKI ", "Posted: 22 hrs ago", R.drawable.gsx250or,"2250 $", "Color: WHITE","Brand: HONDA", "Category: Motorbike", "2019"));
-        articleList.add(new Article(6, "MSX New 2019", "Posted: 22 hrs ago", R.drawable.msx_2019,"2250 $", "Color: WHITE","Brand: HONDA", "Category: Motorbike", "2019"));
-        articleList.add(new Article(7, "PCX 2019", "Posted: 22 hrs ago", R.drawable.pcx_2019,"2250 $", "Color: WHITE","Brand: HONDA", "Category: Motorbike", "2019"));
-        articleList.add(new Article(8, "Roll Royce 2019", "Posted: 22 hrs ago", R.drawable.roll_royce_2019,"2250 $", "Color: WHITE","Brand: HONDA", "Category: Motorbike", "2019"));
-        articleList.add(new Article(9, "Scoopy New 2019", "Posted: 22 hrs ago", R.drawable.scopy_2019,"2250 $", "Color: WHITE","Brand: HONDA", "Category: Motorbike", "2019"));
-        articleList.add(new Article(10, "Zoomer X 2019", "Posted: 22 hrs ago", R.drawable.zoomer_x,"2250 $", "Color: WHITE","Brand: HONDA", "Category: Motorbike", "2019"));
+        articleList.add(new Article(0, "Click 2019", "Posted: 2 hrs ago", R.drawable.click_2019, "2250 $", "Color: WHITE","Brand: HONDA", "Category: Motorbike", "2019"));
+        articleList.add(new Article(1, "Dream Red New", "Posted: 16 hrs ago", R.drawable.dream_red,"2100 $", "Color: RED","Brand: HONDA", "Category: Motorbike", "2019"));
+        articleList.add(new Article(2, "Duke C390 2019", "Posted: 8 hrs ago", R.drawable.duke_c390_2019,"12000 $", "Color: ORANGE","Brand: HONDA", "Category: Motorbike", "2019"));
+        articleList.add(new Article(3, "Fino New 2019", "Posted: 7 hrs ago", R.drawable.fino_2019,"2150 $", "Color: RED","Brand: YAMAHA", "Category: Motorbike", "2019"));
+        articleList.add(new Article(4, "Dream Gold New", "Posted: 12 hrs ago", R.drawable.gold_dream,"2050 $", "Color: GOLD","Brand: HONDA", "Category: Motorbike", "2019"));
+        articleList.add(new Article(5, "GSX250OR SUZUKI ", "Posted: 13 hrs ago", R.drawable.gsx250or,"2500 $", "Color: BLACK","Brand: SUZUKI", "Category: Motorbike", "2019"));
+        articleList.add(new Article(6, "MSX New 2019", "Posted: 23 hrs ago", R.drawable.msx_2019,"2300 $", "Color: BLACK","Brand: HONDA", "Category: Motorbike", "2019"));
+        articleList.add(new Article(7, "PCX 2019", "Posted: 20 hrs ago", R.drawable.pcx_2019,"4000 $", "Color: RED","Brand: HONDA", "Category: Motorbike", "2019"));
+        articleList.add(new Article(8, "Roll Royce 2019", "Posted: 6 hrs ago", R.drawable.roll_royce_2019,"1000000 $", "Color: BLACK","Brand: AMERICA", "Category: CAR", "2019"));
+        articleList.add(new Article(9, "Scoopy New 2019", "Posted: 5 hrs ago", R.drawable.scopy_2019,"2400 $", "Color: WHITE","Brand: HONDA", "Category: Motorbike", "2019"));
+        articleList.add(new Article(10, "Zoomer X 2019", "Posted: 1 hrs ago", R.drawable.zoomer_x,"2250 $", "Color: BLACK","Brand: HONDA", "Category: Motorbike", "2019"));
         return articleList;
 
 
@@ -259,16 +261,31 @@ public class View_buying_request_main extends AppCompatActivity {
 //    }
 
     @Override
+    protected void onNewIntent(Intent intent) {
+        handleIntent(intent);
+    }
+
+    private void handleIntent(Intent intent) {
+
+        if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
+            String query = intent.getStringExtra(SearchManager.QUERY);
+            //use the query to search your data somehow
+        }
+    }
+
+    @Override
     public boolean onCreateOptionsMenu(final Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_search_and_shop, menu);
         MenuItem search_item = menu.findItem(R.id.action_search);
         MenuItem shop_item = menu.findItem(R.id.action_Shop);
 
-        SearchView searchView = (SearchView) search_item.getActionView();
-        searchView.setFocusable(false);
-        searchView.setQueryHint("Search");
-//        search_item.expandActionView();
+        SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
+        SearchView searchView = (SearchView) menu.findItem(R.id.action_search).getActionView();
+        searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
+        searchView.setFocusable(true);
+        searchView.setQueryHint("Search for Products, Brands and More");
+        search_item.expandActionView();
 
         //search items
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
