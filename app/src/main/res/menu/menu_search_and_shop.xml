@@ -11,7 +11,7 @@
         android:orderInCategory="1"
         android:title="@string/app_name" />
 
-    <!-- Switching between grid and list icon -->
+     Switching between grid and list icon
     <item
         android:id="@+id/action_Shop"
         android:icon="@drawable/ic_shopping_basket_black_24dp"

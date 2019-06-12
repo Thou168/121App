@@ -188,9 +188,9 @@ public class View_buying_request_item_detail extends AppCompatActivity {
         breand = (TextView)findViewById(R.id.tv_brand);
         breand.setText(getIntent().getStringExtra("brand"));
         price = (TextView) findViewById(R.id.tv_price);
-        price.setText(Double.toString(getIntent().getDoubleExtra("price",1)));
+        price.setText(Double.toString(getIntent().getDoubleExtra("price",0)));
         prices = (TextView)findViewById(R.id.tv_prices);
-        prices.setText(Double.toString(getIntent().getDoubleExtra("price",1)));
+        prices.setText(Double.toString(getIntent().getDoubleExtra("price",0)));
 //
 //        kh_title = getResources().getStringArray(R.array.kh_title);
 //        detail = new String[]{
