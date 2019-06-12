@@ -25,6 +25,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 
 import com.example.a121firstapp.Class_Adapter.Utility;
+import com.example.a121firstapp.Class_item.Setting;
 import com.squareup.picasso.Picasso;
 
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -138,7 +139,7 @@ public class fram_account extends Fragment {
                 startActivity(Intent.createChooser(intent,"share_using"));
                 break;
             case R.id.action_settings:
-                startActivity(new Intent(this.getActivity(),UserAccountRegistrationActivity.class));
+                startActivity(new Intent(this.getActivity(), Setting.class));
                 break;
         }
         return super.onOptionsItemSelected(item);

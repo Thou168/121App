@@ -92,9 +92,15 @@
     <string name="txtprice">Price:</string>
     <string name="txtcondition">Condition:</string>
     <string name="txtamount_request">Amount Request:</string>
+
+    //user acoout login
+    <string name="title_Login" translatable="false">Login account</string>
+
     //user account registration
+
     <string name="title_registration">Register to post free ad</string>
     <string name="phone_number">Phone Number</string>
+    <string name="email" translatable="false">Email</string>
     <string name="Password">Password</string>
     <string name="confirm">Confirm Password</string>
     <string name="or">Or</string>

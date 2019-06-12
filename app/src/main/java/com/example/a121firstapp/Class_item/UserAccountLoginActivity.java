@@ -1,5 +1,4 @@
-package com.example.a121firstapp;
-
+package com.example.a121firstapp.Class_item;
 
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -7,16 +6,14 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.a121firstapp.Class_item.Convert_Json_Java;
+import com.example.a121firstapp.MainActivity;
+import com.example.a121firstapp.R;
 import com.google.gson.Gson;
 import com.google.gson.JsonParseException;
 
@@ -25,8 +22,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -36,37 +31,30 @@ import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
 
-public class UserAccountRegistrationActivity extends AppCompatActivity  {
-    ImageButton btnFacebookLogin;
+public class UserAccountLoginActivity extends AppCompatActivity {
+    private EditText Username,Password;
     private Button btnSubmit;
-    private EditText editPhone,editEmail,editPassword;
-    private static final String EMAIL_PATTERN = "^[a-zA-Z0-9#_~!$&'()*+,;=:.\"(),:;<>@\\[\\]\\\\]+@[a-zA-Z0-9-]+(\\.[a-zA-Z0-9-]+)*$";
-    private Pattern pattern = Pattern.compile(EMAIL_PATTERN);
-    private Matcher matcher;
     private static final String TAG = "Response";
-    TextView textView;
     private Context context;
     ProgressDialog mProgress;
     SharedPreferences prefer;
-    String name;
-    String email;
-    String pass;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_user_account_registration);
+        setContentView(R.layout.activity_user_account_login);
 
-        editPhone = (EditText) findViewById(R.id.editPhone);
-        editEmail = (EditText)findViewById(R.id.editEmail);
-        editPassword = (EditText)findViewById(R.id.editConfirm);
-        mProgress = new ProgressDialog(this);
-        mProgress.setMessage("Please wait...");
-        mProgress.setCancelable(false);
-        mProgress.setIndeterminate(true);
+        Username = (EditText)findViewById(R.id.editPhoneLogin);
+        Password = (EditText)findViewById(R.id.editPasswordLogin);
+        btnSubmit = (Button)findViewById(R.id.btnSubmitLogin);
 
         prefer = getSharedPreferences("Register",MODE_PRIVATE);
 
-        btnSubmit = (Button)findViewById(R.id.btnSub);
+        mProgress = new ProgressDialog(this);
+        mProgress.setMessage("Please wait...");
+        mProgress.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+        mProgress.setCancelable(false);
+        mProgress.setIndeterminate(true);
+
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -75,30 +63,27 @@ public class UserAccountRegistrationActivity extends AppCompatActivity  {
                     postRequest();
                 } catch (IOException e) {
                     e.printStackTrace();
+                    mProgress.dismiss();
                 } catch (JSONException e) {
                     e.printStackTrace();
+                    mProgress.dismiss();
                 }
             }
         });
-
-
-    } //create
-
+    }
 
     public void postRequest() throws IOException, JSONException {
-        name = editPhone.getText().toString();
-        email= editEmail.getText().toString();
-        pass = editPassword.getText().toString();
+        String name = Username.getText().toString();
+        String pass= Password.getText().toString();
 
 
         MediaType MEDIA_TYPE = MediaType.parse("application/json");
-        String url = "http://192.168.1.239:8000/users/";   // register
+        String url ="http://192.168.1.239:8000/rest-auth/login/";  // login
 
         OkHttpClient client = new OkHttpClient();
         JSONObject postdata = new JSONObject();
         try {
             postdata.put("username", name);
-            postdata.put("email",email);
             postdata.put("password", pass);
 
         } catch(JSONException e){
@@ -141,39 +126,39 @@ public class UserAccountRegistrationActivity extends AppCompatActivity  {
         Convert_Json_Java convertJsonJava = new Convert_Json_Java();
         try{
             convertJsonJava = gson.fromJson(mMessage,Convert_Json_Java.class);
-            Log.d(TAG, convertJsonJava.getUsername() + "\t" + convertJsonJava.getEmail() + "\t" + convertJsonJava.getToken() + "\t" + convertJsonJava.getStatus());
-            final String token = convertJsonJava.getToken();
+            Log.d(TAG, convertJsonJava.getUsername() + "\t" + convertJsonJava.getEmail() + "\t" + convertJsonJava.getKey() + "\t" + convertJsonJava.getStatus());
+            final String key = convertJsonJava.getKey();
             runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
-                    if (token!=null){
-                        SharedPreferences.Editor editor =prefer.edit();
-                        editor.putString("token",token);
+                    if (key!=null){
+                        SharedPreferences.Editor editor = prefer.edit();
+                        editor.putString("token",key);
                         editor.commit();
 
                         mProgress.dismiss();
-                        Toast.makeText(getApplicationContext(),"Register Success",Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(UserAccountRegistrationActivity.this,MainActivity.class);
+                        Toast.makeText(getApplicationContext(),"Login Success",Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(UserAccountLoginActivity.this, MainActivity.class);
                         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                         startActivity(intent);
                         finish();
-
+                    }else {
+                        mProgress.dismiss();
+                        Toast.makeText(getApplicationContext(),"Login failure",Toast.LENGTH_SHORT).show();
                     }
                 }
             });
         }catch (JsonParseException e){
             e.printStackTrace();
+
             runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
+                    Toast.makeText(getApplicationContext(),"Login failure",Toast.LENGTH_SHORT).show();
                     mProgress.dismiss();
-                    Toast.makeText(getApplicationContext(),"register failure",Toast.LENGTH_SHORT).show();
                 }
             });
-
         }
 
     }
-
-
 }
